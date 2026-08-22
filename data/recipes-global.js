@@ -1,4 +1,4 @@
-/* Dinners from further afield - including a few Polish ones for the Jedrzejczak side. */
+/* Dinners from further afield. Including a few Polish ones for the Jedrzejczak side. */
 window.RECIPES = (window.RECIPES || []).concat([
 
 {
@@ -32,16 +32,16 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Combine the chicken, soy sauce, vinegar, garlic, bay leaves, peppercorns, and sugar in a bowl and marinate 30 minutes, or overnight.",
     "Lift the chicken out and pat it dry, reserving all the marinade.",
     "Heat the oil in a wide pot over medium-high and brown the chicken skin side down 6 minutes, then 3 on the other side.",
-    "Pour in the reserved marinade and the water. Bring to a boil and let it bubble uncovered for 5 minutes without stirring - this cooks off the harsh edge of the raw vinegar.",
+    "Pour in the reserved marinade and the water. Bring to a boil and let it bubble uncovered for 5 minutes without stirring. This cooks off the harsh edge of the raw vinegar.",
     "Reduce to a simmer, cover, and cook 25 minutes.",
     "Uncover and simmer 15 minutes more, until the sauce reduces to a glossy, syrupy glaze that coats the chicken.",
-    "Taste - it should be salty, sour, and faintly sweet all at once. Serve over rice with scallions and plenty of the sauce."
+    "Taste. It should be salty, sour, and faintly sweet all at once. Serve over rice with scallions and plenty of the sauce."
   ],
   tips: [
-    "Do not stir during the first five minutes of boiling. It is the traditional rule and it does mellow the vinegar.",
+    "Don't stir during the first five minutes of boiling. It's the traditional rule and it does mellow the vinegar.",
     "Adobo is famously better the next day, and it keeps for a week because the vinegar preserves it."
   ],
-  makeAhead: "Genuinely improves over two to three days in the fridge."
+  makeAhead: "Improves over two to three days in the fridge."
 },
 
 {
@@ -78,13 +78,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   steps: [
     "Freeze the beef for 30 minutes, then slice it as thinly as you possibly can against the grain. Partly frozen meat is far easier to slice thin.",
     "Mix all the marinade ingredients and fold in the beef. Marinate at least 30 minutes, up to overnight.",
-    "Heat a large cast-iron skillet or grill pan over high until it is genuinely smoking.",
-    "Add the beef in a single layer, in batches - crowding steams it. Cook 2 minutes without moving it, then toss for 1 minute more until the edges char.",
+    "Heat a large cast-iron skillet or grill pan over high until it's smoking.",
+    "Add the beef in a single layer, in batches. Crowding steams it. Cook 2 minutes without moving it, then toss for 1 minute more until the edges char.",
     "Repeat with the remaining beef, wiping the pan between batches if it gets too wet.",
     "Serve with rice, lettuce leaves for wrapping, cucumber, scallions, sesame seeds, and ssamjang."
   ],
   tips: [
-    "The grated pear tenderizes the beef with natural enzymes and adds a clean sweetness. It is the traditional ingredient and it matters.",
+    "The grated pear tenderizes the beef with natural enzymes and adds a clean sweetness. It's the traditional ingredient and it matters.",
     "Cook in batches over the highest heat you have. This is a searing dish, not a simmering one."
   ],
   makeAhead: "Marinate overnight; the beef cooks in five minutes."
@@ -99,7 +99,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Breaded chicken", starch: "Rice", veg: "Carrot, onion, potato" },
   nutrition: { calories: 725, protein: 45, carbs: 82, fat: 25, fiber: 6 },
   tags: ["comfort", "kid-friendly", "make-ahead", "special-occasion"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Curry sauce", items: [
       "2 tablespoons butter",
@@ -198,8 +198,8 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Pour the nuoc cham over each bowl and finish with peanuts."
   ],
   tips: [
-    "The sugar in the marinade is what gives the char. Get the pan properly hot and do not move the meat around.",
-    "Use far more herbs than feels reasonable. In Vietnamese bowls they are a vegetable, not a garnish."
+    "The sugar in the marinade is what gives the char. Get the pan hot and don't move the meat around.",
+    "Use far more herbs than feels reasonable. In Vietnamese bowls they're a vegetable, not a garnish."
   ],
   makeAhead: "Marinate the pork and pickle the carrots a day ahead."
 },
@@ -210,16 +210,17 @@ window.RECIPES = (window.RECIPES || []).concat([
   blurb: "The Spanish potato omelette: soft potatoes, sweet onion, and eggs, cooked slowly into a thick round.",
   emoji: "🥚", protein: "Eggs", cuisine: "Spanish",
   totalTime: 55, activeTime: 40, difficulty: "Medium", servings: 6,
-  plate: { protein: "Eggs", starch: "Potatoes", veg: "Onion" },
-  nutrition: { calories: 385, protein: 15, carbs: 32, fat: 23, fiber: 3 },
+  plate: { protein: "Eggs and Manchego", starch: "Potatoes", veg: "Onion" },
+  nutrition: { calories: 565, protein: 26, carbs: 33, fat: 37, fiber: 3 },
   tags: ["budget", "make-ahead", "gluten-free", "veggie-forward", "comfort", "leftovers"],
   seasons: ["all"],
   ingredients: [
     { group: "Tortilla", items: [
+      "1 cup grated Manchego or aged cheddar",
       "2 lb Yukon gold potatoes, peeled and thinly sliced",
       "1 large onion, thinly sliced",
       "1 1/2 cups olive oil, for cooking the potatoes",
-      "8 eggs",
+      "12 eggs",
       "2 teaspoons kosher salt"
     ]},
     { group: "To serve", items: [
@@ -231,17 +232,17 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Heat the olive oil in a 10-inch nonstick skillet over medium-low. Add the potatoes and onion with a teaspoon of the salt.",
     "Cook gently 25 minutes, stirring occasionally, until the potatoes are completely soft but not browned. They should be poaching in the oil, not frying.",
     "Drain the potatoes and onion in a colander set over a bowl, saving the oil. Let them cool 5 minutes.",
-    "Beat the eggs with the remaining salt in a large bowl, then fold in the warm potatoes. Let this sit 10 minutes so the potatoes soak up some egg.",
+    "Beat the eggs with the remaining salt in a large bowl, stir in the cheese, then fold in the warm potatoes. Let this sit 10 minutes so the potatoes soak up some egg.",
     "Wipe the skillet and return 2 tablespoons of the reserved oil. Heat over medium.",
     "Pour in the mixture, spread it evenly, and cook 6 to 8 minutes, running a spatula around the edge to keep it loose, until the bottom is set and golden.",
     "Put a large plate over the pan and, in one confident motion, invert the tortilla onto it. Slide it back into the pan raw side down.",
     "Cook 4 to 5 minutes more, until just set with a slightly soft center. Rest 10 minutes, then cut into wedges and serve warm or at room temperature."
   ],
   tips: [
-    "The flip is the only hard part. Use a plate wider than the pan, hold it tight against the rim, and commit - hesitation is what makes it fall apart.",
-    "The oil is not wasted. Strain it and use it for roasting potatoes or in salad dressings for weeks."
+    "The flip is the only hard part. Use a plate wider than the pan, hold it tight against the rim, and commit. Hesitation is what makes it fall apart.",
+    "The oil isn't wasted. Strain it and use it for roasting potatoes or in salad dressings for weeks."
   ],
-  makeAhead: "Traditionally eaten at room temperature, so it is ideal made hours ahead."
+  makeAhead: "Traditionally eaten at room temperature, so it's ideal made hours ahead."
 },
 
 {
@@ -293,7 +294,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Simmer 30 minutes, until very thick with no loose liquid. A wet meat layer makes a sloppy moussaka.",
     "For the bechamel, melt the butter, whisk in the flour, and cook 2 minutes. Add the warm milk gradually, whisking, and simmer 5 minutes until thick. Off the heat, whisk in the nutmeg, salt, cheese, and then the egg yolks one at a time.",
     "Lower the oven to 375F. Layer in a deep 9x13 dish: potatoes, half the eggplant, all the meat sauce, the rest of the eggplant, then the bechamel spread evenly over the top.",
-    "Bake 45 to 50 minutes, until deeply golden and set. Rest at least 30 minutes before cutting - this is essential for clean slices."
+    "Bake 45 to 50 minutes, until deeply golden and set. Rest at least 30 minutes before cutting. This is essential for clean slices."
   ],
   tips: [
     "Roasting rather than frying the eggplant saves an enormous amount of oil and tastes just as good.",
@@ -348,10 +349,10 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Return the chicken skin side up, so the skin stays above the liquid. Cover and simmer gently 35 minutes.",
     "Add the olives and preserved lemon and simmer uncovered 15 minutes more, until the sauce has reduced and thickened.",
     "Prepare the couscous with boiling broth, covered, 10 minutes, then fluff.",
-    "Stir most of the herbs into the tagine and taste for salt - the olives and preserved lemon are salty, so check before adding more. Serve over couscous with almonds and the remaining herbs."
+    "Stir most of the herbs into the tagine and taste for salt. The olives and preserved lemon are salty, so check before adding more. Serve over couscous with almonds and the remaining herbs."
   ],
   tips: [
-    "Preserved lemon is worth seeking out. If you cannot find it, use fresh lemon zest plus a squeeze of juice, added at the end.",
+    "Preserved lemon is worth seeking out. If you can't find it, use fresh lemon zest plus a squeeze of juice, added at the end.",
     "Keep the chicken skin above the liquid line and it stays browned rather than going soft."
   ],
   makeAhead: "Better the next day. Keeps four days."
@@ -360,7 +361,7 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "ropa-vieja",
   title: "Ropa Vieja",
-  blurb: "Shredded beef braised with peppers and olives until it looks like the old clothes it is named for.",
+  blurb: "Shredded beef braised with peppers and olives until it looks like the old clothes it's named for.",
   emoji: "🫑", protein: "Beef", cuisine: "Cuban",
   totalTime: 195, activeTime: 30, difficulty: "Medium", servings: 6,
   plate: { protein: "Flank steak", starch: "Rice and black beans", veg: "Peppers, onions, tomato" },
@@ -422,7 +423,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Chicken thighs", starch: "Egg noodles", veg: "Onion and peppers" },
   nutrition: { calories: 625, protein: 40, carbs: 54, fat: 27, fiber: 4 },
   tags: ["comfort", "one-pan", "make-ahead", "leftovers", "budget"],
-  seasons: ["fall", "winter"], karolina: true,
+  seasons: ["fall", "winter"],
   ingredients: [
     { group: "Chicken", items: [
       "8 bone-in skin-on chicken thighs",
@@ -508,13 +509,13 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Mix the beef with the soy sauce, brown sugar, sesame oil, and garlic and leave it while you cook the vegetables.",
     "Blanch the spinach 30 seconds, squeeze it dry, and toss with 1 teaspoon sesame oil, a little garlic, and salt.",
     "Blanch the bean sprouts 2 minutes and dress the same way.",
-    "Saute the carrots 2 minutes in sesame oil with salt, and set aside. Repeat separately with the zucchini, then the mushrooms with a splash of soy sauce. Keeping them separate is the point - each one should taste of itself.",
+    "Saute the carrots 2 minutes in sesame oil with salt, and set aside. Repeat separately with the zucchini, then the mushrooms with a splash of soy sauce. Keeping them separate is the point. Each one should taste of itself.",
     "Cook the beef in a hot skillet 5 minutes, until browned and glazed.",
     "Fry the eggs so the whites are set and the yolks runny.",
     "Fill bowls with hot rice and arrange the vegetables and beef in neat sections on top, with an egg in the middle. Serve the sauce alongside and mix everything together at the table."
   ],
   tips: [
-    "Season and cook each vegetable separately. It seems fussy and it is the entire character of the dish.",
+    "Season and cook each vegetable separately. It seems fussy and it's the character of the dish.",
     "For crispy rice at the bottom, use a hot stone bowl or press the rice into an oiled skillet for 3 minutes before filling."
   ],
   makeAhead: "All the vegetable components keep three days, which makes assembly a ten-minute job."
@@ -555,7 +556,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   steps: [
     "Whisk the sauce ingredients together.",
-    "Heat the oil in a wok or large skillet over high. Add the garlic and chilies and stir 20 seconds - just until fragrant, not browned.",
+    "Heat the oil in a wok or large skillet over high. Add the garlic and chilies and stir 20 seconds. Just until fragrant, not browned.",
     "Add the chicken and press it flat. Leave it 2 minutes to brown before breaking it up, then cook 3 minutes more.",
     "Add the onion and green beans and stir-fry 3 minutes.",
     "Pour in the sauce and toss 2 minutes, until it reduces and coats the meat.",
@@ -565,7 +566,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Add the basil off the heat at the very last second. Cooked basil turns black and loses everything that makes it worth using.",
-    "The crispy fried egg is not optional in Thailand and should not be here either. Use plenty of hot oil."
+    "The crispy fried egg isn't optional in Thailand and shouldn't be here either. Use plenty of hot oil."
   ],
   makeAhead: null
 },
@@ -610,7 +611,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Return the beef with the rest of the coconut milk, the broth, cinnamon, cardamom, and bay leaves.",
     "Simmer gently, partly covered, for 1 1/2 hours.",
     "Add the potatoes, onions, fish sauce, sugar, and tamarind. Simmer 40 minutes more, until the beef is completely tender and the potatoes are soft.",
-    "Stir in the peanuts and taste - it should be balanced between salty, sweet, and sour. Adjust with more fish sauce, sugar, or tamarind.",
+    "Stir in the peanuts and taste. It should be balanced between salty, sweet, and sour. Adjust with more fish sauce, sugar, or tamarind.",
     "Serve over jasmine rice with cilantro and lime."
   ],
   tips: [
@@ -717,10 +718,10 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]}
   ],
   steps: [
-    "Mix all the kofta ingredients with your hands for a full 2 minutes. Unlike burgers, kofta benefits from being worked - it becomes slightly sticky, which is what holds it on the skewer.",
+    "Mix all the kofta ingredients with your hands for a full 2 minutes. Unlike burgers, kofta benefits from being worked. It becomes slightly sticky, which is what holds it on the skewer.",
     "Chill the mixture 20 minutes.",
     "Shape into 12 sausage shapes around flat metal skewers, or into oblong patties if you have no skewers.",
-    "Whisk the tahini with the lemon juice and garlic. It will seize into a stiff paste - keep whisking in cold water a tablespoon at a time until it pours smoothly.",
+    "Whisk the tahini with the lemon juice and garlic. It will seize into a stiff paste. Keep whisking in cold water a tablespoon at a time until it pours smoothly.",
     "Heat the broiler with a rack 6 inches from the element, or heat a grill to medium-high.",
     "Broil the kofta 5 minutes per side, until browned and cooked through.",
     "Toss the tomato, cucumber, onion, and parsley with a squeeze of lemon and a pinch of salt.",
@@ -740,12 +741,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥔", protein: "Pork", cuisine: "Polish",
   totalTime: 45, activeTime: 25, difficulty: "Easy", servings: 4,
   plate: { protein: "Kielbasa", starch: "Potatoes", veg: "Cabbage and onion" },
-  nutrition: { calories: 585, protein: 24, carbs: 46, fat: 35, fiber: 8 },
+  nutrition: { calories: 705, protein: 32, carbs: 47, fat: 45, fiber: 8 },
   tags: ["one-pan", "budget", "comfort", "leftovers", "gluten-free", "dairy-free"],
   seasons: ["fall", "winter"],
   ingredients: [
     { group: "Everything", items: [
-      "1 1/2 lb kielbasa, cut into thick coins",
+      "2 lb kielbasa, cut into thick coins",
       "1 1/2 lb baby potatoes, halved",
       "1 small head green cabbage, cored and roughly chopped",
       "2 onions, sliced",
@@ -772,7 +773,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Stir in the vinegar and dill and taste for salt."
   ],
   tips: [
-    "Caraway is the flavor that makes this taste Polish rather than generic. Do not skip it.",
+    "Caraway is the flavor that makes this taste Polish rather than generic. Don't skip it.",
     "The splash of vinegar at the end lifts the whole pan. Cabbage and sausage both need acid."
   ],
   makeAhead: "Keeps four days and reheats well in a hot skillet."
@@ -820,7 +821,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   steps: [
     "Cut the core out of the cabbage. Lower the whole head into a large pot of boiling salted water for 3 minutes, then peel off the outer leaves as they soften, returning the head to the water as you go. Get 16 to 18 good leaves.",
     "Shave down the thick rib at the base of each leaf with a knife so it rolls without cracking.",
-    "Mix all the filling ingredients with your hands until just combined. Do not overwork it.",
+    "Mix all the filling ingredients with your hands until just combined. Don't overwork it.",
     "Cook the onion for the sauce in the butter 6 minutes, then add the tomatoes, broth, tomato paste, sugar, vinegar, bay leaves, and salt. Simmer 10 minutes.",
     "Heat the oven to 350F. Spread a cup of sauce in a deep baking dish and line the bottom with a couple of spare cabbage leaves.",
     "Put about 1/3 cup of filling near the base of each leaf, fold the sides in, and roll it up tightly like a burrito. Set them seam side down in the dish.",
@@ -828,7 +829,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Uncover and bake 15 minutes more. Rest 15 minutes before serving with plenty of sauce."
   ],
   tips: [
-    "Freezing the whole cabbage head overnight and thawing it also softens the leaves, with no boiling at all - it is the easier method if you plan ahead.",
+    "Freezing the whole cabbage head overnight and thawing it also softens the leaves, with no boiling at all. It's the easier method if you plan ahead.",
     "Line the dish with spare leaves. It stops the bottom rolls catching and burning."
   ],
   makeAhead: "Assemble a day ahead, or freeze baked rolls in their sauce for three months."
@@ -843,7 +844,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Kielbasa", starch: "Pierogi", veg: "Onions and cabbage" },
   nutrition: { calories: 665, protein: 26, carbs: 62, fat: 35, fiber: 5 },
   tags: ["comfort", "budget", "kid-friendly", "leftovers"],
-  seasons: ["fall", "winter"], karolina: true,
+  seasons: ["fall", "winter"],
   ingredients: [
     { group: "Everything", items: [
       "2 lb frozen potato and cheese pierogi",
@@ -864,7 +865,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   steps: [
     "Melt 3 tablespoons of the butter in a large skillet over medium-low. Add the onions, sugar, and a pinch of salt.",
-    "Cook 25 minutes, stirring every few minutes, until deep golden and jammy. This is the backbone of the dish and it cannot be hurried.",
+    "Cook 25 minutes, stirring every few minutes, until deep golden and jammy. This is the backbone of the dish and it can't be hurried.",
     "Meanwhile, bring a large pot of salted water to a boil. Cook the pierogi 4 minutes, until they float. Drain gently.",
     "Push the onions to one side of the skillet. Add the oil and brown the kielbasa 5 minutes until the edges crisp. Combine with the onions and move everything to a bowl.",
     "Add the remaining butter to the skillet over medium-high. Add the drained pierogi in a single layer and cook 3 minutes per side, until golden and crisp. Work in batches if needed.",
@@ -873,9 +874,9 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Boil the pierogi first, then pan-fry. Frying frozen pierogi directly leaves the middle cold.",
-    "Do not crowd the pan when frying them or they steam and stay pale instead of crisping."
+    "Don't crowd the pan when frying them or they steam and stay pale instead of crisping."
   ],
-  makeAhead: "Caramelize the onions up to five days ahead - they keep beautifully."
+  makeAhead: "Caramelize the onions up to five days ahead. They keep beautifully."
 },
 
 {
@@ -887,7 +888,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Chicken thighs", starch: "Rice", veg: "Cucumber salad" },
   nutrition: { calories: 605, protein: 44, carbs: 52, fat: 25, fiber: 4 },
   tags: ["grill", "make-ahead", "dairy-free", "high-protein", "kid-friendly"],
-  seasons: ["summer"], karolina: true,
+  seasons: ["summer"],
   ingredients: [
     { group: "Marinade", items: [
       "2 lb boneless skinless chicken thighs, cut into strips",
@@ -942,12 +943,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍲", protein: "Vegetarian", cuisine: "Ethiopian",
   totalTime: 55, activeTime: 20, difficulty: "Easy", servings: 5,
   plate: { protein: "Red lentils", starch: "Injera or rice", veg: "Onion and tomato" },
-  nutrition: { calories: 385, protein: 18, carbs: 58, fat: 10, fiber: 15 },
+  nutrition: { calories: 505, protein: 27, carbs: 77, fat: 11, fiber: 20 },
   tags: ["budget", "veggie-forward", "dairy-free", "make-ahead", "freezer-friendly", "high-protein", "comfort"],
   seasons: ["fall", "winter"],
   ingredients: [
     { group: "Stew", items: [
-      "2 cups red lentils, rinsed",
+      "2 1/2 cups red lentils, rinsed",
       "3 large onions, very finely diced",
       "1/4 cup neutral oil",
       "6 cloves garlic, minced",
@@ -960,7 +961,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]},
     { group: "To serve", items: [
       "Injera, flatbread, or rice",
-      "1 cup plain yogurt",
+      "1 1/2 cups plain yogurt",
       "1/2 cup chopped cilantro"
     ]}
   ],
@@ -975,7 +976,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Berbere blends vary enormously in heat. Start with three tablespoons and add more once you have tasted it.",
-    "The huge quantity of finely diced onion is not a mistake. It melts down and becomes the body of the stew."
+    "The huge quantity of finely diced onion isn't a mistake. It melts down and becomes the body of the stew."
   ],
   makeAhead: "Better the next day. Keeps five days and freezes three months."
 },
@@ -1026,7 +1027,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Taste for salt and sourness, scatter with cilantro, and serve over rice with lime."
   ],
   tips: [
-    "Do not stir once the fish goes in. Spoon sauce over it instead, or it will break into flakes.",
+    "Don't stir once the fish goes in. Spoon sauce over it instead, or it will break into flakes.",
     "Tamarind is what makes this distinctly Goan. Lime juice works but gives a sharper, less rounded sourness."
   ],
   makeAhead: "Make the sauce ahead; add fresh fish when you reheat it."

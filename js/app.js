@@ -89,21 +89,20 @@
       if (pickerState.current) Store.remember(pickerState.current.id);
     }
 
-    var quick     = DB.query({ maxTime: 40, sort: 'quickest' }).slice(0, 4);
-    var classics  = DB.query({ tags: ['comfort'], sort: 'az' }).slice(0, 4);
-    var veg       = DB.query({ tags: ['veggie-forward'], sort: 'az' }).slice(0, 4);
-    var kidPicks  = DB.mains().filter(function (r) { return r.karolina; });
-    kidPicks = U.shuffle(kidPicks).slice(0, 4);
+    var quick    = DB.query({ maxTime: 40, sort: 'quickest' }).slice(0, 4);
+    var protein  = DB.query({ sort: 'protein' }).slice(0, 4);
+    var classics = DB.query({ tags: ['comfort'], sort: 'az' }).slice(0, 4);
+    var veg      = DB.query({ tags: ['veggie-forward'], sort: 'az' }).slice(0, 4);
 
     var html = '' +
       '<section class="hero"><div class="wrap hero-inner">' +
         '<p class="hero-greeting">' + U.esc(sundayGreeting()) + '</p>' +
-        '<h1>What should we make for family dinner?</h1>' +
-        '<p class="lede">A real plate every time &mdash; something roasted or seared, something starchy, ' +
-          'and something green. Press the button and we&rsquo;ll pick one for you.</p>' +
+        '<h1>What should we make for dinner?</h1>' +
+        '<p class="lede">Every dinner here is a full plate: a real protein, something starchy, ' +
+          'something green. Press the button and it picks one.</p>' +
         '<div class="hero-actions">' +
-          '<button class="btn btn-primary btn-lg" data-act="reroll">🎲 Give me an idea</button>' +
-          '<a class="btn btn-secondary btn-lg" href="#/browse">Browse all ' + DB.count() + ' recipes</a>' +
+          '<button class="btn btn-primary btn-lg" data-act="reroll">Give me an idea</button>' +
+          '<a class="btn btn-secondary btn-lg" href="#/browse">Browse all ' + DB.count() + '</a>' +
         '</div>' +
       '</div></section>' +
 
@@ -112,9 +111,9 @@
       '</div>' +
 
       section('Quick nights', 'On the table in 40 minutes or less.', quick, '#/browse?t=40&sort=quickest') +
-      section('Sunday comfort', 'The slow, cozy, fill-the-house-with-smell ones.', classics, '#/browse?tag=comfort') +
-      section('Veggie forward', 'Where the vegetables do the heavy lifting.', veg, '#/browse?tag=veggie-forward') +
-      section('Karolina&rsquo;s picks', 'Tested and approved by the toughest critic.', kidPicks, '#/browse?tag=kid-friendly');
+      section('Most protein', 'The heaviest hitters in the box.', protein, '#/browse?sort=protein') +
+      section('Slow and cozy', 'For when you have the afternoon.', classics, '#/browse?tag=comfort') +
+      section('Veg heavy', 'Where the vegetables do most of the work.', veg, '#/browse?tag=veggie-forward');
 
     setView(html, 'home');
   }
@@ -126,7 +125,7 @@
         '<h2>' + title + '</h2>' +
         '<a class="section-note" href="' + moreHref + '">See more →</a>' +
       '</div>' +
-      '<p class="section-note" style="margin:-10px 0 16px">' + note + '</p>' +
+      '<p class="section-note" style="margin:0 0 16px">' + note + '</p>' +
       R.cardGrid(list) +
       '</div>';
   }
@@ -142,33 +141,36 @@
     var sides = DB.pairFor(r, U.hash(r.id));
     var sidesHtml = '';
     if (sides.length) {
-      sidesHtml = '<div><h3 style="margin-bottom:8px">Round it out with</h3>' + R.miniList(sides) + '</div>';
+      sidesHtml = '<div class="pick-sides"><h3>Serve it with</h3>' + R.miniList(sides) + '</div>';
     }
 
     var fav = Store.isFavorite(r.id);
 
     return '' +
-      '<div class="pick" style="' + R.styleVars(r) + '">' +
-        '<div class="pick-top">' +
+      '<div class="pick">' +
+        '<div class="pick-top" style="' + R.styleVars(r) + '">' +
           '<span class="pick-emoji" aria-hidden="true">' + U.emojiFor(r) + '</span>' +
-          '<p class="eyebrow" style="color:#7a4a2c">Tonight&rsquo;s idea</p>' +
-          '<h2 class="pick-title"><a href="#/recipe/' + U.esc(r.id) + '">' + U.esc(r.title) + '</a></h2>' +
-          '<p class="pick-blurb">' + U.esc(r.blurb) + '</p>' +
-          R.chipRow(r) +
+          '<div>' +
+            '<p class="eyebrow">Tonight</p>' +
+            '<h2 class="pick-title"><a href="#/recipe/' + U.esc(r.id) + '">' + U.esc(r.title) + '</a></h2>' +
+            '<p class="pick-blurb">' + U.esc(r.blurb) + '</p>' +
+          '</div>' +
         '</div>' +
         '<div class="pick-body">' +
-          R.plateSlots(r) +
-          R.nutrition(r) +
+          '<div class="pick-cols">' +
+            '<div>' + R.plateSlots(r) + '</div>' +
+            '<div>' + R.nutrition(r) + '</div>' +
+          '</div>' +
           sidesHtml +
           '<div class="pick-actions">' +
             '<a class="btn btn-primary" href="#/recipe/' + U.esc(r.id) + '">See the recipe</a>' +
-            '<button class="btn btn-secondary" data-act="reroll">🎲 Another idea</button>' +
-            '<button class="btn btn-secondary" data-act="planThis" data-id="' + U.esc(r.id) + '">📋 Put it on the plan</button>' +
+            '<button class="btn btn-secondary" data-act="reroll">Another idea</button>' +
+            '<button class="btn btn-secondary" data-act="planThis" data-id="' + U.esc(r.id) + '">Add to plan</button>' +
             '<button class="btn btn-ghost" data-fav="' + U.esc(r.id) + '" aria-pressed="' + (fav ? 'true' : 'false') + '">' +
               (fav ? '♥ Saved' : '♡ Save this') + '</button>' +
           '</div>' +
-          '<div>' +
-            '<p class="section-note" style="margin-bottom:8px">Narrow the suggestion:</p>' +
+          '<div class="pick-filters">' +
+            '<p class="section-note">Narrow it down</p>' +
             pickFilters() +
           '</div>' +
         '</div>' +
@@ -414,24 +416,24 @@
             '<div id="ingHost">' + R.ingredients(r, factor) + '</div>' +
           '</div>' +
 
-          (R.nutrition(r) ? '<div class="panel">' + R.nutrition(r) + '</div>' : '') +
-
           '<div class="panel">' +
             '<h2>The plate</h2>' +
             R.plateSlots(r) +
           '</div>' +
+
+          (R.nutrition(r) ? '<div class="panel"><h2>Nutrition</h2>' + R.nutrition(r) + '</div>' : '') +
         '</div>' +
 
         '<div>' +
-          (r.makeAhead ? callout('📅', 'Get ahead', r.makeAhead) : '') +
+          (r.makeAhead ? callout('Get ahead', r.makeAhead) : '') +
           '<div class="panel">' +
-            '<h2>How to make it</h2>' +
-            '<p class="section-note" style="margin-bottom:18px">Tap a step to cross it off as you go.</p>' +
+            '<h2>Method</h2>' +
+            '<p class="section-note" style="margin-bottom:16px">Tap a step to cross it off as you go.</p>' +
             R.steps(r) +
           '</div>' +
 
           (r.tips && r.tips.length
-            ? '<div class="panel"><h2>Good to know</h2><ul class="tip-list">' +
+            ? '<div class="panel"><h2>Notes</h2><ul class="tip-list">' +
               r.tips.map(function (t) { return '<li><span>' + U.esc(t) + '</span></li>'; }).join('') +
               '</ul></div>'
             : '') +
@@ -441,18 +443,18 @@
             : '') +
 
           '<div class="panel">' +
-            '<h2>Keep it handy</h2>' +
+            '<h2>Save it</h2>' +
             '<div class="chip-row" style="gap:10px">' +
-              '<button class="btn btn-primary" data-act="planThis" data-id="' + U.esc(r.id) + '">📋 Add to Sunday plan</button>' +
+              '<button class="btn btn-primary" data-act="planThis" data-id="' + U.esc(r.id) + '">Add to plan</button>' +
               '<button class="btn btn-secondary" data-fav="' + U.esc(r.id) + '" aria-pressed="' + (fav ? 'true' : 'false') + '">' +
                 (fav ? '♥ Saved' : '♡ Save this') + '</button>' +
-              '<button class="btn btn-secondary" data-act="print">🖨 Print</button>' +
+              '<button class="btn btn-secondary" data-act="print">Print</button>' +
               '<button class="btn btn-ghost" data-act="resetChecks" data-id="' + U.esc(r.id) + '">Clear check marks</button>' +
             '</div>' +
           '</div>' +
 
           (more.length
-            ? '<div class="panel"><h2>If you liked this one</h2>' + R.miniList(more) + '</div>'
+            ? '<div class="panel"><h2>More like this</h2>' + R.miniList(more) + '</div>'
             : '') +
         '</div>' +
 
@@ -462,8 +464,8 @@
     main.focus();
   }
 
-  function callout(icon, title, body) {
-    return '<div class="callout"><span class="callout-ico" aria-hidden="true">' + icon + '</span>' +
+  function callout(title, body) {
+    return '<div class="callout">' +
       '<p><strong>' + U.esc(title) + '</strong>' + U.esc(body) + '</p></div>';
   }
 
@@ -471,9 +473,9 @@
 
   var SLOTS = [
     ['main',    'Main dish',   'Pick a main'],
-    ['side1',   'Side one',    'Something green, usually'],
-    ['side2',   'Side two',    'Something starchy, usually'],
-    ['dessert', 'Dessert',     'Optional, but Karolina votes yes']
+    ['side1',   'Side one',    'Something green'],
+    ['side2',   'Side two',    'Something starchy'],
+    ['dessert', 'Dessert',     'Optional']
   ];
 
   function viewPlan() {
@@ -522,9 +524,9 @@
 
     var html = '' +
       '<div class="wrap section" style="padding-top:26px">' +
-        '<h1 style="margin-bottom:.2em">This Sunday&rsquo;s plan</h1>' +
-        '<p class="lede">Build the menu here. The shopping list updates itself, ' +
-          'and everything stays put on this device until you change it.</p>' +
+        '<h1>This Sunday&rsquo;s plan</h1>' +
+        '<p class="lede">Build the menu here. The shopping list writes itself, ' +
+          'and it stays on this device until you change it.</p>' +
 
         '<div class="plan-grid" style="margin-top:26px">' +
           '<div>' +
@@ -543,7 +545,7 @@
                 U.formatTime(totals.longest) + '</strong>.</p>' +
             '</div>' : '') +
             '<div class="chip-row" style="gap:10px;margin-top:16px">' +
-              '<button class="btn btn-secondary" data-act="surpriseMenu">🎲 Build me a whole menu</button>' +
+              '<button class="btn btn-secondary" data-act="surpriseMenu">Build me a menu</button>' +
               (ids.length ? '<button class="btn btn-ghost" data-act="clearPlan">Clear the plan</button>' : '') +
             '</div>' +
           '</div>' +
@@ -551,7 +553,7 @@
           '<div class="panel">' +
             '<div class="section-head" style="margin-bottom:10px">' +
               '<h2 style="margin:0">Shopping list</h2>' +
-              (ids.length ? '<button class="btn btn-ghost btn-sm" data-act="print">🖨 Print</button>' : '') +
+              (ids.length ? '<button class="btn btn-ghost btn-sm" data-act="print">Print</button>' : '') +
             '</div>' +
             shopHtml +
             (ids.length ? '<button class="btn btn-ghost btn-sm" data-act="resetShop" style="margin-top:14px">Untick everything</button>' : '') +
@@ -642,58 +644,53 @@
 
   function viewHelp() {
     var html = '<div class="wrap section" style="padding-top:26px"><div class="prose">' +
-      '<h1>How this thing works</h1>' +
+      '<h1>How it works</h1>' +
       '<p class="lede">Short version: press the big button on the front page. ' +
-        'Everything else is a bonus.</p>' +
+        'The rest is extra.</p>' +
 
       '<h2>The front page</h2>' +
-      '<p>Press <strong>Give me an idea</strong> and it picks a dinner for you. Do not like it? ' +
-        'Press <strong>Another idea</strong>. It remembers the last dozen suggestions so it will not ' +
-        'keep handing you the same thing.</p>' +
-      '<p>Underneath the suggestion you can narrow it down &mdash; only chicken, only under 45 minutes, ' +
-        'only the easy ones.</p>' +
+      '<p>Press <strong>Give me an idea</strong> and it picks a dinner. Don\'t like it? ' +
+        'Press <strong>Another idea</strong>. It remembers the last dozen so it won\'t keep ' +
+        'handing you the same thing. Underneath you can narrow it down to chicken only, ' +
+        'under 45 minutes, or easy only.</p>' +
 
-      '<h2>Every recipe is a full plate</h2>' +
-      '<p>Each dinner lists what it brings to the table: <strong>a protein, a starch, and a vegetable</strong>. ' +
-        'If a recipe is missing one of the three, the site suggests a side to fill the gap, so you always ' +
-        'end up with a real dinner instead of just a pile of pasta.</p>' +
+      '<h2>Every dinner is a full plate</h2>' +
+      '<p>Each one lists what it brings: <strong>a protein, a starch, and a vegetable</strong>. ' +
+        'If a recipe is missing one of the three, the site suggests a side to fill the gap.</p>' +
+      '<p>Every dinner in here has at least 25g of protein per serving. You can sort the whole ' +
+        'box by protein from the <strong>All Recipes</strong> page.</p>' +
 
       '<h2>Serving sizes</h2>' +
-      '<p>Recipes are written for four, since three of us plus leftovers is about right. On any recipe, ' +
-        'use the <strong>+</strong> and <strong>−</strong> buttons next to &ldquo;Serves&rdquo; and every ' +
-        'ingredient amount rescales itself.</p>' +
-      '<p>The maths is honest but a little literal, so it will cheerfully tell you to buy ' +
-        '&ldquo;1&nbsp;&frac12; whole chickens.&rdquo; Round those to something you can actually buy &mdash; ' +
-        'the cooking times stay near enough the same.</p>' +
+      '<p>Recipes are written for four. Use the <strong>+</strong> and <strong>&minus;</strong> ' +
+        'buttons next to "Serves" and every ingredient amount rescales itself.</p>' +
+      '<p>It does the maths literally, so it will happily tell you to buy one and a half whole ' +
+        'chickens. Round those to something you can buy. The cooking times stay about the same.</p>' +
 
       '<h2>Cooking from your phone</h2>' +
-      '<p>Tap an ingredient to cross it off. Tap a step to grey it out. It remembers where you were ' +
-        'if the screen goes dark or you close the tab.</p>' +
+      '<p>Tap an ingredient to cross it off. Tap a step to grey it out. It remembers where you ' +
+        'were if the screen goes dark or you close the tab.</p>' +
 
       '<h2>The Sunday plan</h2>' +
-      '<p>Add a main and a couple of sides to <strong>Sunday Plan</strong> and it adds up the whole meal ' +
-        'and builds a shopping list, sorted the way you walk through the store. ' +
-        'The <strong>Build me a whole menu</strong> button does the whole thing in one press.</p>' +
+      '<p>Add a main and a couple of sides and it adds up the whole meal, then builds a shopping ' +
+        'list sorted the way you walk through the store. <strong>Build me a menu</strong> does ' +
+        'the whole thing in one press.</p>' +
 
       '<h2>Put it on your home screen</h2>' +
-      '<p><strong>iPhone:</strong> open the site in Safari, tap the share button at the bottom, ' +
-        'then <em>Add to Home Screen</em>.<br>' +
-        '<strong>Android:</strong> open it in Chrome, tap the three dots, then <em>Add to Home screen</em>.<br>' +
+      '<p><strong>iPhone:</strong> open it in Safari, tap the share button, then ' +
+        '<em>Add to Home Screen</em>.<br>' +
+        '<strong>Android:</strong> open it in Chrome, tap the three dots, then ' +
+        '<em>Add to Home screen</em>.<br>' +
         'It will sit there like an app.</p>' +
 
-      '<h2>About the nutrition numbers</h2>' +
-      '<p>They are careful estimates for one serving, meant for a rough sense of balance &mdash; ' +
-        'is there enough protein, is there fiber, is this a heavy night or a light one. ' +
-        'They are not lab-measured and they are not medical advice.</p>' +
+      '<h2>The nutrition numbers</h2>' +
+      '<p>Estimates for one serving, there to give a rough sense of balance. Is there enough ' +
+        'protein, is there fiber, is this a heavy night or a light one. They are not ' +
+        'lab-measured and they are not medical advice.</p>' +
 
       '<h2>Where does my saved stuff live?</h2>' +
-      '<p>In the browser on the device you are using. Saving on your phone will not show up on the ' +
-        'desktop, and clearing your browser data clears it. Nothing is uploaded anywhere &mdash; ' +
-        'there is no account and no server.</p>' +
-
-      '<hr class="divider">' +
-      '<p class="section-note">Built for Mom. Recipes chosen for real weeknights and slow Sundays alike. ' +
-        'Karolina&rsquo;s picks are marked with a badge.</p>' +
+      '<p>In the browser on whichever device you are using. Saving on your phone won\'t show up ' +
+        'on the desktop, and clearing your browser data clears it. Nothing is uploaded anywhere. ' +
+        'No account, no server.</p>' +
       '</div></div>';
 
     setView(html, 'help');
@@ -701,7 +698,6 @@
 
   function viewNotFound() {
     setView('<div class="wrap section"><div class="empty-state">' +
-      '<span class="big" aria-hidden="true">🥄</span>' +
       '<h1>We could not find that one</h1>' +
       '<p>It may have been renamed. Try the recipe box instead.</p>' +
       '<p style="margin-top:18px"><a class="btn btn-primary" href="#/browse">Browse all recipes</a></p>' +

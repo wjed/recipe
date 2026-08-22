@@ -147,25 +147,23 @@
 
   /* ------------------------------------------------------------- colour --- */
 
-  // Light pastel gradient pairs. Recipe heroes and card thumbs put dark text on
-  // these, so they must stay light in BOTH colour schemes - hence literal hex.
-  var PALETTES = {
-    Chicken:    [['#fbe7c2', '#f6d9a8'], ['#f7e3bd', '#efd3a4'], ['#fceccb', '#f3ddb0']],
-    Beef:       [['#f3d3c8', '#e9bcae'], ['#efd0c4', '#e2b7a6'], ['#f6d8cc', '#eabfb0']],
-    Pork:       [['#f7d9d4', '#eec0b8'], ['#f4d6ce', '#e8bcb1'], ['#fadfd8', '#f0c6bc']],
-    Turkey:     [['#f0dcc0', '#e3c8a4'], ['#f4e0c6', '#e7cdaa'], ['#eed9bb', '#e0c49e']],
-    Lamb:       [['#e8d2c6', '#d8bcaa'], ['#eed8cb', '#dfc2b0'], ['#e4cec1', '#d4b7a4']],
-    Fish:       [['#cfe3ee', '#b3d1e2'], ['#d5e7f0', '#b9d5e5'], ['#c9dfeb', '#addcdf']],
-    Shrimp:     [['#fbd8ca', '#f5bfab'], ['#fde0d3', '#f7c8b5'], ['#f9d3c3', '#f2b9a3']],
-    Vegetarian: [['#dcebd0', '#c2dcb2'], ['#e2eed8', '#c9e0ba'], ['#d6e8ca', '#bcd8ab']],
-    Eggs:       [['#fdeec4', '#f8dfa2'], ['#fbe9bd', '#f4d99c'], ['#fef1cd', '#fae3ad']],
-    Side:       [['#e6e9d8', '#d2d8bf'], ['#eaece0', '#d8dcc7'], ['#e2e7d3', '#cdd5b8']]
+  // One flat, muted tint per protein. Recipe cards put dark text and an emoji on
+  // these, so they stay light in BOTH colour schemes, hence the literal hex.
+  var TINTS = {
+    Chicken:    '#f4e3c4',
+    Beef:       '#eed3c8',
+    Pork:       '#f2dbd4',
+    Turkey:     '#eeddc3',
+    Lamb:       '#e6d2c6',
+    Fish:       '#d3e2ea',
+    Shrimp:     '#f6d8cb',
+    Vegetarian: '#dee9d4',
+    Eggs:       '#f8ebc6',
+    Side:       '#e6e8dc'
   };
-  var FALLBACK = [['#e6efe6', '#f3ece1']];
 
-  U.paletteFor = function (recipe) {
-    var set = PALETTES[recipe.type === 'side' ? 'Side' : recipe.protein] || FALLBACK;
-    return set[U.hash(recipe.id) % set.length];
+  U.tintFor = function (recipe) {
+    return TINTS[recipe.type === 'side' ? 'Side' : recipe.protein] || '#e9e5db';
   };
 
   var DEFAULT_EMOJI = {

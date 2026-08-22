@@ -1,4 +1,4 @@
-/* Slow cooker meals - start them in the morning, forget about them. */
+/* Slow cooker meals. Start them in the morning, forget about them. */
 window.RECIPES = (window.RECIPES || []).concat([
 
 {
@@ -10,7 +10,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Pork shoulder", starch: "Buns", veg: "Slaw" },
   nutrition: { calories: 465, protein: 38, carbs: 32, fat: 20, fiber: 3 },
   tags: ["slow-cooker", "make-ahead", "freezer-friendly", "budget", "leftovers", "dairy-free", "kid-friendly"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Pork", items: [
       "5 lb boneless pork shoulder",
@@ -41,16 +41,16 @@ window.RECIPES = (window.RECIPES || []).concat([
   steps: [
     "Mix all the rub ingredients and massage them into the pork on every surface. If you have time, do this the night before and refrigerate uncovered.",
     "Scatter the onions across the bottom of the slow cooker and set the pork on top.",
-    "Whisk the broth, vinegar, tomato paste, Worcestershire, and brown sugar and pour it around - not over - the pork so the rub stays on the meat.",
-    "Cover and cook on low 8 hours, or high 5 hours. Do not lift the lid; every peek adds 20 minutes.",
-    "The pork is done when a fork twists in it with no resistance at all. If it still resists, give it another hour - it will get there.",
+    "Whisk the broth, vinegar, tomato paste, Worcestershire, and brown sugar and pour it around, not over, the pork so the rub stays on the meat.",
+    "Cover and cook on low 8 hours, or high 5 hours. Don't lift the lid; every peek adds 20 minutes.",
+    "The pork is done when a fork twists in it with no resistance at all. If it still resists, give it another hour. It will get there.",
     "Lift the pork out and shred it with two forks, discarding large lumps of fat.",
     "Skim the fat off the cooking liquid, then pour about a cup of the remaining juices back over the shredded pork so it stays moist.",
     "Serve on buns with barbecue sauce, coleslaw, and pickles."
   ],
   tips: [
     "Pork shoulder, sometimes labeled Boston butt, is the only cut for this. Loin will be dry no matter what you do.",
-    "Do not drown it in barbecue sauce in the pot. Sauce at the table keeps the leftovers flexible for tacos and bowls."
+    "Don't drown it in barbecue sauce in the pot. Sauce at the table keeps the leftovers flexible for tacos and bowls."
   ],
   makeAhead: "Keeps five days in its juices and freezes for three months."
 },
@@ -103,7 +103,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Cook the pasta, reserve a cup of pasta water, and toss the drained pasta with the ragu and a splash of the water. Serve with Parmesan and basil."
   ],
   tips: [
-    "Sear the beef even though it means an extra pan. Slow cookers cannot brown, and unbrowned beef ragu tastes flat.",
+    "Sear the beef even though it means an extra pan. Slow cookers can't brown, and unbrowned beef ragu tastes flat.",
     "Any leftover ragu is superb on polenta or baked into a lasagna."
   ],
   makeAhead: "Better on day two. Freezes for three months."
@@ -145,7 +145,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Cover and cook on low 4 to 5 hours, or high 2 1/2 hours.",
     "Shred the chicken directly in the pot with two forks.",
     "Stir in the lime juice and let it sit uncovered 10 minutes so the meat soaks the sauce back up.",
-    "If it looks watery, tip some liquid off - chicken releases a lot as it cooks.",
+    "If it looks watery, tip some liquid off. Chicken releases a lot as it cooks.",
     "Serve over rice or in tortillas with beans, cheese, avocado, cilantro, and sour cream."
   ],
   tips: [
@@ -189,12 +189,12 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Scatter the onion in the slow cooker and set the roast on top.",
     "Sprinkle the dill, garlic powder, and onion powder over the meat.",
     "Lay the butter on top in slices, scatter the pepperoncini around, and pour in the brine and broth.",
-    "Cover and cook on low 8 hours. Do not add more liquid - the beef and butter make plenty.",
+    "Cover and cook on low 8 hours. Don't add more liquid. The beef and butter make plenty.",
     "Shred the beef in the pot with two forks and stir it through the buttery, tangy juices.",
     "Serve over mashed potatoes with plenty of the sauce and a scatter of parsley."
   ],
   tips: [
-    "Pepperoncini are mild. They provide tang and only a whisper of heat, so do not be shy with them.",
+    "Pepperoncini are mild. They provide tang and only a whisper of heat, so don't be shy with them.",
     "Leftovers make outstanding sandwiches on a toasted roll with provolone."
   ],
   makeAhead: "Keeps four days and reheats well in its own juices."
@@ -209,7 +209,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Chicken and white beans", starch: "White beans and corn", veg: "Peppers, corn, chiles" },
   nutrition: { calories: 445, protein: 40, carbs: 42, fat: 13, fiber: 10 },
   tags: ["slow-cooker", "make-ahead", "freezer-friendly", "high-protein", "budget", "leftovers", "comfort"],
-  seasons: ["fall", "winter"], karolina: true,
+  seasons: ["fall", "winter"],
   ingredients: [
     { group: "Chili", items: [
       "2 1/2 lb boneless skinless chicken thighs",
@@ -298,7 +298,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Serve in tortillas or over rice with onion, cilantro, and lime."
   ],
   tips: [
-    "The ground cloves sound strange and are what makes barbacoa taste like barbacoa. Use a light hand but do not skip them.",
+    "The ground cloves sound strange and are what makes barbacoa taste like barbacoa. Use a light hand but don't skip them.",
     "The cooking liquid is too good to throw away. Freeze it and use it to reheat leftovers."
   ],
   makeAhead: "Keeps five days in its juices and freezes for three months."
@@ -307,13 +307,13 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "slow-cooker-chicken-tikka-masala",
   title: "Slow Cooker Chicken Tikka Masala",
-  blurb: "The takeout favorite made in a slow cooker, with the sauce finished properly at the end.",
+  blurb: "The takeout favorite made in a slow cooker, with the sauce finished at the end.",
   emoji: "🍛", protein: "Chicken", cuisine: "Indian",
   totalTime: 260, activeTime: 25, difficulty: "Easy", servings: 6,
   plate: { protein: "Chicken thighs", starch: "Basmati rice", veg: "Tomato and onion" },
   nutrition: { calories: 545, protein: 42, carbs: 48, fat: 21, fiber: 4 },
   tags: ["slow-cooker", "make-ahead", "freezer-friendly", "comfort", "high-protein", "leftovers", "gluten-free"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Chicken", items: [
       "3 lb boneless skinless chicken thighs, cut into large chunks",
@@ -369,7 +369,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Chicken thighs", starch: "Rice", veg: null },
   nutrition: { calories: 465, protein: 38, carbs: 48, fat: 13, fiber: 1 },
   tags: ["slow-cooker", "kid-friendly", "budget", "dairy-free", "make-ahead", "leftovers"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Chicken", items: [
       "3 lb boneless skinless chicken thighs",
@@ -399,8 +399,8 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Serve over rice with steamed broccoli, scallions, and sesame seeds."
   ],
   tips: [
-    "Thickening at the end is what turns a watery slow cooker liquid into a glaze that actually clings.",
-    "The broiler step takes three minutes and makes it look and taste far better."
+    "Thickening at the end is what turns a watery slow cooker liquid into a glaze that clings.",
+    "The broiler step takes three minutes and makes it look and taste better."
   ],
   makeAhead: "Mix the sauce up to a week ahead."
 },
@@ -445,7 +445,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "In a saucepan, melt the butter and whisk in the flour. Cook 2 minutes, then whisk in the cream slowly until smooth. Simmer 3 minutes until thickened.",
     "Stir the cream mixture into the slow cooker and cook on high 15 minutes more.",
     "Add the lemon juice and parsley and taste for salt.",
-    "If it is thicker than you like, thin it with hot broth - wild rice keeps absorbing liquid."
+    "If it's thicker than you like, thin it with hot broth. Wild rice keeps absorbing liquid."
   ],
   tips: [
     "Making a roux separately gives you a much smoother, thicker soup than just pouring cream in.",
@@ -491,11 +491,11 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]}
   ],
   steps: [
-    "Heat the oil in a skillet over medium-high and brown the turkey 8 minutes, breaking it up. Ground turkey is lean and will not brown in a slow cooker, so this step matters.",
+    "Heat the oil in a skillet over medium-high and brown the turkey 8 minutes, breaking it up. Ground turkey is lean and won't brown in a slow cooker, so this step matters.",
     "Add the onions and peppers and cook 6 minutes. Add the garlic, all the spices, and the tomato paste and stir 90 seconds.",
     "Tip everything into the slow cooker with the tomatoes, beans, corn, broth, and salt.",
     "Cover and cook on low 6 hours, or high 3 1/2 hours.",
-    "If it is looser than you want, leave the lid off on high for the last 30 minutes.",
+    "If it's looser than you want, leave the lid off on high for the last 30 minutes.",
     "Stir in the lime juice and taste carefully for salt.",
     "Serve with cheddar, sour cream, scallions, and avocado."
   ],
@@ -549,13 +549,13 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Put the ribs in the slow cooker and pour the sauce over.",
     "Cover and cook on low 8 hours, until the meat pulls away from the bone with almost no effort.",
     "Toss the cucumber with the rice vinegar and a pinch of salt and refrigerate.",
-    "Lift the ribs out. Skim the fat off the sauce - there will be a lot - then simmer the sauce in a pot for 10 minutes to concentrate it.",
+    "Lift the ribs out. Skim the fat off the sauce, there will be a lot, then simmer the sauce in a pot for 10 minutes to concentrate it.",
     "Return the ribs to the reduced sauce and turn to coat.",
     "Serve over rice with the quick cucumbers, scallions, and sesame seeds."
   ],
   tips: [
-    "The grated pear is a Korean technique that tenderizes the meat and adds a clean sweetness. It is worth including.",
-    "Chill the finished dish and lift the solid fat off the top - it is by far the easiest way to degrease it."
+    "The grated pear is a Korean technique that tenderizes the meat and adds a clean sweetness. It's worth including.",
+    "Chill the finished dish and lift the solid fat off the top. It's by far the easiest way to degrease it."
   ],
   makeAhead: "Make a day ahead specifically so you can lift the fat off cold. Reheat gently."
 },
@@ -606,7 +606,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Serve over polenta or pasta with Parmesan and parsley."
   ],
   tips: [
-    "The skin will not stay crisp through a long braise. Brown it anyway - that is where the flavor of the sauce comes from.",
+    "The skin won't stay crisp through a long braise. Brown it anyway. That's where the flavor of the sauce comes from.",
     "Bone-in thighs make a far richer sauce than boneless. The bones are doing real work."
   ],
   makeAhead: "Better on day two. Freezes for three months."
@@ -621,7 +621,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Chicken thighs", starch: "Basmati rice", veg: "Tomato and onion" },
   nutrition: { calories: 585, protein: 40, carbs: 46, fat: 27, fiber: 4 },
   tags: ["slow-cooker", "comfort", "kid-friendly", "make-ahead", "freezer-friendly", "gluten-free", "leftovers"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Sauce", items: [
       "3 lb boneless skinless chicken thighs, cut into chunks",
@@ -658,7 +658,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Taste for salt, stir in the cilantro, and serve with rice and naan."
   ],
   tips: [
-    "Blending the sauce and adding the butter and cream at the very end is the whole technique. Everything before that is just building flavor.",
+    "Blending the sauce and adding the butter and cream at the very end is the whole technique. Everything before that's just building flavor.",
     "Adding the butter off a rolling boil, a piece at a time, keeps the sauce glossy rather than oily."
   ],
   makeAhead: "Freeze before adding the butter and cream."
@@ -704,13 +704,13 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Add the onion, peppers, celery, garlic, tomatoes, broth, all the seasonings, bay leaves, and salt. Stir.",
     "Cover and cook on low 4 hours.",
     "Stir in the rice, cover, and cook on high 45 minutes to 1 hour, until the rice is tender and has absorbed most of the liquid.",
-    "Scatter the shrimp over the top, cover, and cook 15 minutes more, just until they are pink and curled.",
+    "Scatter the shrimp over the top, cover, and cook 15 minutes more, just until they're pink and curled.",
     "Remove the bay leaves and taste for salt.",
     "Stir in the scallions and parsley and serve with hot sauce."
   ],
   tips: [
     "Add the rice partway through, not at the start, or it turns to porridge over four hours.",
-    "Shrimp go in last and need only fifteen minutes. Any longer and they are rubber."
+    "Shrimp go in last and need only fifteen minutes. Any longer and they're rubber."
   ],
   makeAhead: "Best fresh once the rice is in, though the base can be made ahead."
 },
@@ -721,12 +721,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   blurb: "A creamy, gently spiced curry from cupboard ingredients, ready when you get home.",
   emoji: "🥥", protein: "Vegetarian", cuisine: "Indian",
   totalTime: 380, activeTime: 15, difficulty: "Easy", servings: 6,
-  plate: { protein: "Chickpeas", starch: "Rice", veg: "Sweet potato, tomato, spinach" },
-  nutrition: { calories: 485, protein: 15, carbs: 72, fat: 18, fiber: 14 },
+  plate: { protein: "Chickpeas and lentils", starch: "Rice", veg: "Sweet potato, tomato, spinach" },
+  nutrition: { calories: 625, protein: 27, carbs: 94, fat: 19, fiber: 20 },
   tags: ["slow-cooker", "budget", "make-ahead", "freezer-friendly", "dairy-free", "veggie-forward", "high-protein", "gluten-free"],
   seasons: ["fall", "winter"],
   ingredients: [
     { group: "Curry", items: [
+      "1 cup red lentils, rinsed",
       "3 (15 oz) cans chickpeas, drained",
       "2 large sweet potatoes, cut into 1-inch cubes",
       "1 large onion, diced",
@@ -752,11 +753,11 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]}
   ],
   steps: [
-    "Put everything except the finishing ingredients in the slow cooker and stir well.",
+    "Put everything except the finishing ingredients in the slow cooker, including the red lentils, and stir well.",
     "Cover and cook on low 6 hours, or high 3 1/2 hours, until the sweet potatoes are completely tender.",
     "Mash a few pieces of sweet potato and a scoop of the chickpeas against the side of the pot to thicken the curry.",
     "Add the spinach and stir until it wilts, about 3 minutes with the lid on.",
-    "Stir in the lime juice and taste for salt - it will need more than you expect.",
+    "Stir in the lime juice and taste for salt. It will need more than you expect.",
     "Scatter with cilantro and serve over rice with naan."
   ],
   tips: [
@@ -775,7 +776,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Beef chuck", starch: "Rolls", veg: "Onions" },
   nutrition: { calories: 625, protein: 46, carbs: 42, fat: 29, fiber: 3 },
   tags: ["slow-cooker", "comfort", "make-ahead", "leftovers", "kid-friendly"],
-  seasons: ["fall", "winter"], karolina: true,
+  seasons: ["fall", "winter"],
   ingredients: [
     { group: "Beef", items: [
       "4 lb beef chuck roast",
@@ -803,13 +804,13 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Put the onions and garlic in the slow cooker and set the roast on top.",
     "Add the broth, Worcestershire, soy sauce, mustard, thyme, and bay leaves.",
     "Cover and cook on low 8 hours, until the beef shreds with no resistance.",
-    "Lift the beef out and shred it. Strain the cooking liquid, skim off the fat, and keep it hot - this is your jus.",
+    "Lift the beef out and shred it. Strain the cooking liquid, skim off the fat, and keep it hot. This is your jus.",
     "Toss the shredded beef with about a cup of the jus so it stays juicy.",
     "Butter the cut sides of the rolls and toast them under the broiler until golden.",
     "Pile the beef on the rolls, top with cheese, and broil 2 minutes until melted. Serve with horseradish and a small bowl of hot jus for dipping."
   ],
   tips: [
-    "Toast the rolls properly. Untoasted bread turns to paste the moment it meets the jus.",
+    "Toast the rolls. Untoasted bread turns to paste the moment it meets the jus.",
     "Strain and degrease the jus or it will be greasy rather than savory."
   ],
   makeAhead: "The beef and jus keep four days and reheat perfectly together."

@@ -1,5 +1,5 @@
 /* Sides, salads, breads & something sweet.
-   These fill the gaps in a plate - the site suggests them automatically
+   These fill the gaps in a plate. The site suggests them automatically
    when a main is missing a vegetable or a starch. */
 window.RECIPES = (window.RECIPES || []).concat([
 
@@ -15,7 +15,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: null, veg: "Green beans" },
   nutrition: { calories: 115, protein: 3, carbs: 10, fat: 8, fiber: 4 },
   tags: ["30-minutes", "gluten-free", "veggie-forward", "budget", "kid-friendly"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Beans", items: [
       "1 1/2 lb green beans, trimmed",
@@ -50,7 +50,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: null, veg: "Broccoli" },
   nutrition: { calories: 155, protein: 8, carbs: 12, fat: 10, fiber: 5 },
   tags: ["30-minutes", "gluten-free", "veggie-forward", "kid-friendly", "budget", "low-carb"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Broccoli", items: [
       "2 large heads broccoli, cut into florets",
@@ -63,14 +63,14 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]}
   ],
   steps: [
-    "Heat the oven to 425F. Put a sheet pan in the oven while it heats - a hot pan gives an immediate sear.",
-    "Toss the broccoli with the oil, salt, and pepper. Make sure every piece is coated; dry spots do not brown.",
+    "Heat the oven to 425F. Put a sheet pan in the oven while it heats. A hot pan gives an immediate sear.",
+    "Toss the broccoli with the oil, salt, and pepper. Make sure every piece is coated; dry spots don't brown.",
     "Spread on the hot pan in a single layer, cut sides down where possible, and roast 20 minutes without stirring.",
     "Scatter the garlic over and roast 4 minutes more, until the florets have dark crispy edges.",
     "Toss immediately with the Parmesan and lemon juice while still hot."
   ],
   tips: [
-    "Do not stir halfway through. Uninterrupted contact with the pan is what creates the browned edges everybody actually wants.",
+    "Don't stir halfway through. Uninterrupted contact with the pan is what creates the browned edges everybody wants.",
     "The little loose florets that fall off get the crispiest and are the best part."
   ],
   makeAhead: null
@@ -86,7 +86,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: null, veg: "Carrots" },
   nutrition: { calories: 165, protein: 2, carbs: 26, fat: 7, fiber: 5 },
   tags: ["30-minutes", "gluten-free", "kid-friendly", "budget", "veggie-forward", "make-ahead"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Carrots", items: [
       "2 lb carrots, cut into thick diagonal slices",
@@ -107,7 +107,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "The vinegar at the end keeps this from being cloying. Sweet glazes need acid.",
-    "Cut the carrots on a steep diagonal - more surface area means more glaze on every piece."
+    "Cut the carrots on a steep diagonal. More surface area means more glaze on every piece."
   ],
   makeAhead: "Cook through step 2 hours ahead and finish the glaze before serving."
 },
@@ -144,7 +144,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Pale, boiled-tasting sprouts are why people think they hate sprouts. Roast them until they look almost too dark.",
-    "Do not throw away the loose leaves. They turn into crisps and are the best bit on the pan."
+    "Don't throw away the loose leaves. They turn into crisps and are the best bit on the pan."
   ],
   makeAhead: "Trim and halve the sprouts a day ahead."
 },
@@ -174,7 +174,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Heat the oil in a very large pot or skillet over medium. Add the garlic and pepper flakes and cook 1 minute, until the garlic is pale gold.",
     "Add the spinach in large handfuls, tossing with tongs and waiting for each addition to wilt before adding more.",
     "Cook 3 to 4 minutes total, until all the spinach has collapsed.",
-    "Tip the pan and pour off any watery liquid that has collected - this is what keeps it from being soggy.",
+    "Tip the pan and pour off any watery liquid that has collected. This is what keeps it from being soggy.",
     "Season with the salt and lemon juice and serve immediately."
   ],
   tips: [
@@ -207,7 +207,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   steps: [
     "Heat the oven to 425F.",
-    "Snap the woody ends off - hold each spear near the base and bend until it breaks naturally at the right point.",
+    "Snap the woody ends off. Hold each spear near the base and bend until it breaks naturally at the right point.",
     "Toss with the oil, salt, and pepper and spread in a single layer on a sheet pan.",
     "Roast 10 to 14 minutes depending on thickness, until tender with browned tips.",
     "Finish with the lemon zest, juice, and shaved Parmesan while still hot."
@@ -222,14 +222,14 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "creamed-corn",
   title: "Skillet Creamed Corn",
-  blurb: "Sweet corn in a light cream sauce made from the corn itself. Far better than the canned kind.",
+  blurb: "Sweet corn in a light cream sauce made from the corn itself. Better than the canned kind.",
   emoji: "🌽", protein: "Vegetarian", cuisine: "American",
   type: "side", sideType: "veg", pairsWith: ["Chicken", "Beef", "Pork", "Fish", "Turkey"],
   totalTime: 25, activeTime: 20, difficulty: "Easy", servings: 6,
   plate: { protein: null, starch: null, veg: "Corn" },
   nutrition: { calories: 225, protein: 6, carbs: 28, fat: 12, fiber: 3 },
   tags: ["30-minutes", "gluten-free", "kid-friendly", "comfort", "budget"],
-  seasons: ["summer"], karolina: true,
+  seasons: ["summer"],
   ingredients: [
     { group: "Corn", items: [
       "8 ears corn, kernels cut off, or 6 cups frozen corn",
@@ -253,7 +253,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Scraping the cobs is the step that separates good creamed corn from adequate creamed corn.",
-    "Frozen corn works well year round. Do not thaw it first."
+    "Frozen corn works well year round. Don't thaw it first."
   ],
   makeAhead: "Keeps three days and reheats gently with a splash of milk."
 },
@@ -291,7 +291,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Roast it until it looks slightly too brown. Pale cauliflower tastes of almost nothing.",
-    "The small crumbly bits that break off get crispiest, so do not pick them out."
+    "The small crumbly bits that break off get crispiest, so don't pick them out."
   ],
   makeAhead: "Cut the florets a day ahead."
 },
@@ -325,12 +325,12 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Melt the butter in a large pot over medium. Cook the onion 5 minutes.",
     "Add all the remaining ingredients and stir well. The pot will look overfull; the cabbage collapses to a third of its volume.",
     "Cover and cook on low 40 minutes, stirring every 10 minutes.",
-    "Uncover for the last 10 minutes if there is liquid left in the bottom, so it reduces and glazes the cabbage.",
-    "Remove the bay leaf and taste - it should be balanced between sweet and sour. Adjust with a splash more vinegar or a pinch of sugar."
+    "Uncover for the last 10 minutes if there's liquid left in the bottom, so it reduces and glazes the cabbage.",
+    "Remove the bay leaf and taste. It should be balanced between sweet and sour. Adjust with a splash more vinegar or a pinch of sugar."
   ],
   tips: [
     "The vinegar keeps the cabbage a vivid purple. Without acid it turns an unappealing blue-grey.",
-    "This is genuinely better on day two, which makes it ideal for a holiday table."
+    "This is better on day two, which makes it ideal for a holiday table."
   ],
   makeAhead: "Keeps five days and reheats perfectly."
 },
@@ -365,13 +365,13 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Salt the zucchini planks and leave them on a rack 10 minutes, then blot dry. This draws out water so they char rather than steam.",
     "Brush both sides with the oil and season with pepper.",
     "Heat a grill or grill pan to medium-high.",
-    "Grill 3 to 4 minutes per side, until well marked and just tender. Do not move them around while they cook.",
+    "Grill 3 to 4 minutes per side, until well marked and just tender. Don't move them around while they cook.",
     "Whisk the dressing ingredients together and spoon over the warm zucchini.",
     "Serve warm or at room temperature."
   ],
   tips: [
     "Salting and blotting first is what stops zucchini going watery and limp on the grill.",
-    "Take it off while there is still a little bite. Zucchini goes from tender to mush quickly."
+    "Take it off while there's still a little bite. Zucchini goes from tender to mush quickly."
   ],
   makeAhead: "Good at room temperature, so it can be grilled an hour ahead."
 },
@@ -413,7 +413,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Toss the carrots with the oil, cumin, and salt and spread cut side down on a sheet pan.",
     "Roast 28 to 32 minutes, until tender and browned along the cut side.",
     "Drizzle with the honey and toss on the pan.",
-    "Whisk the tahini with the lemon juice and garlic. It will seize into a paste - keep whisking in cold water a spoonful at a time until it pours.",
+    "Whisk the tahini with the lemon juice and garlic. It will seize into a paste. Keep whisking in cold water a spoonful at a time until it pours.",
     "Arrange the carrots on a platter, spoon the tahini over, and finish with parsley, pumpkin seeds, and sumac."
   ],
   tips: [
@@ -433,7 +433,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: null, veg: "Peas" },
   nutrition: { calories: 155, protein: 7, carbs: 18, fat: 7, fiber: 6 },
   tags: ["30-minutes", "gluten-free", "kid-friendly", "budget", "veggie-forward"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Peas", items: [
       "1 1/2 lb frozen peas",
@@ -452,7 +452,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Frozen peas are picked and frozen within hours and are usually better than the fresh ones at the store.",
-    "Do not overcook them. Three minutes is plenty; longer turns them khaki and starchy."
+    "Don't overcook them. Three minutes is plenty; longer turns them khaki and starchy."
   ],
   makeAhead: null
 },
@@ -491,7 +491,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Two batches, high heat, and no stirring for the first four minutes. Crowded mushrooms steam in their own liquid and stay grey.",
-    "Do not salt them until the end. Salt draws out water and delays the browning."
+    "Don't salt them until the end. Salt draws out water and delays the browning."
   ],
   makeAhead: null
 },
@@ -538,14 +538,14 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "creamy-mashed-potatoes",
   title: "Creamy Mashed Potatoes",
-  blurb: "Smooth, buttery, properly seasoned. The foundation of half the dinners in this collection.",
+  blurb: "Smooth, buttery, seasoned. The foundation of half the dinners in this collection.",
   emoji: "🥔", protein: "Vegetarian", cuisine: "American",
   type: "side", sideType: "starch", pairsWith: ["Beef", "Chicken", "Pork", "Turkey", "Lamb"],
   totalTime: 35, activeTime: 25, difficulty: "Easy", servings: 6,
   plate: { protein: null, starch: "Potatoes", veg: null },
   nutrition: { calories: 305, protein: 6, carbs: 42, fat: 14, fiber: 4 },
   tags: ["gluten-free", "comfort", "kid-friendly", "budget", "make-ahead"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Potatoes", items: [
       "3 lb Yukon gold potatoes, peeled and cut into even chunks",
@@ -561,7 +561,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Bring to a boil and simmer 18 to 20 minutes, until a knife slides in with no resistance.",
     "Drain and return them to the hot dry pot for 2 minutes, shaking occasionally, to steam off the surface moisture.",
     "Mash with a masher or push through a ricer for the smoothest result.",
-    "Add the butter first and stir until melted, then the warm milk gradually until it is the texture you want.",
+    "Add the butter first and stir until melted, then the warm milk gradually until it's the texture you want.",
     "Season with salt and white pepper and taste. Potatoes take a surprising amount of salt."
   ],
   tips: [
@@ -574,14 +574,14 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "crispy-roast-potatoes",
   title: "Crispy Roast Potatoes",
-  blurb: "Shattering crust, fluffy middle. Parboiling and roughing them up is the whole secret.",
+  blurb: "Shattering crust, fluffy middle. Parboiling and roughing them up is the secret.",
   emoji: "🥔", protein: "Vegetarian", cuisine: "British",
   type: "side", sideType: "starch", pairsWith: ["Chicken", "Beef", "Pork", "Lamb", "Fish", "Turkey"],
   totalTime: 65, activeTime: 20, difficulty: "Easy", servings: 6,
   plate: { protein: null, starch: "Potatoes", veg: null },
   nutrition: { calories: 285, protein: 5, carbs: 44, fat: 11, fiber: 4 },
   tags: ["gluten-free", "dairy-free", "comfort", "kid-friendly", "budget", "special-occasion"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Potatoes", items: [
       "3 lb russet or Yukon gold potatoes, peeled and cut into large chunks",
@@ -597,13 +597,13 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Heat the oven to 450F and put a sheet pan with the oil on it in to heat.",
     "Boil the potatoes in salted water with the baking soda for 10 minutes, until the outsides are soft but the centers still firm.",
     "Drain them in a colander and let them steam dry for 3 minutes.",
-    "Shake the colander hard for 15 seconds. The outsides should break down into a rough, starchy paste - that fluffy exterior is what turns into crust.",
+    "Shake the colander hard for 15 seconds. The outsides should break down into a rough, starchy paste. That fluffy exterior is what turns into crust.",
     "Carefully tip the potatoes onto the hot oiled pan and turn to coat. They should sizzle on contact.",
     "Roast 25 minutes, then turn each one and add the garlic and rosemary. Roast 20 to 25 minutes more, until deep golden and audibly crunchy.",
     "Season with salt and serve immediately."
   ],
   tips: [
-    "The baking soda raises the pH and helps the surface break down. It genuinely makes a visible difference.",
+    "The baking soda raises the pH and helps the surface break down. It makes a visible difference.",
     "Preheating the oil is essential. Cold oil soaks in; hot oil sears immediately."
   ],
   makeAhead: "Parboil and rough up the potatoes hours ahead; roast just before serving."
@@ -638,7 +638,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Melt the butter in a saucepan over medium. Cook the onion 5 minutes until soft, then the garlic 1 minute.",
     "Add the rice and stir for 2 to 3 minutes, until the grains smell toasty and look slightly translucent at the edges.",
     "Add the broth, bay leaf, and salt. Bring to a boil, then reduce to the lowest heat, cover, and cook 18 minutes.",
-    "Take it off the heat and let it stand, still covered, for 10 minutes. Do not lift the lid.",
+    "Take it off the heat and let it stand, still covered, for 10 minutes. Don't lift the lid.",
     "Fluff with a fork and stir in the parsley and almonds."
   ],
   tips: [
@@ -658,7 +658,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Orzo", veg: null },
   nutrition: { calories: 285, protein: 10, carbs: 40, fat: 10, fiber: 2 },
   tags: ["30-minutes", "kid-friendly", "budget", "comfort", "one-pan"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Orzo", items: [
       "1 1/2 cups orzo",
@@ -678,7 +678,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Add the garlic and cook 1 minute.",
     "Pour in the broth and bring to a simmer. Cook uncovered 10 to 12 minutes, stirring often, until the orzo is tender and most of the liquid has been absorbed.",
     "Take it off the heat and stir in the Parmesan, cream, salt, and pepper.",
-    "Add the lemon juice and parsley. Serve immediately - it thickens quickly as it sits."
+    "Add the lemon juice and parsley. Serve immediately. It thickens quickly as it sits."
   ],
   tips: [
     "Stir often. Orzo cooked in a small amount of liquid sticks to the bottom of the pan if you leave it.",
@@ -697,7 +697,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Sweet potatoes", veg: null },
   nutrition: { calories: 235, protein: 3, carbs: 40, fat: 8, fiber: 6 },
   tags: ["gluten-free", "dairy-free", "kid-friendly", "veggie-forward", "budget"],
-  seasons: ["fall", "winter"], karolina: true,
+  seasons: ["fall", "winter"],
   ingredients: [
     { group: "Sweet potatoes", items: [
       "3 lb sweet potatoes, cut into 1-inch cubes",
@@ -720,7 +720,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Add the maple syrup near the end. From the start it would burn long before the potatoes are cooked.",
-    "The cayenne is not enough to taste hot. It keeps the sweetness in check."
+    "The cayenne isn't enough to taste hot. It keeps the sweetness in check."
   ],
   makeAhead: "Cut the potatoes a day ahead."
 },
@@ -735,7 +735,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Potatoes", veg: null },
   nutrition: { calories: 385, protein: 11, carbs: 32, fat: 25, fiber: 3 },
   tags: ["comfort", "make-ahead", "special-occasion", "gluten-free", "kid-friendly"],
-  seasons: ["fall", "winter"], karolina: true,
+  seasons: ["fall", "winter"],
   ingredients: [
     { group: "Gratin", items: [
       "3 1/2 lb Yukon gold potatoes, peeled and sliced 1/8 inch thick",
@@ -753,7 +753,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   steps: [
     "Heat the oven to 375F and butter a 9x13 baking dish.",
-    "Slice the potatoes thinly and evenly - a mandoline makes this much easier. Do not rinse them; the surface starch helps thicken the cream.",
+    "Slice the potatoes thinly and evenly. A mandoline makes this much easier. Don't rinse them; the surface starch helps thicken the cream.",
     "Put the cream, milk, garlic, thyme, nutmeg, salt, and pepper in a wide pot. Add the potato slices and bring to a gentle simmer.",
     "Cook 8 minutes, stirring gently, until the cream thickens noticeably and the potatoes are partly tender. This step is what guarantees they cook through evenly.",
     "Discard the thyme sprigs. Transfer half the potatoes to the dish, spreading them level, and scatter over half the Gruyere.",
@@ -763,7 +763,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Simmering the potatoes in the cream first is the single technique that prevents the dreaded crunchy-potato gratin.",
-    "Do not rinse the sliced potatoes. That starch is doing the thickening."
+    "Don't rinse the sliced potatoes. That starch is doing the thickening."
   ],
   makeAhead: "Assemble a day ahead and bake from cold, adding 20 minutes."
 },
@@ -819,7 +819,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Egg noodles", veg: null },
   nutrition: { calories: 285, protein: 8, carbs: 42, fat: 10, fiber: 2 },
   tags: ["30-minutes", "kid-friendly", "budget", "comfort"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Noodles", items: [
       "12 oz wide egg noodles",
@@ -838,7 +838,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Season with salt and pepper, stir in the herbs and Parmesan, and serve immediately."
   ],
   tips: [
-    "Salt the water properly. It is the only chance to season the noodles from the inside.",
+    "Salt the water. It's the only chance to season the noodles from the inside.",
     "A splash of the starchy cooking water makes the butter coat rather than pool."
   ],
   makeAhead: null
@@ -879,8 +879,8 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Fold in the herbs, scallions, lemon juice, olive oil, and almonds. Taste for salt."
   ],
   tips: [
-    "Couscous is not a grain that needs boiling - it is tiny pasta that only needs hot liquid and a lid.",
-    "Fluff it properly with a fork. Stirring with a spoon compacts it into a paste."
+    "Couscous isn't a grain that needs boiling. It's tiny pasta that only needs hot liquid and a lid.",
+    "Fluff it with a fork. Stirring with a spoon compacts it into a paste."
   ],
   makeAhead: "Good warm or at room temperature; keeps three days."
 },
@@ -916,10 +916,10 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Take it off the heat and beat in the butter, Parmesan, and pepper. Serve immediately."
   ],
   tips: [
-    "Instant polenta takes 5 minutes and is genuinely fine on a weeknight. Coarse polenta is better and takes 30.",
+    "Instant polenta takes 5 minutes and is fine on a weeknight. Coarse polenta is better and takes 30.",
     "It stiffens as it cools. Loosen it with hot broth or milk right before serving."
   ],
-  makeAhead: "Leftover polenta sets firm - cut it into slabs and pan-fry them in butter."
+  makeAhead: "Leftover polenta sets firm. Cut it into slabs and pan-fry them in butter."
 },
 
 {
@@ -953,7 +953,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Remove the lemongrass, fluff with a fork, and finish with toasted coconut flakes."
   ],
   tips: [
-    "Coconut milk scorches more easily than water. Keep the heat genuinely low and do not stir after it comes to a boil.",
+    "Coconut milk scorches more easily than water. Keep the heat low and don't stir after it comes to a boil.",
     "Full-fat coconut milk gives a much better texture than the light version."
   ],
   makeAhead: "Best fresh, but reheats with a splash of coconut milk."
@@ -1013,7 +1013,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Croutons", veg: "Romaine" },
   nutrition: { calories: 245, protein: 8, carbs: 14, fat: 18, fiber: 2 },
   tags: ["30-minutes", "veggie-forward", "comfort", "special-occasion"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Croutons", items: [
       "4 cups torn day-old bread",
@@ -1039,14 +1039,14 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   steps: [
     "Heat the oven to 400F. Toss the bread with the oil, garlic, and salt and bake 12 minutes, until golden and crunchy.",
-    "Whisk all the dressing ingredients together until smooth. Taste it - it should be sharp, salty, and assertive.",
+    "Whisk all the dressing ingredients together until smooth. Taste it. It should be sharp, salty, and assertive.",
     "Make sure the romaine is completely dry. Wet leaves repel dressing and dilute it.",
     "Toss the romaine with about two thirds of the dressing.",
     "Add the croutons and toss briefly, then finish with shaved Parmesan and more black pepper."
   ],
   tips: [
-    "The anchovies do not taste fishy - they taste like Caesar dressing. Without them it is just garlic mayonnaise.",
-    "Dry the lettuce properly in a salad spinner or with a towel. It is the most common reason a Caesar tastes watery."
+    "The anchovies don't taste fishy. They taste like Caesar dressing. Without them it's just garlic mayonnaise.",
+    "Dry the lettuce in a salad spinner or with a towel. It's the most common reason a Caesar tastes watery."
   ],
   makeAhead: "The dressing keeps five days and the croutons three."
 },
@@ -1084,11 +1084,11 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Whisk the olive oil, vinegar, half the oregano, salt, and pepper together and pour it over.",
     "Toss gently and let the salad sit 10 minutes so the tomatoes release some juice into the dressing.",
     "Scatter the olives over the top.",
-    "Lay the whole block of feta on top - do not crumble it - and sprinkle with the remaining oregano and a final drizzle of olive oil."
+    "Lay the whole block of feta on top, don't crumble it, and sprinkle with the remaining oregano and a final drizzle of olive oil."
   ],
   tips: [
-    "A whole block of feta on top is how it is served in Greece, and it tastes creamier than pre-crumbled feta.",
-    "This only works with genuinely ripe tomatoes. In winter, use cherry tomatoes instead."
+    "A whole block of feta on top is how it's served in Greece, and it tastes creamier than pre-crumbled feta.",
+    "This only works with ripe tomatoes. In winter, use cherry tomatoes instead."
   ],
   makeAhead: "Chop the vegetables an hour ahead but dress it just before serving."
 },
@@ -1130,7 +1130,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Soaking sliced raw onion in cold water is a small step that makes a real difference to how it tastes.",
-    "Salt the tomatoes lightly first if they are watery, and pour off the liquid before dressing."
+    "Salt the tomatoes lightly first if they're watery, and pour off the liquid before dressing."
   ],
   makeAhead: "Best within an hour of dressing, though it keeps a day."
 },
@@ -1166,14 +1166,14 @@ window.RECIPES = (window.RECIPES || []).concat([
   steps: [
     "Strip the kale leaves from the stems and slice them into thin ribbons.",
     "Whisk the dressing ingredients together in a jar.",
-    "Put the kale in a large bowl, pour over half the dressing, and massage it with your hands for a full minute. The leaves will darken, soften, and shrink noticeably - this is what makes raw kale pleasant to eat.",
+    "Put the kale in a large bowl, pour over half the dressing, and massage it with your hands for a full minute. The leaves will darken, soften, and shrink noticeably. This is what makes raw kale pleasant to eat.",
     "Let it sit 10 minutes.",
     "Add the apples, walnuts, cheese, and cranberries with the remaining dressing and toss.",
     "Taste for salt and serve."
   ],
   tips: [
-    "Massaging the kale is not optional. Unmassaged raw kale is tough and bitter.",
-    "This is the rare salad that holds up dressed, so it is a good one to bring somewhere."
+    "Massaging the kale isn't optional. Unmassaged raw kale is tough and bitter.",
+    "This is the rare salad that holds up dressed, so it's a good one to bring somewhere."
   ],
   makeAhead: "Keeps two days dressed and stays crisp."
 },
@@ -1188,7 +1188,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: null, veg: "Cabbage and carrot" },
   nutrition: { calories: 175, protein: 2, carbs: 12, fat: 14, fiber: 3 },
   tags: ["30-minutes", "no-cook", "make-ahead", "gluten-free", "budget", "kid-friendly", "veggie-forward"],
-  seasons: ["summer"], karolina: true,
+  seasons: ["summer"],
   ingredients: [
     { group: "Slaw", items: [
       "1 small head green cabbage, finely shredded",
@@ -1232,7 +1232,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Mozzarella", starch: null, veg: "Tomatoes and basil" },
   nutrition: { calories: 265, protein: 13, carbs: 8, fat: 21, fiber: 2 },
   tags: ["30-minutes", "no-cook", "gluten-free", "veggie-forward", "special-occasion", "low-carb"],
-  seasons: ["summer"], karolina: true,
+  seasons: ["summer"],
   ingredients: [
     { group: "Salad", items: [
       "1 1/2 lb ripe tomatoes, thickly sliced",
@@ -1248,7 +1248,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Take the mozzarella out of the fridge 30 minutes ahead. Cold cheese is rubbery and tastes of nothing.",
     "Slice the tomatoes and lay them on a platter. Season them with half the salt and let them sit 5 minutes.",
     "Layer the mozzarella slices in among the tomatoes, overlapping them.",
-    "Tuck the basil leaves throughout - tear the large ones rather than cutting them, which bruises less.",
+    "Tuck the basil leaves throughout. Tear the large ones rather than cutting them, which bruises less.",
     "Drizzle generously with olive oil, then the balsamic, and finish with the remaining flaky salt and black pepper."
   ],
   tips: [
@@ -1270,7 +1270,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Bread", veg: null },
   nutrition: { calories: 265, protein: 6, carbs: 28, fat: 15, fiber: 1 },
   tags: ["30-minutes", "kid-friendly", "budget", "comfort"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Bread", items: [
       "1 large baguette or ciabatta loaf, halved lengthwise",
@@ -1285,14 +1285,14 @@ window.RECIPES = (window.RECIPES || []).concat([
   steps: [
     "Heat the oven to 400F.",
     "Mash the softened butter with the garlic, Parmesan, parsley, salt, and pepper flakes until completely combined.",
-    "Spread it thickly over both cut halves, right to the edges - the edges are where it burns if they are bare.",
+    "Spread it thickly over both cut halves, right to the edges. The edges are where it burns if they're bare.",
     "Put the halves cut side up on a sheet pan and bake 12 minutes, until the butter is bubbling and the edges are golden.",
     "Switch to the broiler for 1 to 2 minutes for a browned top, watching it constantly.",
     "Cut into thick slices and serve hot."
   ],
   tips: [
     "Grate the garlic rather than chopping it. Chopped pieces scorch into bitter specks; grated garlic melts into the butter.",
-    "Do not wrap it in foil. Foil steams the bread soft when the whole point is crunch."
+    "Don't wrap it in foil. Foil steams the bread soft when the whole point is crunch."
   ],
   makeAhead: "The garlic butter keeps two weeks in the fridge and freezes for months."
 },
@@ -1300,14 +1300,14 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "buttermilk-biscuits",
   title: "Buttermilk Biscuits",
-  blurb: "Tall, flaky, and pulling apart in layers. Worth learning to do properly.",
+  blurb: "Tall, flaky, and pulling apart in layers.",
   emoji: "🥐", protein: "Vegetarian", cuisine: "Southern",
   type: "side", sideType: "bread", pairsWith: ["Chicken", "Pork", "Beef", "Turkey"],
   totalTime: 35, activeTime: 20, difficulty: "Medium", servings: 8,
   plate: { protein: null, starch: "Biscuits", veg: null },
   nutrition: { calories: 285, protein: 5, carbs: 32, fat: 15, fiber: 1 },
   tags: ["comfort", "kid-friendly", "budget", "make-ahead", "30-minutes"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Biscuits", items: [
       "3 cups all-purpose flour",
@@ -1321,11 +1321,11 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]}
   ],
   steps: [
-    "Heat the oven to 450F. Freeze the cubed butter for 10 minutes first - genuinely cold butter is the entire secret.",
+    "Heat the oven to 450F. Freeze the cubed butter for 10 minutes first. cold butter is the entire secret.",
     "Whisk the flour, baking powder, baking soda, sugar, and salt together.",
-    "Cut in the cold butter with your fingertips or a pastry cutter until the largest pieces are the size of peas. Do not overwork it; visible butter pieces become steam pockets, which become layers.",
+    "Cut in the cold butter with your fingertips or a pastry cutter until the largest pieces are the size of peas. Don't overwork it; visible butter pieces become steam pockets, which become layers.",
     "Pour in the cold buttermilk and stir with a fork just until a shaggy dough forms. It should look undermixed.",
-    "Tip onto a floured surface and pat into a rectangle. Fold it in thirds like a letter, then pat out and fold again. Repeat once more - three folds total.",
+    "Tip onto a floured surface and pat into a rectangle. Fold it in thirds like a letter, then pat out and fold again. Repeat once more. Three folds total.",
     "Pat to 1 inch thick and cut with a floured round cutter, pressing straight down without twisting. Twisting seals the edges and stops them rising.",
     "Set them on a sheet pan with sides touching, brush the tops with melted butter, and bake 14 to 16 minutes until tall and golden."
   ],
@@ -1346,7 +1346,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Cornbread", veg: null },
   nutrition: { calories: 265, protein: 6, carbs: 34, fat: 12, fiber: 2 },
   tags: ["comfort", "kid-friendly", "budget"],
-  seasons: ["fall", "winter"], karolina: true,
+  seasons: ["fall", "winter"],
   ingredients: [
     { group: "Cornbread", items: [
       "1 1/2 cups yellow cornmeal",
@@ -1362,10 +1362,10 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]}
   ],
   steps: [
-    "Put a 10-inch cast-iron skillet in the oven and heat it to 425F. The pan must be properly hot before the batter goes in.",
+    "Put a 10-inch cast-iron skillet in the oven and heat it to 425F. The pan must be hot before the batter goes in.",
     "Whisk the cornmeal, flour, sugar, baking powder, baking soda, and salt together.",
     "In another bowl, whisk the buttermilk, eggs, and melted butter.",
-    "Pour the wet into the dry and stir just until combined. A few lumps are fine - overmixing makes it tough.",
+    "Pour the wet into the dry and stir just until combined. A few lumps are fine. Overmixing makes it tough.",
     "Take the hot skillet out and add the 3 tablespoons of butter, swirling until it melts and foams.",
     "Pour the batter in; it should sizzle audibly at the edges. That sizzle is your crust forming.",
     "Bake 22 to 25 minutes, until golden and a skewer comes out clean.",
@@ -1375,7 +1375,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "A screaming hot, well-greased pan is what gives cornbread its signature crunchy edge.",
     "For a savory Southern-style version, cut the sugar to one tablespoon."
   ],
-  makeAhead: "Best the day it is made; leftovers are excellent toasted in butter."
+  makeAhead: "Best the day it's made; leftovers are excellent toasted in butter."
 },
 
 /* --------------------------------------------------------------- desserts -- */
@@ -1390,7 +1390,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Oat topping", veg: "Apples" },
   nutrition: { calories: 385, protein: 4, carbs: 58, fat: 16, fiber: 5 },
   tags: ["dessert", "comfort", "make-ahead", "kid-friendly", "budget"],
-  seasons: ["fall", "winter"], karolina: true,
+  seasons: ["fall", "winter"],
   ingredients: [
     { group: "Filling", items: [
       "3 lb apples, peeled and sliced 1/2 inch thick",
@@ -1424,8 +1424,8 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Rest 15 minutes and serve warm with vanilla ice cream."
   ],
   tips: [
-    "Use a mix of apples - some that hold their shape like Honeycrisp, and some that break down like McIntosh.",
-    "Wait for the bubbling. If the filling is not bubbling at the edges, the flour has not thickened it yet."
+    "Use a mix of apples. Some that hold their shape like Honeycrisp, and some that break down like McIntosh.",
+    "Wait for the bubbling. If the filling isn't bubbling at the edges, the flour hasn't thickened it yet."
   ],
   makeAhead: "Assemble a day ahead and bake fresh, or reheat leftovers at 325F."
 },
@@ -1440,7 +1440,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Cookies", veg: null },
   nutrition: { calories: 215, protein: 3, carbs: 28, fat: 11, fiber: 1 },
   tags: ["dessert", "make-ahead", "freezer-friendly", "kid-friendly", "comfort"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Cookies", items: [
       "1 cup butter",
@@ -1468,7 +1468,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Pull them when the middles still look soft. Cookies baked until the center looks done come out hard.",
-    "Chilling the dough overnight makes a genuinely noticeable difference. It is the one shortcut worth not taking."
+    "Chilling the dough overnight makes a noticeable difference. It's the one shortcut worth not taking."
   ],
   makeAhead: "Freeze scooped dough balls; bake from frozen with 2 extra minutes."
 },
@@ -1476,14 +1476,14 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "fudgy-brownies",
   title: "Fudgy Brownies",
-  blurb: "Dense, glossy-topped, and properly chocolatey. One bowl and no mixer.",
+  blurb: "Dense, glossy-topped, and chocolatey. One bowl and no mixer.",
   emoji: "🍫", protein: "Vegetarian", cuisine: "American",
   type: "side", sideType: "dessert",
   totalTime: 55, activeTime: 15, difficulty: "Easy", servings: 16,
   plate: { protein: null, starch: "Brownies", veg: null },
   nutrition: { calories: 265, protein: 4, carbs: 32, fat: 15, fiber: 2 },
   tags: ["dessert", "make-ahead", "kid-friendly", "comfort", "budget"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Brownies", items: [
       "10 tablespoons butter",
@@ -1506,11 +1506,11 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Sift in the flour, cocoa, and salt and fold just until combined. Stop as soon as the flour disappears.",
     "Fold in the chocolate chips and spread in the pan.",
     "Bake 30 to 35 minutes, until the top is set and a skewer in the center comes out with moist crumbs, not clean batter and not clean.",
-    "Cool completely in the pan - at least 2 hours - before lifting out and cutting."
+    "Cool completely in the pan, at least 2 hours, before lifting out and cutting."
   ],
   tips: [
     "A clean skewer means overbaked brownies. Moist crumbs is the target.",
-    "They genuinely do need to cool completely before cutting or they fall apart. Cut them with a hot, wiped knife."
+    "They do need to cool completely before cutting or they fall apart. Cut them with a hot, wiped knife."
   ],
   makeAhead: "Better on day two. Keep in an airtight tin for four days."
 },
@@ -1525,7 +1525,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Crumble topping", veg: "Berries" },
   nutrition: { calories: 345, protein: 5, carbs: 52, fat: 15, fiber: 6 },
   tags: ["dessert", "make-ahead", "kid-friendly", "budget", "freezer-friendly"],
-  seasons: ["summer"], karolina: true,
+  seasons: ["summer"],
   ingredients: [
     { group: "Filling", items: [
       "2 1/2 lb mixed berries, fresh or frozen",
@@ -1547,16 +1547,16 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   steps: [
     "Heat the oven to 375F and butter a 9x13 dish.",
-    "Toss the berries with the sugar, cornstarch, lemon juice and zest, and salt. Do not thaw frozen berries first.",
+    "Toss the berries with the sugar, cornstarch, lemon juice and zest, and salt. Don't thaw frozen berries first.",
     "Spread the fruit in the dish.",
     "Combine the flour, oats, brown sugar, almonds, cinnamon, and salt.",
     "Rub in the cold butter with your fingertips until you have coarse crumbs with some larger clumps.",
     "Scatter the crumble evenly over the fruit, leaving some gaps for steam to escape.",
     "Bake 45 to 50 minutes, until the topping is golden and the fruit bubbles thickly at the edges.",
-    "Rest 20 minutes before serving - the filling thickens as it cools."
+    "Rest 20 minutes before serving. The filling thickens as it cools."
   ],
   tips: [
-    "Cornstarch is what stops berry desserts being a purple puddle. Do not reduce it.",
+    "Cornstarch is what stops berry desserts being a purple puddle. Don't reduce it.",
     "Frozen berries need no thawing and often taste better than out-of-season fresh ones."
   ],
   makeAhead: "Assemble and freeze unbaked; bake from frozen with 15 extra minutes."
@@ -1572,7 +1572,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Quick bread", veg: "Bananas" },
   nutrition: { calories: 295, protein: 4, carbs: 44, fat: 12, fiber: 2 },
   tags: ["dessert", "make-ahead", "freezer-friendly", "kid-friendly", "budget", "comfort"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Bread", items: [
       "4 very ripe bananas, mashed",
@@ -1590,7 +1590,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   steps: [
     "Heat the oven to 350F. Butter a 9x5 loaf pan and line it with a strip of parchment.",
-    "Mash the bananas thoroughly - the blacker and softer they are, the better the bread.",
+    "Mash the bananas thoroughly. The blacker and softer they are, the better the bread.",
     "Whisk in the melted butter, brown sugar, eggs, sour cream, and vanilla.",
     "In another bowl, whisk the flour, baking soda, cinnamon, and salt.",
     "Fold the dry into the wet just until no streaks of flour remain. Overmixing makes it tough and rubbery.",
@@ -1600,7 +1600,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Bananas that look too far gone are exactly right. If yours are still yellow, bake them at 350F for 15 minutes to ripen them fast.",
-    "Do not overmix. Fold until the flour just disappears and then stop."
+    "Don't overmix. Fold until the flour just disappears and then stop."
   ],
   makeAhead: "Better on day two. Freezes whole or in slices for three months."
 },
@@ -1615,7 +1615,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: null, starch: "Biscuit base", veg: null },
   nutrition: { calories: 425, protein: 6, carbs: 34, fat: 30, fiber: 1 },
   tags: ["dessert", "make-ahead", "no-cook", "special-occasion", "kid-friendly"],
-  seasons: ["spring", "summer"], karolina: true,
+  seasons: ["spring", "summer"],
   ingredients: [
     { group: "Base", items: [
       "10 oz graham crackers or digestive biscuits, crushed",
@@ -1639,7 +1639,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   steps: [
     "Mix the crushed biscuits with the melted butter, sugar, and salt until it looks like wet sand.",
-    "Press firmly into the base and slightly up the sides of a 9-inch springform pan. Use the flat bottom of a glass to compact it properly.",
+    "Press firmly into the base and slightly up the sides of a 9-inch springform pan. Use the flat bottom of a glass to compact it.",
     "Chill the base while you make the filling.",
     "Beat the room-temperature cream cheese with the powdered sugar until completely smooth with no lumps. Cold cream cheese will stay lumpy no matter how long you beat it.",
     "Beat in the lemon juice, zest, vanilla, and salt.",
@@ -1658,7 +1658,7 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "affogato",
   title: "Affogato",
-  blurb: "Vanilla ice cream drowned in hot espresso. Two ingredients, one minute, feels like a restaurant.",
+  blurb: "Vanilla ice cream with hot espresso poured over it. Two ingredients, one minute.",
   emoji: "☕", protein: "Vegetarian", cuisine: "Italian",
   type: "side", sideType: "dessert",
   totalTime: 5, activeTime: 5, difficulty: "Easy", servings: 4,
@@ -1678,13 +1678,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   steps: [
     "Chill four small glasses or cups in the freezer for 10 minutes if you have time.",
     "Put a scoop of ice cream in each glass.",
-    "Brew the espresso and pour it over the ice cream immediately, at the table if you can - the melting is the whole point.",
+    "Brew the espresso and pour it over the ice cream immediately, at the table if you can. The melting is the whole point.",
     "Add a splash of liqueur if using.",
     "Finish with hazelnuts and shaved chocolate and serve at once with a spoon."
   ],
   tips: [
-    "Make the coffee last and pour it over immediately. Coffee that has sat and cooled will not melt the ice cream properly.",
-    "Use the best vanilla ice cream you can find. With two ingredients there is nowhere to hide."
+    "Make the coffee last and pour it over immediately. Coffee that has sat and cooled won't melt the ice cream.",
+    "Use the best vanilla ice cream you can find. With two ingredients there's nowhere to hide."
   ],
   makeAhead: null
 }

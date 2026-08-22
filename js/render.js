@@ -19,41 +19,35 @@
     '30-minutes': '30 minutes',
     'gluten-free': 'Gluten free',
     'dairy-free': 'Dairy free',
-    'kid-friendly': 'Kid approved',
-    'leftovers': 'Great leftovers',
+    'kid-friendly': 'Crowd pleaser',
+    'leftovers': 'Good leftovers',
     'high-protein': 'High protein',
-    'veggie-forward': 'Veggie forward',
-    'budget': 'Budget friendly',
-    'special-occasion': 'Special occasion',
+    'veggie-forward': 'Veg heavy',
+    'budget': 'Cheap',
+    'special-occasion': 'Special',
     'no-cook': 'No cook',
     'low-carb': 'Lower carb',
     'comfort': 'Comfort food',
     'grill': 'Grill or broil',
-    'instant-pot': 'Pressure cooker'
+    'dessert': 'Dessert'
   };
 
   R.tagLabel = function (tag) { return TAG_LABELS[tag] || U.titleCase(tag.replace(/-/g, ' ')); };
 
   R.styleVars = function (recipe) {
-    var p = U.paletteFor(recipe);
-    return '--c1:' + p[0] + ';--c2:' + p[1] + ';';
+    return '--tint:' + U.tintFor(recipe) + ';';
   };
 
   /* -------------------------------------------------------------- card --- */
 
   R.card = function (recipe) {
     var fav = window.Store.isFavorite(recipe.id);
-    var plate = recipe.plate || {};
-    var bits = [];
-    if (plate.protein) bits.push('<span>🍗 ' + U.esc(plate.protein) + '</span>');
-    if (plate.starch)  bits.push('<span>🥔 ' + U.esc(plate.starch) + '</span>');
-    if (plate.veg)     bits.push('<span>🥬 ' + U.esc(plate.veg) + '</span>');
+    var n = recipe.nutrition || {};
 
     return '' +
       '<article class="rcard" style="' + R.styleVars(recipe) + '">' +
         '<div class="rcard-thumb">' +
           '<span class="emoji" aria-hidden="true">' + U.emojiFor(recipe) + '</span>' +
-          (recipe.karolina ? '<span class="badge-kid">Karolina pick</span>' : '') +
           '<button class="fav-btn" type="button" data-fav="' + U.esc(recipe.id) + '"' +
             ' aria-pressed="' + (fav ? 'true' : 'false') + '"' +
             ' aria-label="' + (fav ? 'Remove' : 'Save') + ' ' + U.esc(recipe.title) + '">' +
@@ -63,15 +57,10 @@
         '<div class="rcard-body">' +
           '<h3 class="rcard-title"><a href="#/recipe/' + U.esc(recipe.id) + '">' + U.esc(recipe.title) + '</a></h3>' +
           '<p class="rcard-blurb">' + U.esc(recipe.blurb) + '</p>' +
-          '<div class="rcard-meta">' +
-            '<span>⏱ ' + U.formatTime(recipe.totalTime) + '</span>' +
-            '<span class="dot">·</span><span>' + U.esc(recipe.difficulty) + '</span>' +
-            (recipe.nutrition.calories
-              ? '<span class="dot">·</span><span>' + recipe.nutrition.calories + ' cal</span>' +
-                '<span class="dot">·</span><span>' + recipe.nutrition.protein + 'g protein</span>'
-              : '') +
+          '<div class="rcard-foot">' +
+            (n.protein ? '<span class="pro">' + n.protein + 'g protein</span>' : '') +
+            '<span class="meta">' + U.formatTime(recipe.totalTime) + ' &middot; ' + U.esc(recipe.difficulty) + '</span>' +
           '</div>' +
-          (bits.length ? '<div class="rcard-plate">' + bits.join('') + '</div>' : '') +
         '</div>' +
       '</article>';
   };
@@ -83,20 +72,21 @@
 
   R.empty = function (msg) {
     return '<div class="empty-state">' +
-      '<span class="big" aria-hidden="true">🍳</span>' +
       '<h3>' + U.esc(msg || 'Nothing matches those filters') + '</h3>' +
-      '<p>Try clearing a filter or searching for something simpler, like &ldquo;chicken&rdquo;.</p>' +
+      '<p>Try clearing a filter, or search for something simpler like "chicken".</p>' +
       '</div>';
   };
 
   /* --------------------------------------------------------- mini list --- */
 
   R.miniItem = function (recipe) {
+    var n = recipe.nutrition || {};
     return '<li><a href="#/recipe/' + U.esc(recipe.id) + '">' +
       '<span class="ml-emoji" style="' + R.styleVars(recipe) + '" aria-hidden="true">' + U.emojiFor(recipe) + '</span>' +
       '<span class="ml-body">' +
-        '<span class="ml-title">' + U.esc(recipe.title) + '</span><br>' +
-        '<span class="ml-meta">' + U.formatTime(recipe.totalTime) + ' · ' + U.esc(recipe.difficulty) + '</span>' +
+        '<span class="ml-title">' + U.esc(recipe.title) + '</span>' +
+        '<span class="ml-meta">' + U.formatTime(recipe.totalTime) + ' &middot; ' + U.esc(recipe.difficulty) +
+          (n.protein ? ' &middot; ' + n.protein + 'g protein' : '') + '</span>' +
       '</span></a></li>';
   };
 
@@ -108,29 +98,22 @@
 
   R.chipRow = function (recipe) {
     var out = [];
-    out.push('<span class="chip chip-green">' + U.esc(recipe.protein) + '</span>');
+    out.push('<span class="chip chip-key">' + U.esc(recipe.protein) + '</span>');
     out.push('<span class="chip">' + U.esc(recipe.cuisine) + '</span>');
-    out.push('<span class="chip">⏱ ' + U.formatTime(recipe.totalTime) + '</span>');
+    out.push('<span class="chip">' + U.formatTime(recipe.totalTime) + '</span>');
     out.push('<span class="chip">' + U.esc(recipe.difficulty) + '</span>');
-    for (var i = 0; i < recipe.tags.length && i < 4; i++) {
-      out.push('<span class="chip chip-clay">' + U.esc(R.tagLabel(recipe.tags[i])) + '</span>');
+    for (var i = 0; i < recipe.tags.length && i < 3; i++) {
+      out.push('<span class="chip">' + U.esc(R.tagLabel(recipe.tags[i])) + '</span>');
     }
     return '<div class="chip-row">' + out.join('') + '</div>';
   };
 
   /* -------------------------------------------------------- nutrition --- */
 
+  // Protein leads, because that is the thing worth checking at a glance.
   R.nutrition = function (recipe) {
     var n = recipe.nutrition || {};
     if (!n.calories) return '';
-
-    var pCal = (n.protein || 0) * 4;
-    var cCal = (n.carbs || 0) * 4;
-    var fCal = (n.fat || 0) * 9;
-    var sum = pCal + cCal + fCal || 1;
-    var pPct = Math.round(pCal / sum * 100);
-    var cPct = Math.round(cCal / sum * 100);
-    var fPct = Math.max(0, 100 - pPct - cPct);
 
     function cell(val, unit, label) {
       return '<div class="nut-cell"><span class="nut-val">' + val + (unit || '') + '</span>' +
@@ -139,26 +122,17 @@
 
     return '' +
       '<div class="nutrition">' +
-        '<h3>What&rsquo;s on the plate</h3>' +
-        '<p class="nut-note">Per serving, roughly &mdash; a friendly estimate, not a lab result.</p>' +
+        '<div class="nut-lead">' +
+          '<span class="nut-lead-val">' + (n.protein || 0) + 'g</span>' +
+          '<span class="nut-lead-lab">protein per serving</span>' +
+        '</div>' +
         '<div class="nut-grid">' +
           cell(n.calories, '', 'Calories') +
-          cell(n.protein, 'g', 'Protein') +
           cell(n.carbs, 'g', 'Carbs') +
           cell(n.fat, 'g', 'Fat') +
           (n.fiber != null ? cell(n.fiber, 'g', 'Fiber') : '') +
         '</div>' +
-        '<div class="balance-bar" role="img" aria-label="Calories from protein ' + pPct +
-          ' percent, carbohydrate ' + cPct + ' percent, fat ' + fPct + ' percent">' +
-          '<i class="bb-p" style="width:' + pPct + '%"></i>' +
-          '<i class="bb-c" style="width:' + cPct + '%"></i>' +
-          '<i class="bb-f" style="width:' + fPct + '%"></i>' +
-        '</div>' +
-        '<div class="balance-key">' +
-          '<span><i class="bb-p"></i> Protein ' + pPct + '%</span>' +
-          '<span><i class="bb-c"></i> Carbs ' + cPct + '%</span>' +
-          '<span><i class="bb-f"></i> Fat ' + fPct + '%</span>' +
-        '</div>' +
+        '<p class="nut-note">Rough estimates for one serving.</p>' +
       '</div>';
   };
 
@@ -166,17 +140,13 @@
 
   R.plateSlots = function (recipe) {
     var p = recipe.plate || {};
-    var rows = [
-      ['The protein', p.protein, '🍗'],
-      ['The starch',  p.starch,  '🥔'],
-      ['The veg',     p.veg,     '🥬']
-    ];
-    return '<div class="pick-plate">' + rows.map(function (row) {
-      return '<div class="plate-slot">' +
-        '<div class="slot-label">' + row[2] + ' ' + row[0] + '</div>' +
-        '<div class="slot-value">' + (row[1] ? U.esc(row[1]) : '<span style="color:var(--ink-3)">add a side</span>') + '</div>' +
+    var rows = [['Protein', p.protein], ['Starch', p.starch], ['Veg', p.veg]];
+    return '<dl class="plate">' + rows.map(function (row) {
+      return '<div class="plate-row">' +
+        '<dt>' + row[0] + '</dt>' +
+        '<dd>' + (row[1] ? U.esc(row[1]) : '<span class="plate-gap">add a side</span>') + '</dd>' +
         '</div>';
-    }).join('') + '</div>';
+    }).join('') + '</dl>';
   };
 
   /* ------------------------------------------------------ ingredients --- */
@@ -220,14 +190,13 @@
   /* ------------------------------------------------------------- misc --- */
 
   R.statStrip = function (recipe, servings) {
+    var n = recipe.nutrition || {};
     return '<div class="stat-strip">' +
       '<div class="stat"><b>' + U.formatTime(recipe.totalTime) + '</b><span>Total</span></div>' +
       '<div class="stat"><b>' + U.formatTime(recipe.activeTime) + '</b><span>Hands on</span></div>' +
       '<div class="stat"><b>' + servings + '</b><span>Servings</span></div>' +
-      '<div class="stat"><b>' + U.esc(recipe.difficulty) + '</b><span>Effort</span></div>' +
-      (recipe.nutrition.calories
-        ? '<div class="stat"><b>' + recipe.nutrition.calories + '</b><span>Cal / serving</span></div>'
-        : '') +
+      (n.protein ? '<div class="stat stat-key"><b>' + n.protein + 'g</b><span>Protein</span></div>' : '') +
+      (n.calories ? '<div class="stat"><b>' + n.calories + '</b><span>Calories</span></div>' : '') +
       '</div>';
   };
 

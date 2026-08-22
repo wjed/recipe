@@ -1,4 +1,4 @@
-/* Sheet pan dinners - one pan, one oven, minimal washing up. */
+/* Sheet pan dinners. One pan, one oven, minimal washing up. */
 window.RECIPES = (window.RECIPES || []).concat([
 
 {
@@ -31,7 +31,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Toss the potatoes with 1 tablespoon oil and a pinch of salt. Spread on a large sheet pan and roast 15 minutes.",
     "Whisk the remaining oil with the mustard, maple syrup, sage, and salt. Toss with the sprouts, apples, and onion.",
     "Push the potatoes to one side and add the sprout mixture and the sausages, arranging everything in one layer.",
-    "Roast 25 to 28 minutes, turning the sausages once, until they are browned and the sprouts have dark crispy outer leaves.",
+    "Roast 25 to 28 minutes, turning the sausages once, until they're browned and the sprouts have dark crispy outer leaves.",
     "Drizzle the vinegar over the whole pan, toss, and serve."
   ],
   tips: [
@@ -47,12 +47,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   blurb: "Gnocchi roasted straight from the package until crisp, with burst tomatoes making an instant sauce.",
   emoji: "🍅", protein: "Vegetarian", cuisine: "Italian",
   totalTime: 35, activeTime: 10, difficulty: "Easy", servings: 4,
-  plate: { protein: "Mozzarella", starch: "Gnocchi", veg: "Tomatoes, zucchini, peppers" },
-  nutrition: { calories: 505, protein: 17, carbs: 68, fat: 19, fiber: 6 },
+  plate: { protein: "Mozzarella and chickpeas", starch: "Gnocchi", veg: "Tomatoes, zucchini, peppers" },
+  nutrition: { calories: 685, protein: 29, carbs: 86, fat: 26, fiber: 11 },
   tags: ["sheet-pan", "one-pan", "30-minutes", "veggie-forward", "kid-friendly", "budget"],
-  seasons: ["summer"], karolina: true,
+  seasons: ["summer"],
   ingredients: [
     { group: "Pan", items: [
+      "1 (15 oz) can chickpeas, drained and dried",
       "2 lb shelf-stable potato gnocchi",
       "2 pints cherry tomatoes",
       "2 zucchini, cut into half-moons",
@@ -65,7 +66,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1 1/2 teaspoons kosher salt"
     ]},
     { group: "To finish", items: [
-      "8 oz fresh mozzarella, torn",
+      "12 oz fresh mozzarella, torn",
       "1/2 cup torn basil",
       "1/2 cup grated Parmesan",
       "1 tablespoon balsamic vinegar"
@@ -74,13 +75,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   steps: [
     "Heat the oven to 450F.",
     "Toss the gnocchi, tomatoes, zucchini, pepper, and onion with the oil, garlic, oregano, pepper flakes, and salt directly on a large sheet pan.",
-    "Spread everything into a single layer. Use two pans if it looks crowded - crowding steams the gnocchi instead of crisping them.",
+    "Spread everything into a single layer. Use two pans if it looks crowded. Crowding steams the gnocchi instead of crisping them.",
     "Roast 25 minutes, tossing once at the halfway mark, until the gnocchi are golden and the tomatoes have burst.",
     "Scatter the mozzarella over the top and return to the oven 4 minutes, just until it slumps.",
     "Crush a few tomatoes with the back of a spoon so their juices coat everything, then finish with basil, Parmesan, and balsamic."
   ],
   tips: [
-    "Do not boil the gnocchi first. Straight from the package into the oven is what gives you a crisp shell and a chewy middle.",
+    "Don't boil the gnocchi first. Straight from the package into the oven is what gives you a crisp shell and a chewy middle.",
     "Shelf-stable gnocchi works better here than the refrigerated kind, which is softer and can fall apart."
   ],
   makeAhead: null
@@ -124,7 +125,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Rest the chops 8 minutes before serving. Toss the vegetables in whatever glaze has run onto the pan."
   ],
   tips: [
-    "Bone-in chops at least an inch thick survive the oven far better than thin boneless ones.",
+    "Bone-in chops at least an inch thick survive the oven better than thin boneless ones.",
     "145F and a proper rest gives you juicy pork with a faint blush of pink, which is exactly right."
   ],
   makeAhead: "Mix the glaze up to a week ahead."
@@ -139,7 +140,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Salmon", starch: "Baby potatoes", veg: "Green beans" },
   nutrition: { calories: 525, protein: 42, carbs: 36, fat: 23, fiber: 6 },
   tags: ["sheet-pan", "one-pan", "30-minutes", "gluten-free", "dairy-free", "high-protein", "kid-friendly"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Pan", items: [
       "4 salmon fillets (6 oz each)",
@@ -182,7 +183,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Beef meatballs", starch: "Baby potatoes", veg: "Peppers, zucchini, tomatoes" },
   nutrition: { calories: 545, protein: 34, carbs: 40, fat: 27, fiber: 7 },
   tags: ["sheet-pan", "one-pan", "make-ahead", "freezer-friendly", "kid-friendly", "leftovers"],
-  seasons: ["summer", "fall"], karolina: true,
+  seasons: ["summer", "fall"],
   ingredients: [
     { group: "Meatballs", items: [
       "1 1/2 lb ground beef or lamb",
@@ -222,7 +223,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Space the meatballs. Touching meatballs steam each other and stay pale.",
-    "Use two pans if one looks crowded. Crowding is the single most common sheet pan mistake."
+    "Use two pans if one looks crowded. Crowding is the most common sheet pan mistake."
   ],
   makeAhead: "Roll the meatballs a day ahead, or freeze them raw for three months."
 },
@@ -262,14 +263,14 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Heat the oven to 425F.",
     "Whisk the oil, lemon juice, garlic, oregano, salt, and pepper together.",
     "Toss the potatoes, peppers, and onion with two thirds of the mixture and spread on a large sheet pan with a rim.",
-    "Pour the broth into the pan - it steams the potatoes soft while the tops roast.",
+    "Pour the broth into the pan. It steams the potatoes soft while the tops roast.",
     "Pat the chicken dry, rub with the remaining lemon mixture, and set skin side up on top of the vegetables.",
     "Roast 45 to 50 minutes, until the skin is crisp and deep golden and the thighs read 175F.",
     "Scatter with feta, olives, and parsley and serve with lemon wedges."
   ],
   tips: [
     "The splash of broth is the Greek trick. It keeps the potatoes creamy inside while the exposed tops still crisp.",
-    "Keep the chicken skin above the liquid line or it will not crisp."
+    "Keep the chicken skin above the liquid line or it won't crisp."
   ],
   makeAhead: "The lemon-oregano marinade keeps a week."
 },
@@ -313,7 +314,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Broilers vary enormously. Check the steak at 4 minutes per side the first time you make this.",
-    "The ten-minute rest is not optional. Cutting early puts all the juice on the board instead of in the meat."
+    "The ten-minute rest isn't optional. Cutting early puts all the juice on the board instead of in the meat."
   ],
   makeAhead: "Garlic butter keeps two weeks in the fridge and freezes well."
 },
@@ -321,13 +322,13 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "sheet-pan-shrimp-boil",
   title: "Sheet Pan Shrimp Boil",
-  blurb: "All the fun of a shrimp boil - corn, sausage, potatoes, Old Bay - with none of the giant pot.",
+  blurb: "All the fun of a shrimp boil, corn, sausage, potatoes, Old Bay, with none of the giant pot.",
   emoji: "🌽", protein: "Shrimp", cuisine: "Southern",
   totalTime: 45, activeTime: 15, difficulty: "Easy", servings: 4,
   plate: { protein: "Shrimp and sausage", starch: "Potatoes and corn", veg: "Corn" },
   nutrition: { calories: 585, protein: 40, carbs: 48, fat: 26, fiber: 6 },
   tags: ["sheet-pan", "one-pan", "gluten-free", "special-occasion", "kid-friendly"],
-  seasons: ["summer"], karolina: true,
+  seasons: ["summer"],
   ingredients: [
     { group: "Pan", items: [
       "1 1/2 lb large shrimp, peeled and deveined",
@@ -357,7 +358,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Halve the potatoes small so they finish in the same time frame as everything else.",
-    "Serve it on the pan in the middle of the table with paper towels. That is half the point."
+    "Serve it on the pan in the middle of the table with paper towels. That's half the point."
   ],
   makeAhead: null
 },
@@ -368,12 +369,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   blurb: "Crisp roasted tofu and vegetables with a peanut sauce poured over everything at the end.",
   emoji: "🥜", protein: "Vegetarian", cuisine: "Thai",
   totalTime: 50, activeTime: 20, difficulty: "Easy", servings: 4,
-  plate: { protein: "Tofu", starch: "Rice", veg: "Broccoli, peppers, carrots" },
-  nutrition: { calories: 545, protein: 24, carbs: 56, fat: 26, fiber: 9 },
+  plate: { protein: "Tofu and edamame", starch: "Rice", veg: "Broccoli, peppers, carrots" },
+  nutrition: { calories: 635, protein: 32, carbs: 63, fat: 29, fiber: 12 },
   tags: ["sheet-pan", "one-pan", "dairy-free", "veggie-forward", "high-protein", "make-ahead"],
   seasons: ["all"],
   ingredients: [
     { group: "Pan", items: [
+      "1 1/2 cups shelled edamame",
       "2 blocks (14 oz each) extra-firm tofu, pressed and cubed",
       "2 tablespoons cornstarch",
       "1 head broccoli, cut into florets",
@@ -404,7 +406,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   steps: [
     "Press the tofu 20 minutes, then cube it and toss gently with the cornstarch, 1 tablespoon soy sauce, and 2 tablespoons oil.",
     "Heat the oven to 425F. Spread the tofu on one sheet pan and roast 25 minutes, turning once.",
-    "Toss the vegetables with the remaining oil, soy sauce, and salt and spread on a second pan. Roast alongside the tofu for 25 minutes, tossing once.",
+    "Toss the vegetables and edamame with the remaining oil, soy sauce, and salt and spread on a second pan. Roast alongside the tofu for 25 minutes, tossing once.",
     "Whisk the peanut sauce ingredients together, adding warm water a tablespoon at a time until it pours in a thick ribbon.",
     "Combine the roasted tofu and vegetables on one pan and drizzle with about half the peanut sauce.",
     "Serve over rice with the rest of the sauce, cilantro, peanuts, and lime."
@@ -419,13 +421,13 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "sheet-pan-breakfast-hash-eggs",
   title: "Sheet Pan Hash with Baked Eggs",
-  blurb: "Crispy potatoes, sausage, and peppers with eggs cracked in at the end. Breakfast for dinner, properly.",
+  blurb: "Crispy potatoes, sausage, and peppers with eggs cracked in at the end. Breakfast for dinner,.",
   emoji: "🍳", protein: "Eggs", cuisine: "American",
   totalTime: 45, activeTime: 15, difficulty: "Easy", servings: 4,
   plate: { protein: "Eggs and sausage", starch: "Potatoes", veg: "Peppers and onions" },
   nutrition: { calories: 525, protein: 27, carbs: 42, fat: 29, fiber: 6 },
   tags: ["sheet-pan", "one-pan", "budget", "kid-friendly", "high-protein", "comfort"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Hash", items: [
       "2 lb russet or Yukon gold potatoes, cut into 3/4-inch dice",
@@ -455,7 +457,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Scatter with scallions and serve with hot sauce."
   ],
   tips: [
-    "Check the eggs at 7 minutes. They go from runny to hard-set in about ninety seconds.",
+    "Check the eggs at 7 minutes. They go from runny to hard-set quickly.",
     "Cutting the potatoes small and giving them a head start is what makes them crisp rather than merely cooked."
   ],
   makeAhead: "Dice the potatoes a day ahead and keep them submerged in cold water; dry thoroughly before roasting."
@@ -502,7 +504,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Harissa brands vary a lot in heat. Taste yours and adjust before committing all three tablespoons.",
-    "Drying the chickpeas properly is what lets them crisp instead of going soft."
+    "Drying the chickpeas is what lets them crisp instead of going soft."
   ],
   makeAhead: "Rub the chicken with harissa up to a day ahead."
 },
@@ -548,7 +550,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "The wine and burst tomatoes make a light sauce in the pan. Bread for mopping is strongly recommended.",
-    "Drain the beans but do not rinse them dry - a little of their starch helps thicken the pan juices."
+    "Drain the beans but don't rinse them dry. A little of their starch helps thicken the pan juices."
   ],
   makeAhead: null
 },
@@ -562,7 +564,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Chicken drumsticks and thighs", starch: "Potatoes", veg: "Corn and peppers" },
   nutrition: { calories: 605, protein: 40, carbs: 52, fat: 26, fiber: 6 },
   tags: ["sheet-pan", "one-pan", "kid-friendly", "budget", "dairy-free", "leftovers"],
-  seasons: ["summer"], karolina: true,
+  seasons: ["summer"],
   ingredients: [
     { group: "Pan", items: [
       "3 lb bone-in chicken pieces",
@@ -590,7 +592,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Add the corn and peppers to the pan and roast 12 minutes more.",
     "Stir the vinegar and hot sauce into the barbecue sauce. Brush it generously over the chicken.",
     "Roast 10 to 12 minutes more, until the glaze is sticky and caramelized and the chicken reads 175F at the thigh.",
-    "If you want more char, broil the last 2 minutes, watching closely - barbecue sauce burns fast."
+    "If you want more char, broil the last 2 minutes, watching closely. Barbecue sauce burns fast."
   ],
   tips: [
     "Glaze at the end, never the beginning. The sugar in barbecue sauce blackens long before chicken is cooked.",
@@ -606,13 +608,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍛", protein: "Vegetarian", cuisine: "Indian",
   totalTime: 45, activeTime: 15, difficulty: "Easy", servings: 4,
   plate: { protein: "Chickpeas", starch: "Rice or naan", veg: "Cauliflower and onion" },
-  nutrition: { calories: 445, protein: 16, carbs: 62, fat: 17, fiber: 15 },
+  nutrition: { calories: 595, protein: 26, carbs: 81, fat: 19, fiber: 20 },
   tags: ["sheet-pan", "one-pan", "budget", "veggie-forward", "dairy-free", "high-protein", "make-ahead"],
   seasons: ["all"],
   ingredients: [
     { group: "Pan", items: [
       "2 heads cauliflower, cut into florets",
-      "2 (15 oz) cans chickpeas, drained and dried",
+      "3 (15 oz) cans chickpeas, drained and dried",
       "1 red onion, cut into wedges",
       "5 tablespoons olive oil",
       "1 tablespoon curry powder",
@@ -623,7 +625,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1 1/2 teaspoons kosher salt"
     ]},
     { group: "To serve", items: [
-      "3/4 cup plain Greek yogurt",
+      "1 1/2 cups plain Greek yogurt",
       "2 tablespoons lemon juice",
       "1/2 cup chopped cilantro",
       "3 cups cooked basmati rice",

@@ -60,7 +60,7 @@ if (DB) console.log(`mains: ${DB.mainCount()}  sides: ${DB.sideCount()}  index p
 // --- vocabularies that the UI depends on
 const PROTEINS = ['Chicken','Beef','Pork','Turkey','Lamb','Fish','Shrimp','Eggs','Vegetarian'];
 const DIFFICULTY = ['Easy','Medium','Ambitious'];
-const SIDE_TYPES = ['veg','starch','salad','bread','dessert'];
+const SIDE_TYPES = ['veg','starch','salad','bread','dessert','starter'];
 const SEASONS = ['all','spring','summer','fall','winter'];
 // tags offered as filter buttons on the browse page (js/app.js TAGS)
 const BROWSE_TAGS = ['one-pan','sheet-pan','slow-cooker','comfort','veggie-forward','kid-friendly',
@@ -69,7 +69,9 @@ const BROWSE_TAGS = ['one-pan','sheet-pan','slow-cooker','comfort','veggie-forwa
 // tags that have a human label in js/render.js TAG_LABELS
 const LABELLED_TAGS = ['one-pan','sheet-pan','slow-cooker','make-ahead','freezer-friendly','30-minutes',
   'gluten-free','dairy-free','kid-friendly','leftovers','high-protein','veggie-forward','budget',
-  'special-occasion','no-cook','low-carb','comfort','grill','instant-pot'];
+  'special-occasion','no-cook','low-carb','comfort','grill','dessert'];
+
+const PROTEIN_FLOOR = 25;   // grams per serving, every main must clear this
 
 const ids = new Set();
 const tagUse = {};
@@ -116,7 +118,11 @@ for (const r of R) {
       for (const p of r.pairsWith) if (!PROTEINS.includes(p)) err(at(`pairsWith has unknown protein "${p}"`));
     }
   } else {
-    if (!r.plate || !r.plate.protein) warn(at('main has no plate.protein'));
+    // Will's rule: a dinner has to come with a real protein, not just carbs.
+    if (!r.plate || !r.plate.protein) err(at('main has no plate.protein'));
+    if ((r.nutrition || {}).protein < PROTEIN_FLOOR) {
+      err(at(`main has only ${(r.nutrition || {}).protein}g protein (floor is ${PROTEIN_FLOOR}g)`));
+    }
   }
 
   // tags
@@ -159,6 +165,20 @@ for (const r of R) {
       }
     }
     if (count < 3) warn(at(`only ${count} ingredients`));
+  }
+
+  // house style: no em dashes, and no " - " standing in for one
+  const copy = [r.blurb, r.makeAhead || ''].concat(r.steps || [], r.tips || []).join(' ');
+  if (/—/.test(copy)) err(at('copy contains an em dash'));
+  if (/ - /.test(copy)) err(at('copy uses " - " as a dash'));
+  if ('karolina' in r) err(at('still has the karolina flag'));
+
+  // prose hygiene: sentences start capitalised, no doubled punctuation or spaces
+  for (const line of [r.blurb, r.makeAhead].concat(r.steps || [], r.tips || [])) {
+    if (!line) continue;
+    if (/^[a-z]/.test(line)) err(at(`sentence starts lowercase: "${line.slice(0, 50)}"`));
+    if (/  /.test(line)) err(at(`double space: "${line.slice(0, 50)}"`));
+    if (/\.\s*\.|,,|\s,/.test(line)) err(at(`punctuation artifact: "${line.slice(0, 50)}"`));
   }
 
   // steps
@@ -237,7 +257,7 @@ const sections = {
   'quick (<=40m)': DB.query({ maxTime: 40 }).length,
   'comfort': DB.query({ tags: ['comfort'] }).length,
   'veggie-forward': DB.query({ tags: ['veggie-forward'] }).length,
-  'karolina picks': DB.mains().filter(r => r.karolina).length
+  'most protein': DB.query({ sort: 'protein' }).length
 };
 for (const [k, v] of Object.entries(sections)) {
   console.log(`  ${k.padEnd(16)} -> ${v}`);
@@ -269,7 +289,7 @@ for (const r of R) {
 console.log('  protein:', byProtein);
 console.log('  effort :', byDiff);
 console.log('  cuisines:', Object.keys(byCuisine).length);
-console.log(`  karolina picks: ${R.filter(r => r.karolina).length}`);
+console.log(`  protein floor: ${PROTEIN_FLOOR}g | lowest main: ${Math.min(...DB.mains().map(r => r.nutrition.protein))}g`);
 console.log(`  avg steps: ${(R.reduce((a, r) => a + r.steps.length, 0) / R.length).toFixed(1)}`);
 console.log(`  avg ingredients: ${(R.reduce((a, r) => a + r._flat.length, 0) / R.length).toFixed(1)}`);
 

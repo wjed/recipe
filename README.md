@@ -1,35 +1,34 @@
 # Sunday Dinner
 
-A recipe site built for Mom (Sarah), for the Sunday dinners the three of us have
-every week — her, me, and Karolina.
+A recipe site built for Mom, for the family dinner we have every Sunday.
 
-The idea is simple: press one button on the front page and it tells you what to
-make. Every dinner is built around a **real plate — a protein, a starch, and a
-vegetable** — rather than "here's a pizza." If a recipe is missing one of the
-three, the site suggests a side to fill the gap.
+Press one button on the front page and it tells you what to make. Every dinner
+is built around a **real plate: a protein, a starch, and a vegetable**. If a
+recipe is missing one of the three, the site suggests a side to fill the gap.
 
-**225 recipes**: 183 dinners and 42 sides, salads, breads and desserts, all with
-full step-by-step instructions, ingredient lists, and per-serving nutrition.
+**225 recipes**: 181 dinners and 44 sides, salads, breads, starters and
+desserts, all with full step-by-step instructions and per-serving nutrition.
+
+**Every dinner clears 25g of protein per serving.** That is enforced by the
+validator, not by eye, so a recipe that drops below it fails the build.
 
 ## What it does
 
-- **Tonight** — one big button that picks a dinner for you, with a "give me
-  another" and filters for protein / under 45 minutes / easy only. It remembers
-  the last dozen suggestions so it won't repeat itself.
-- **All Recipes** — search plus filters for protein, time, effort and style
-  (one-pan, sheet-pan, slow-cooker, make-ahead, kid-friendly, gluten-free…).
-- **Recipe pages** — a servings scaler that rescales every ingredient, tick-off
-  ingredients and steps that survive a screen lock, nutrition, tips, make-ahead
-  notes, suggested sides, and a print layout.
-- **Sunday Plan** — build a menu (main + two sides + dessert), see the nutrition
-  for the whole meal, and get a shopping list sorted by supermarket aisle.
-  "Build me a whole menu" does it all in one press.
-- **Saved** — heart anything to keep it.
+- **Tonight** picks a dinner for you. "Another idea" rerolls, and it remembers
+  the last dozen so it will not repeat itself. Narrow it to one protein, under
+  45 minutes, or easy only.
+- **All Recipes** has search plus filters for protein, time, effort and style,
+  and sorts by most protein, quickest, or easiest.
+- **Recipe pages** have a servings scaler that rewrites every quantity,
+  tick-off ingredients and steps that survive a screen lock, and a print layout.
+- **Sunday Plan** builds a menu, totals the nutrition, and writes a shopping
+  list sorted by supermarket aisle. "Build me a menu" does it in one press.
+- **Saved** keeps anything you heart.
 
 ## Running it
 
-There is no build step and there are no dependencies. Open `index.html` in a
-browser and it works — including straight off the disk, no server needed.
+No build step, no dependencies. Open `index.html` in a browser and it works,
+including straight off the disk with no server.
 
 To serve it locally:
 
@@ -37,18 +36,16 @@ To serve it locally:
 python -m http.server 8770
 ```
 
-Then visit http://localhost:8770.
-
 ## Hosting it
 
-It is a static site, so GitHub Pages serves it as-is: **Settings → Pages →
-Deploy from a branch → `main` / root**. Routing is hash-based (`#/recipe/...`)
-precisely so it works on Pages and from a local file with no server config.
+It is a static site, so GitHub Pages serves it as-is: **Settings, Pages, Deploy
+from a branch, `main` / root**. Routing is hash-based (`#/recipe/...`) so it
+works on Pages and from a local file with no server config.
 
 ## Adding a recipe
 
 Recipes live in `data/recipes-*.js`. Each file appends to a global array, so
-adding one means copying an existing entry and editing it. The shape:
+adding one means copying an existing entry and editing it.
 
 ```js
 {
@@ -59,12 +56,11 @@ adding one means copying an existing entry and editing it. The shape:
   totalTime: 45, activeTime: 15, // minutes
   difficulty: "Easy",            // Easy|Medium|Ambitious
   servings: 4,
-  type: "main",                  // or "side" (+ sideType: veg|starch|salad|bread|dessert)
+  type: "main",                  // or "side" (+ sideType: veg|starch|salad|bread|dessert|starter)
   plate: { protein: "...", starch: "...", veg: "..." },   // null for anything it lacks
   nutrition: { calories, protein, carbs, fat, fiber },    // per serving
   tags: ["one-pan", "comfort"],
   seasons: ["fall", "winter"],
-  karolina: true,                // the kid-approved badge
   ingredients: [{ group: "Chicken", items: ["1 1/2 lb chicken thighs", ...] }],
   steps: ["...", "..."],
   tips: ["..."],
@@ -72,12 +68,16 @@ adding one means copying an existing entry and editing it. The shape:
 }
 ```
 
-Two rules that matter:
+Four rules that matter:
 
-1. **Write quantities in plain ASCII** — `2`, `1/2`, `1 1/2`, `2-3`. The servings
-   scaler parses the leading quantity and renders it as `½`, `1½` and so on.
-   Typing a `½` directly into the data will break scaling for that line.
-2. **Don't lie in the tags.** `30-minutes` means `totalTime` is 35 or under.
+1. **A main needs a named `plate.protein` and at least 25g of protein.** Below
+   that it belongs in `sides`, or it needs more protein in it.
+2. **Write quantities in plain ASCII**: `2`, `1/2`, `1 1/2`, `2-3`. The scaler
+   parses the leading quantity and renders it as `½`, `1½` and so on. Typing a
+   `½` directly into the data breaks scaling for that line.
+3. **House style: no em dashes**, and no `" - "` standing in for one. Start a
+   new sentence instead. Contractions are fine and preferred.
+4. **Do not lie in the tags.** `30-minutes` means `totalTime` is 35 or under.
 
 After editing, **bump the `?v=` number on every asset in `index.html`** so
 browsers pick up the change instead of serving a cached copy.
@@ -85,16 +85,17 @@ browsers pick up the change instead of serving a cached copy.
 ## Checking your work
 
 `scripts/validate.js` checks the whole library: duplicate ids, unknown proteins
-or tags, `activeTime` greater than `totalTime`, unparseable quantities, nutrition
-whose macros don't add up to its calorie count, mains that can't be paired with a
-side, filters that would return an empty page, and ingredients the shopping list
-can't file under an aisle.
+or tags, the protein floor, times that contradict each other, unparseable
+quantities, nutrition whose macros do not add up to its calories, mains that
+cannot be paired with a side, filters that would return an empty page,
+ingredients the shopping list cannot file under an aisle, and prose problems
+like em dashes, doubled spaces or sentences starting lowercase.
 
 ```bash
 node scripts/validate.js
 ```
 
-It exits non-zero if anything is actually wrong.
+It exits non-zero if anything is wrong.
 
 ## Layout
 
@@ -110,8 +111,8 @@ data/recipes-*.js       the recipes
 scripts/validate.js     the QA check
 ```
 
-Nothing is uploaded anywhere. There's no account and no server — saved recipes
-and the Sunday plan live in the browser on whichever device you're using.
+Nothing is uploaded anywhere. No account, no server. Saved recipes and the
+Sunday plan live in the browser on whichever device you are using.
 
-Nutrition figures are careful estimates meant to give a sense of balance, not
-lab-measured values, and they aren't medical advice.
+Nutrition figures are estimates meant to give a sense of balance, not
+lab-measured values, and they are not medical advice.

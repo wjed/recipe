@@ -41,7 +41,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Salmon keeps cooking after it leaves the oven. Pulling it at 125F gives you moist fish; 145F gives you chalk.",
     "The potatoes need a 20-minute head start. Everything on one pan from the beginning means raw potatoes and destroyed salmon."
   ],
-  makeAhead: "Make the compound butter up to a week ahead; it is good on almost any fish or vegetable."
+  makeAhead: "Make the compound butter up to a week ahead; it's good on almost any fish or vegetable."
 },
 
 {
@@ -53,7 +53,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Shrimp", starch: "Rice", veg: "Broccolini" },
   nutrition: { calories: 470, protein: 34, carbs: 48, fat: 15, fiber: 4 },
   tags: ["30-minutes", "one-pan", "high-protein", "gluten-free", "kid-friendly"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Shrimp", items: [
       "1 1/2 lb large shrimp, peeled and deveined",
@@ -77,7 +77,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Pat the shrimp completely dry and season with the salt. Wet shrimp steam instead of searing.",
     "Cook the broccolini in a large skillet with the oil and 1/4 cup water, covered, 4 minutes. Uncover and cook 2 minutes until the water is gone and the stems are tender. Move to a plate.",
     "Wipe the pan. Heat the olive oil and 1 tablespoon of the butter over medium-high. Add the shrimp in a single layer and cook 90 seconds a side, until just pink and opaque. Move to the plate with the broccolini.",
-    "Lower the heat to medium. Add the remaining butter and the garlic and pepper flakes and cook 45 seconds - do not let the garlic brown.",
+    "Lower the heat to medium. Add the remaining butter and the garlic and pepper flakes and cook 45 seconds. Don't let the garlic brown.",
     "Add the wine and lemon juice and simmer 2 minutes, scraping the pan.",
     "Return the shrimp and broccolini, toss in the sauce for 30 seconds, add the parsley, and serve over rice."
   ],
@@ -91,13 +91,13 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "baked-cod-lemon-herb",
   title: "Baked Cod with Lemon and Herbs",
-  blurb: "Mild, flaky, and quietly excellent - a fifteen-minute fish that even fish skeptics eat.",
+  blurb: "Mild, flaky, and quietly excellent. A fifteen-minute fish that even fish skeptics eat.",
   emoji: "🐠", protein: "Fish", cuisine: "Mediterranean",
   totalTime: 25, activeTime: 10, difficulty: "Easy", servings: 4,
   plate: { protein: "Cod fillets", starch: null, veg: "Cherry tomatoes" },
   nutrition: { calories: 285, protein: 36, carbs: 7, fat: 13, fiber: 2 },
   tags: ["30-minutes", "low-carb", "gluten-free", "high-protein", "kid-friendly"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Fish", items: [
       "4 cod fillets (6 oz each)",
@@ -122,7 +122,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Cod fillets vary a lot in thickness. Start checking at 12 minutes if yours are thin.",
-    "If the fillets look watery when you unwrap them, salt them and leave 10 minutes, then pat dry - it firms up the texture."
+    "If the fillets look watery when you unwrap them, salt them and leave 10 minutes, then pat dry. It firms up the texture."
   ],
   makeAhead: null
 },
@@ -130,7 +130,7 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "shrimp-scampi",
   title: "Shrimp Scampi with Linguine",
-  blurb: "White wine, garlic, butter, lemon. Twenty minutes and it tastes like a night out.",
+  blurb: "White wine, garlic, butter, and lemon, tossed through linguine in 20 minutes.",
   emoji: "🍝", protein: "Shrimp", cuisine: "Italian",
   totalTime: 25, activeTime: 25, difficulty: "Easy", servings: 4,
   plate: { protein: "Shrimp", starch: "Linguine", veg: "Parsley and lemon" },
@@ -163,7 +163,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Return the shrimp with the parsley and Parmesan, toss, and serve at once."
   ],
   tips: [
-    "The starchy pasta water is what makes the butter and wine into an actual sauce instead of a puddle. Do not forget to save it.",
+    "The starchy pasta water is what makes the butter and wine into an actual sauce instead of a puddle. Don't forget to save it.",
     "Cook the shrimp separately and add them back at the end, or they turn to rubber while the sauce reduces."
   ],
   makeAhead: null
@@ -172,7 +172,7 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "blackened-salmon-bowls",
   title: "Blackened Salmon Bowls",
-  blurb: "A dark, spicy crust on the salmon, cooled down by avocado and a lime-yogurt drizzle.",
+  blurb: "A dark, spiced crust on the salmon, cooled by avocado and lime yogurt.",
   emoji: "🥑", protein: "Fish", cuisine: "American",
   totalTime: 35, activeTime: 25, difficulty: "Easy", servings: 4,
   plate: { protein: "Salmon", starch: "Brown rice", veg: "Corn, avocado, cabbage" },
@@ -209,7 +209,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   steps: [
     "Mix all the spices together and rub them firmly onto the flesh side of the salmon fillets.",
     "Whisk the lime yogurt ingredients together.",
-    "Heat the oil in a cast-iron skillet over medium-high until it just begins to smoke. Open a window - blackening makes smoke.",
+    "Heat the oil in a cast-iron skillet over medium-high until it just begins to smoke. Open a window. Blackening makes smoke.",
     "Lay the fillets spice side down and cook 3 to 4 minutes without moving them, until the crust is very dark.",
     "Flip carefully and cook 3 minutes more, until the fish flakes at the edges.",
     "Char the corn in the same pan for 2 minutes while the salmon rests.",
@@ -219,7 +219,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Blackened means very dark, not burnt. The paprika and thyme are what darken, not scorched fish.",
     "Cast iron holds heat better than nonstick and gives a much better crust."
   ],
-  makeAhead: "Mix a jar of the spice blend and keep it for months; it is excellent on chicken too."
+  makeAhead: "Mix a jar of the spice blend and keep it for months; it's excellent on chicken too."
 },
 
 {
@@ -231,7 +231,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "White fish", starch: "Corn tortillas", veg: "Cabbage slaw" },
   nutrition: { calories: 545, protein: 34, carbs: 48, fat: 24, fiber: 7 },
   tags: ["kid-friendly", "veggie-forward"],
-  seasons: ["summer"], karolina: true,
+  seasons: ["summer"],
   ingredients: [
     { group: "Fish", items: [
       "1 1/2 lb cod or halibut, cut into strips",
@@ -263,9 +263,9 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]}
   ],
   steps: [
-    "Toss the slaw ingredients together and let them sit - the cabbage softens slightly and the lime seasons it through.",
+    "Toss the slaw ingredients together and let them sit. The cabbage softens slightly and the lime seasons it through.",
     "Stir the crema ingredients together.",
-    "Whisk the flour, cornstarch, baking powder, salt, and paprika. Just before frying, whisk in the cold sparkling water until it is the texture of thin pancake batter. Lumps are fine.",
+    "Whisk the flour, cornstarch, baking powder, salt, and paprika. Just before frying, whisk in the cold sparkling water until it's the texture of thin pancake batter. Lumps are fine.",
     "Heat 2 inches of oil in a heavy pot to 365F. If you have no thermometer, a drop of batter should sizzle and float immediately.",
     "Pat the fish dry, dip each strip in the batter, let the excess drip off, and lower it into the oil. Fry 3 or 4 pieces at a time for 3 to 4 minutes, until golden and crisp.",
     "Drain on a rack and salt right away.",
@@ -273,7 +273,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "The batter must be cold and the oil must be hot. That contrast is what makes it crisp instead of greasy.",
-    "Do not crowd the pot - each piece drops the oil temperature, and cool oil means soggy batter."
+    "Don't crowd the pot. Each piece drops the oil temperature, and cool oil means soggy batter."
   ],
   makeAhead: "Slaw and crema can be made a day ahead. Batter and fry at the last minute."
 },
@@ -311,7 +311,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Whisk all the glaze ingredients until smooth. Spread it over the salmon fillets and let them sit 15 minutes, or up to 4 hours in the fridge.",
     "Cook the rice according to the package.",
     "Set an oven rack about 6 inches below the broiler and heat the broiler to high. Line a sheet pan with foil.",
-    "Broil the salmon 6 to 8 minutes, until the glaze is bubbling and darkened in spots and the fish flakes. Watch it closely from minute 5 - miso and honey go from caramelized to burnt fast.",
+    "Broil the salmon 6 to 8 minutes, until the glaze is bubbling and darkened in spots and the fish flakes. Watch it closely from minute 5. Miso and honey go from caramelized to burnt fast.",
     "Meanwhile, heat the sesame oil in a skillet over medium-high. Add the garlic and bok choy cut side down and cook 3 minutes, then add 2 tablespoons water, cover, and steam 2 minutes.",
     "Serve the salmon over rice with the bok choy, scallions, and sesame seeds."
   ],
@@ -319,7 +319,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "White miso is mild and sweet; red miso is much saltier and will overpower the fish.",
     "A foil-lined pan saves you from scrubbing burnt glaze off a sheet pan."
   ],
-  makeAhead: "Glaze the salmon in the morning - it only improves with a few hours of marinating."
+  makeAhead: "Glaze the salmon in the morning. It only improves with a few hours of marinating."
 },
 
 {
@@ -331,7 +331,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Shrimp and egg", starch: "Rice", veg: "Peas, carrot, scallion" },
   nutrition: { calories: 465, protein: 30, carbs: 52, fat: 15, fiber: 4 },
   tags: ["30-minutes", "budget", "kid-friendly", "dairy-free", "leftovers"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Fried rice", items: [
       "4 cups cold cooked rice, at least a day old",
@@ -351,12 +351,12 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]}
   ],
   steps: [
-    "Break up the cold rice with your hands so there are no clumps. Cold, dry, day-old rice is the single most important thing here.",
+    "Break up the cold rice with your hands so there are no clumps. Cold, dry, day-old rice is the important part here.",
     "Mix the sauce ingredients in a small bowl.",
     "Heat 1 tablespoon oil in a wok or large skillet over high. Add the beaten eggs and scramble quickly, 30 seconds, until just set. Move to a plate.",
     "Add another tablespoon of oil and the shrimp. Cook 90 seconds a side until pink. Move to the plate.",
     "Add the last tablespoon of oil, then the garlic, ginger, and scallion whites. Stir 30 seconds.",
-    "Add the rice and press it into the pan. Let it sit 1 minute to toast, then toss. Repeat twice more - this is how you get the slightly crispy grains.",
+    "Add the rice and press it into the pan. Let it sit 1 minute to toast, then toss. Repeat twice more. This is how you get the slightly crispy grains.",
     "Add the peas and carrots and the sauce. Toss 1 minute, then return the egg, shrimp, and scallion greens and toss to combine."
   ],
   tips: [
@@ -375,7 +375,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Salmon", starch: null, veg: null },
   nutrition: { calories: 425, protein: 39, carbs: 20, fat: 21, fiber: 0 },
   tags: ["30-minutes", "one-pan", "dairy-free", "kid-friendly", "high-protein"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Everything", items: [
       "4 salmon fillets (6 oz each)",
@@ -400,7 +400,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Honey burns quickly. If the glaze is darkening faster than the fish is cooking, pull the pan off the heat for a moment.",
-    "Serve with rice and a green vegetable - the glaze is good on everything it touches."
+    "Serve with rice and a green vegetable. The glaze is good on everything it touches."
   ],
   makeAhead: null
 },
@@ -414,7 +414,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Baked cod", starch: "Oven chips", veg: "Peas" },
   nutrition: { calories: 565, protein: 42, carbs: 58, fat: 17, fiber: 7 },
   tags: ["comfort", "kid-friendly", "budget"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Chips", items: [
       "2 1/2 lb russet potatoes, cut into thick chips",
@@ -449,7 +449,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Serve with lemon, tartar sauce, and plenty of vinegar."
   ],
   tips: [
-    "Drying the potatoes is the entire difference between crisp chips and steamed ones.",
+    "Drying the potatoes is the difference between crisp chips and steamed ones.",
     "Pre-toasting the panko in oil gives you the golden color that oven-baked breading otherwise never reaches."
   ],
   makeAhead: null
@@ -530,7 +530,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]}
   ],
   steps: [
-    "Bring the broth and milk to a simmer. Whisk in the grits slowly so they do not clump, then reduce the heat to very low.",
+    "Bring the broth and milk to a simmer. Whisk in the grits slowly so they don't clump, then reduce the heat to very low.",
     "Cook the grits 25 to 30 minutes, whisking every 5 minutes, until thick and creamy. Stir in the butter, cheese, and salt at the end.",
     "Meanwhile, cook the bacon in a large skillet over medium until crisp, 8 minutes. Lift it out, leaving the fat.",
     "Add the bell pepper to the bacon fat and cook 4 minutes. Add the garlic, paprika, and cayenne and cook 1 minute.",
@@ -548,13 +548,13 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "salmon-cakes",
   title: "Salmon Cakes with Dill Sauce",
-  blurb: "Crisp outside, tender inside, and made from a can if that is what is in the cupboard.",
+  blurb: "Crisp outside, tender inside, and made from a can if that's what's in the cupboard.",
   emoji: "🥘", protein: "Fish", cuisine: "American",
   totalTime: 35, activeTime: 30, difficulty: "Easy", servings: 4,
   plate: { protein: "Salmon cakes", starch: "Breadcrumbs", veg: "Onion and celery" },
   nutrition: { calories: 415, protein: 33, carbs: 22, fat: 22, fiber: 2 },
   tags: ["30-minutes", "budget", "make-ahead", "high-protein", "kid-friendly"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Cakes", items: [
       "1 1/2 lb cooked salmon, flaked, or 3 (14 oz) cans, drained",
@@ -581,7 +581,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   steps: [
     "Stir the dill sauce ingredients together and refrigerate.",
     "Combine everything for the cakes except the oil in a large bowl, folding gently so the salmon stays in flakes rather than turning to paste.",
-    "Form into 8 patties, about 3/4 inch thick. Chill 15 minutes - this is what keeps them from falling apart in the pan.",
+    "Form into 8 patties, about 3/4 inch thick. Chill 15 minutes. This is what keeps them from falling apart in the pan.",
     "Heat the oil in a large skillet over medium.",
     "Cook the cakes 4 minutes per side, in batches, until deep golden and heated through. Turn them once only, gently.",
     "Drain briefly on a rack and serve with the dill sauce and lemon wedges."
@@ -725,8 +725,8 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Drizzle with the remaining glaze and finish with scallions and sesame seeds."
   ],
   tips: [
-    "Cornstarch is what turns a thin marinade into a glaze that actually clings.",
-    "These pack well for lunch - the salmon is good cold."
+    "Cornstarch is what turns a thin marinade into a glaze that clings.",
+    "These pack well for lunch. The salmon is good cold."
   ],
   makeAhead: "Make the glaze and pickle the cucumbers up to three days ahead."
 },
@@ -734,7 +734,7 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "garlic-butter-scallops",
   title: "Seared Scallops with Garlic Butter",
-  blurb: "Golden crust, sweet centers, and a lemon-butter pan sauce. Ten minutes and genuinely restaurant quality.",
+  blurb: "Golden crust, sweet centers, and a lemon-butter pan sauce. Ten minutes and restaurant quality.",
   emoji: "🐚", protein: "Shrimp", cuisine: "French",
   totalTime: 20, activeTime: 20, difficulty: "Medium", servings: 4,
   plate: { protein: "Sea scallops", starch: null, veg: null },
@@ -755,17 +755,17 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]}
   ],
   steps: [
-    "Pull off the small tough side muscle from each scallop if it is still attached.",
+    "Pull off the small tough side muscle from each scallop if it's still attached.",
     "Pat the scallops as dry as you possibly can, then leave them on paper towels 10 minutes and pat again. Moisture is the enemy of a sear.",
-    "Season both flat sides just before cooking - salting early draws out water.",
-    "Heat the oil in a heavy skillet over high until it is just smoking.",
+    "Season both flat sides just before cooking. Salting early draws out water.",
+    "Heat the oil in a heavy skillet over high until it's just smoking.",
     "Add the scallops in a single layer, not touching. Cook 2 minutes without moving them, until a deep golden crust forms.",
     "Flip, add the butter and garlic, and cook 60 to 90 seconds while spooning the butter over. The centers should still be slightly translucent. Move to a plate.",
     "Add the wine and lemon juice to the pan, simmer 1 minute, stir in the parsley, and pour over the scallops."
   ],
   tips: [
     "Buy dry-packed scallops if you can. Wet-packed ones are treated with a solution that makes them weep and refuse to brown.",
-    "Overcooked scallops turn rubbery in about thirty seconds. Pull them while the middle still looks underdone."
+    "Overcooked scallops turn rubbery in seconds. Pull them while the middle still looks underdone."
   ],
   makeAhead: null
 },
@@ -803,7 +803,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   steps: [
     "Whisk the vinaigrette ingredients together in a jar.",
-    "Boil the potatoes in salted water 14 minutes until tender. Lift them out with a slotted spoon and toss immediately with 2 tablespoons of the vinaigrette while still warm - they absorb it.",
+    "Boil the potatoes in salted water 14 minutes until tender. Lift them out with a slotted spoon and toss immediately with 2 tablespoons of the vinaigrette while still warm. They absorb it.",
     "Drop the green beans into the same water and cook 3 minutes, until bright and crisp-tender. Move straight into ice water to stop the cooking.",
     "Lower the eggs into the same pot and boil 8 minutes for jammy yolks. Cool in the ice water, then peel and halve.",
     "Arrange the lettuce on a large platter and lay everything else on top in separate piles: potatoes, beans, tuna, tomatoes, eggs, olives, onion, and capers.",
@@ -811,7 +811,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Dressing the potatoes while hot is the trick that keeps this from tasting bland in the middle.",
-    "Tuna packed in olive oil is worth the extra dollar here - water-packed tuna is dry and shreds."
+    "Tuna packed in olive oil is worth the extra dollar here. Water-packed tuna is dry and shreds."
   ],
   makeAhead: "Cook the potatoes, beans, and eggs a day ahead and assemble in ten minutes."
 },
@@ -825,7 +825,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   plate: { protein: "Tilapia", starch: "Rice pilaf", veg: null },
   nutrition: { calories: 445, protein: 38, carbs: 44, fat: 13, fiber: 2 },
   tags: ["30-minutes", "budget", "high-protein", "kid-friendly"],
-  seasons: ["all"], karolina: true,
+  seasons: ["all"],
   ingredients: [
     { group: "Fish", items: [
       "4 tilapia fillets (6 oz each)",
@@ -857,7 +857,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   tips: [
     "Tilapia is thin and delicate. Use a wide spatula and flip once, decisively.",
-    "This works with any thin white fish - flounder, sole, or catfish."
+    "This works with any thin white fish. Flounder, sole, or catfish."
   ],
   makeAhead: null
 },
@@ -892,13 +892,13 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Toss the zucchini, fennel, and tomatoes with 2 tablespoons of the oil and half the salt.",
     "Pile a quarter of the vegetables on one half of each parchment sheet, leaving a wide border.",
     "Set a salmon fillet on top of each pile. Season, drizzle with the remaining oil, add a tablespoon of wine, and top with lemon slices and herb sprigs.",
-    "Fold the parchment over and crimp the open edges in small overlapping folds, working around the curve, to seal the packet completely. It needs to be airtight to steam properly.",
+    "Fold the parchment over and crimp the open edges in small overlapping folds, working around the curve, to seal the packet completely. It needs to be airtight to steam.",
     "Set the packets on a sheet pan and bake 15 to 17 minutes. They will puff up.",
-    "Serve each packet on a plate and let everyone tear theirs open at the table - the burst of steam is the best part."
+    "Serve each packet on a plate and let everyone tear theirs open at the table. The burst of steam is the best part."
   ],
   tips: [
     "The packet must be well sealed or the steam escapes and the fish roasts dry instead of steaming.",
-    "Aluminum foil works if you have no parchment, though it will not puff as dramatically."
+    "Aluminum foil works if you have no parchment, though it won't puff as dramatically."
   ],
   makeAhead: "Assemble the packets in the morning and refrigerate; add 3 minutes to the bake time."
 }
