@@ -159,6 +159,57 @@
 
     resetShop: function () { state.shopChecked = []; save(); emit(); },
 
+    /* -------------------------------------------------- moving devices --- */
+
+    // The saved list lives in this browser, so the only way to get it onto
+    // another phone or laptop is to carry it there. This is small enough to
+    // travel inside a link, which means no account and no server.
+    exportState: function () {
+      return {
+        v: 1,
+        f: state.favorites.slice(),
+        p: {
+          m: state.plan.main,
+          a: state.plan.side1,
+          b: state.plan.side2,
+          d: state.plan.dessert
+        }
+      };
+    },
+
+    // `known` filters out ids that no longer exist, so an old link that names
+    // a renamed recipe restores everything else instead of failing.
+    importState: function (payload, mode, known) {
+      if (!payload || payload.v !== 1) return null;
+      var keep = function (id) { return id && (!known || known(id)) ? id : null; };
+
+      var incoming = (payload.f || []).filter(keep);
+      var added = 0, already = 0;
+
+      if (mode === 'replace') {
+        state.favorites = incoming.slice();
+        added = incoming.length;
+      } else {
+        for (var i = 0; i < incoming.length; i++) {
+          if (state.favorites.indexOf(incoming[i]) === -1) { state.favorites.push(incoming[i]); added++; }
+          else already++;
+        }
+      }
+
+      var p = payload.p || {};
+      var planned = 0;
+      var slots = [['main', p.m], ['side1', p.a], ['side2', p.b], ['dessert', p.d]];
+      for (var s = 0; s < slots.length; s++) {
+        var id = keep(slots[s][1]);
+        if (id) { state.plan[slots[s][0]] = id; planned++; }
+      }
+      if (planned) state.shopChecked = [];
+
+      save();
+      emit();
+      return { added: added, already: already, planned: planned, skipped: (payload.f || []).length - incoming.length };
+    },
+
     /* ------------------------------------------------------------ meta --- */
 
     isMemoryOnly: function () { return memoryOnly; }

@@ -178,6 +178,47 @@
     return recipe.emoji || DEFAULT_EMOJI[recipe.protein] || '🍽️';
   };
 
+  /* ------------------------------------------------------------ packing --- */
+
+  // base64url, so the packed state survives being pasted into a text message
+  // or an address bar without anything mangling it.
+  U.pack = function (obj) {
+    try {
+      var bytes = new TextEncoder().encode(JSON.stringify(obj));
+      var bin = '';
+      for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+      return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    } catch (e) { return null; }
+  };
+
+  U.unpack = function (str) {
+    try {
+      var b64 = String(str).replace(/-/g, '+').replace(/_/g, '/');
+      while (b64.length % 4) b64 += '=';
+      var bin = atob(b64);
+      var bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      return JSON.parse(new TextDecoder().decode(bytes));
+    } catch (e) { return null; }
+  };
+
+  // Copies text, falling back to selecting it when the clipboard API is blocked.
+  U.copy = function (text, inputEl) {
+    function fallback() {
+      if (!inputEl) return false;
+      inputEl.focus();
+      inputEl.setSelectionRange(0, inputEl.value.length);
+      try { return document.execCommand('copy'); } catch (e) { return false; }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).then(
+        function () { return true; },
+        function () { return fallback(); }
+      );
+    }
+    return Promise.resolve(fallback());
+  };
+
   /* -------------------------------------------------------------- toast --- */
 
   var toastTimer = null;

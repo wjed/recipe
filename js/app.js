@@ -49,6 +49,7 @@
       case 'recipe':    viewRecipe(r.parts[1]);          break;
       case 'plan':      viewPlan();                      break;
       case 'favorites': viewFavorites();                 break;
+      case 'transfer':  viewTransfer(r.params);          break;
       case 'help':      viewHelp();                      break;
       case 'home':      viewHome();                      break;
       default:          viewNotFound();                  break;
@@ -628,16 +629,94 @@
 
     var html = '<div class="wrap section" style="padding-top:26px">' +
       '<h1 style="margin-bottom:.2em">Saved recipes</h1>' +
-      '<p class="lede">The ones you tapped the heart on. They stay on this device.</p>' +
+      '<p class="lede">The ones you tapped the heart on. They live in this browser, ' +
+        'on this device.</p>' +
       (list.length
         ? '<div style="margin-top:26px">' + R.cardGrid(list) + '</div>'
-        : '<div class="empty-state"><span class="big" aria-hidden="true">♡</span>' +
+        : '<div class="empty-state">' +
           '<h3>Nothing saved yet</h3>' +
           '<p>Tap the little heart on any recipe and it will show up here.</p>' +
           '<p style="margin-top:18px"><a class="btn btn-primary" href="#/browse">Go find something</a></p></div>') +
+      transferPanel() +
       '</div>';
 
     setView(html, 'favorites');
+  }
+
+  /* ---------------------------------------------------- moving devices -- */
+
+  // The whole saved list is a handful of recipe ids, so it fits in a link.
+  // Send yourself the link, open it on the other device, done. No account.
+  function transferLink() {
+    var payload = U.pack(Store.exportState());
+    if (!payload) return null;
+    var base = location.origin + location.pathname;
+    if (location.protocol === 'file:') base = location.href.split('#')[0];
+    return base + '#/transfer?d=' + payload;
+  }
+
+  function transferPanel() {
+    var saved = Store.favorites().length;
+    var planned = Store.planCount();
+    if (!saved && !planned) return '';
+
+    var link = transferLink();
+    if (!link) return '';
+
+    return '<div class="panel transfer" style="margin-top:30px">' +
+      '<h2>Use these on another device</h2>' +
+      '<p class="section-note" style="margin-bottom:14px">' +
+        'This link carries your ' + saved + ' saved recipe' + (saved === 1 ? '' : 's') +
+        (planned ? ' and this Sunday&rsquo;s plan' : '') + '. ' +
+        'Text or email it to yourself, open it on the other phone or computer, ' +
+        'and everything lands there. Keep the message and it doubles as a backup.</p>' +
+      '<div class="transfer-row">' +
+        '<label class="sr-only" for="xferLink">Transfer link</label>' +
+        '<input id="xferLink" type="text" readonly value="' + U.esc(link) + '">' +
+        '<button class="btn btn-primary" data-act="copyLink">Copy link</button>' +
+      '</div>' +
+      '</div>';
+  }
+
+  function viewTransfer(params) {
+    var payload = params.d ? U.unpack(params.d) : null;
+
+    if (!payload || payload.v !== 1) {
+      setView('<div class="wrap section"><div class="empty-state">' +
+        '<h1>That link did not work</h1>' +
+        '<p>It may have been cut short by the app you sent it through. ' +
+        'Try sending it again, and check the whole thing came across.</p>' +
+        '<p style="margin-top:18px"><a class="btn btn-primary" href="#/favorites">Go to saved recipes</a></p>' +
+        '</div></div>', 'transfer');
+      return;
+    }
+
+    var incoming = (payload.f || []).filter(function (id) { return DB.byId(id); });
+    var list = DB.query({ type: 'all', ids: incoming, sort: 'az' });
+    var p = payload.p || {};
+    var planIds = [p.m, p.a, p.b, p.d].filter(function (id) { return id && DB.byId(id); });
+    var here = Store.favorites().length;
+
+    var html = '<div class="wrap section" style="padding-top:26px">' +
+      '<h1 style="margin-bottom:.2em">Bring these over?</h1>' +
+      '<p class="lede">This link is carrying ' + incoming.length + ' saved recipe' +
+        (incoming.length === 1 ? '' : 's') +
+        (planIds.length ? ' and a Sunday plan' : '') + '. ' +
+        (here ? 'You already have ' + here + ' saved on this device.' : 'Nothing is saved on this device yet.') +
+      '</p>' +
+
+      '<div class="chip-row" style="gap:10px;margin:22px 0 30px">' +
+        '<button class="btn btn-primary" data-act="doImport" data-mode="merge" data-d="' + U.esc(params.d) + '">' +
+          (here ? 'Add to what is here' : 'Bring them over') + '</button>' +
+        (here ? '<button class="btn btn-secondary" data-act="doImport" data-mode="replace" data-d="' + U.esc(params.d) + '">' +
+          'Replace what is here</button>' : '') +
+        '<a class="btn btn-ghost" href="#/favorites">Cancel</a>' +
+      '</div>' +
+
+      (list.length ? R.cardGrid(list) : '<p class="section-note">None of those recipes exist any more.</p>') +
+      '</div>';
+
+    setView(html, 'transfer');
   }
 
   /* --------------------------------------------------------------- help -- */
@@ -687,10 +766,18 @@
         'protein, is there fiber, is this a heavy night or a light one. They are not ' +
         'lab-measured and they are not medical advice.</p>' +
 
-      '<h2>Where does my saved stuff live?</h2>' +
-      '<p>In the browser on whichever device you are using. Saving on your phone won\'t show up ' +
-        'on the desktop, and clearing your browser data clears it. Nothing is uploaded anywhere. ' +
-        'No account, no server.</p>' +
+      '<h2>Where do saved recipes live?</h2>' +
+      '<p>In the browser, on the device you saved them from. There is no account and no ' +
+        'server, and nothing is uploaded anywhere. That keeps it simple and private, but ' +
+        'it does mean the phone and the computer each keep their own list.</p>' +
+
+      '<h2>Getting them onto another device</h2>' +
+      '<p>At the bottom of <strong>Saved</strong> there is a link that carries your saved ' +
+        'recipes and your Sunday plan inside it. Press <strong>Copy link</strong>, text or ' +
+        'email it to yourself, then open it on the other phone or computer. It asks before ' +
+        'it changes anything.</p>' +
+      '<p>Keep that message and it doubles as a backup. If the browser ever forgets ' +
+        'everything, open the link again and it all comes back.</p>' +
       '</div></div>';
 
     setView(html, 'help');
@@ -829,6 +916,31 @@
       case 'surpriseMenu':
         surpriseMenu();
         break;
+
+      case 'copyLink': {
+        var input = document.getElementById('xferLink');
+        if (!input) break;
+        Promise.resolve(U.copy(input.value, input)).then(function (ok) {
+          U.toast(ok ? 'Link copied. Send it to yourself.' : 'Press and hold the link to copy it.');
+        });
+        break;
+      }
+
+      case 'doImport': {
+        var data = U.unpack(btn.getAttribute('data-d'));
+        var res = Store.importState(data, btn.getAttribute('data-mode'), function (id) {
+          return !!DB.byId(id);
+        });
+        if (!res) { U.toast('That link did not work'); break; }
+        var bits = [];
+        if (res.added) bits.push(res.added + ' recipe' + (res.added === 1 ? '' : 's') + ' saved');
+        if (res.already) bits.push(res.already + ' already here');
+        if (res.planned) bits.push('plan restored');
+        U.toast(bits.length ? bits.join(', ') : 'Nothing new to bring over');
+        updateNavCounts();
+        location.hash = '#/favorites';
+        break;
+      }
 
       case 'resetShop':
         Store.resetShop();

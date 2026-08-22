@@ -111,8 +111,21 @@ data/recipes-*.js       the recipes
 scripts/validate.js     the QA check
 ```
 
-Nothing is uploaded anywhere. No account, no server. Saved recipes and the
-Sunday plan live in the browser on whichever device you are using.
+## Where the saved data lives
+
+There is no database and nothing to set up. Saved recipes, the Sunday plan and
+the tick-boxes live in `localStorage`, which is a small store built into the
+browser. No account, no server, nothing uploaded.
+
+The tradeoff is that it is per-device. So the bottom of the **Saved** page
+builds a link with the whole saved list packed into it (base64url in the hash,
+a few hundred characters). Text it to yourself, open it on the other device,
+and it asks whether to merge or replace. Keeping that message also makes it a
+backup, since opening the link again restores everything.
+
+`Store.exportState()` and `Store.importState()` handle it. Import filters out
+ids that no longer exist, so an old link still restores everything else instead
+of failing.
 
 Nutrition figures are estimates meant to give a sense of balance, not
 lab-measured values, and they are not medical advice.
