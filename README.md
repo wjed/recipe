@@ -23,7 +23,24 @@ validator, not by eye, so a recipe that drops below it fails the build.
   tick-off ingredients and steps that survive a screen lock, and a print layout.
 - **Sunday Plan** builds a menu, totals the nutrition, and writes a shopping
   list sorted by supermarket aisle. "Build me a menu" does it in one press.
-- **Saved** keeps anything you heart.
+- **Saved** keeps anything you heart, and can hand the whole list to another
+  device through a link.
+
+## In the kitchen
+
+- **Timers.** Any time written in a step is a button. Tap "25 minutes" and a
+  timer starts in a tray at the bottom. Several can run at once, they keep
+  going while you move around the site, and they beep and buzz when they are
+  up. A range like "8 to 10 minutes" times the shorter one so you check early.
+- **Keep screen on.** A toggle next to the method holds a screen wake lock, so
+  the phone does not lock mid-recipe. It is re-acquired when you come back to
+  the tab, because the browser drops it whenever the page is hidden.
+- **Works offline.** A service worker caches the whole site on the first visit,
+  so it opens with no signal. Installable from the home screen as a standalone
+  app via `manifest.webmanifest`.
+- **Forgiving search.** "brocolli" finds broccoli, "chiken" finds chicken, and
+  "stirfry" finds stir-fry. If one word matches nothing at all it is dropped
+  rather than zeroing the whole search, and the page says what it did.
 
 ## Running it
 
@@ -79,8 +96,10 @@ Four rules that matter:
    new sentence instead. Contractions are fine and preferred.
 4. **Do not lie in the tags.** `30-minutes` means `totalTime` is 35 or under.
 
-After editing, **bump the `?v=` number on every asset in `index.html`** so
-browsers pick up the change instead of serving a cached copy.
+After editing, **bump the `?v=` number on every asset in `index.html` and the
+matching `VERSION` in `sw.js`.** They have to agree: the service worker caches
+the exact versioned URLs, so a mismatch would leave it caching files the page
+never asks for.
 
 ## Checking your work
 
@@ -105,8 +124,12 @@ css/style.css           all styling, light + dark, print styles
 js/util.js              quantity scaling, fractions, time formatting, colours
 js/store.js             favourites, plan, tick-boxes (localStorage)
 js/data.js              the index: search, filters, pairing, shopping aisles
+js/kitchen.js           timers and the screen wake lock
 js/render.js            HTML builders
 js/app.js               hash router and the views
+sw.js                   offline cache
+manifest.webmanifest    home screen install
+icons/                  generated app icons
 data/recipes-*.js       the recipes
 scripts/validate.js     the QA check
 ```

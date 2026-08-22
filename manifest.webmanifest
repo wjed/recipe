@@ -1,0 +1,21 @@
+{
+  "name": "Sunday Dinner",
+  "short_name": "Dinner",
+  "description": "Dinner ideas built around a real protein, a starch, and a vegetable.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fcfaf6",
+  "theme_color": "#35603f",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Tonight's idea", "url": "./index.html#/", "description": "Pick a dinner" },
+    { "name": "Sunday plan", "url": "./index.html#/plan", "description": "The menu and shopping list" },
+    { "name": "Saved", "url": "./index.html#/favorites", "description": "Saved recipes" }
+  ]
+}

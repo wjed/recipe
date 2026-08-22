@@ -321,7 +321,15 @@
   }
 
   function countLabel(n) {
-    return n === 0 ? 'No recipes found' : n === 1 ? '1 recipe' : n + ' recipes';
+    var base = n === 0 ? 'No recipes found' : n === 1 ? '1 recipe' : n + ' recipes';
+    var fixes = DB.lastCorrections(), ignored = DB.lastIgnored();
+    var note = '';
+    if (fixes.length) {
+      note = ' for ' + fixes.map(function (f) { return '"' + U.esc(f[1]) + '"'; }).join(' and ');
+    } else if (ignored.length) {
+      note = ', ignoring ' + ignored.map(function (w) { return '"' + U.esc(w) + '"'; }).join(' and ');
+    }
+    return base + note;
   }
 
   function updateBrowseChrome(p, opts, results) {
@@ -428,8 +436,16 @@
         '<div>' +
           (r.makeAhead ? callout('Get ahead', r.makeAhead) : '') +
           '<div class="panel">' +
-            '<h2>Method</h2>' +
-            '<p class="section-note" style="margin-bottom:16px">Tap a step to cross it off as you go.</p>' +
+            '<div class="section-head" style="margin-bottom:6px">' +
+              '<h2 style="margin:0">Method</h2>' +
+              (window.Kitchen && Kitchen.wakeSupported()
+                ? '<button class="btn btn-ghost btn-sm" data-act="wake" aria-pressed="' +
+                  (Kitchen.wakeIsOn() ? 'true' : 'false') + '">' +
+                  (Kitchen.wakeIsOn() ? 'Screen staying on' : 'Keep screen on') + '</button>'
+                : '') +
+            '</div>' +
+            '<p class="section-note" style="margin-bottom:16px">Tap a step to cross it off. ' +
+              'Tap any time to start a timer.</p>' +
             R.steps(r) +
           '</div>' +
 
@@ -748,6 +764,16 @@
       '<h2>Cooking from your phone</h2>' +
       '<p>Tap an ingredient to cross it off. Tap a step to grey it out. It remembers where you ' +
         'were if the screen goes dark or you close the tab.</p>' +
+      '<p>Any time written in a step is a button. Tap <strong>25 minutes</strong> and a timer ' +
+        'starts at the bottom of the screen. It beeps when it is up, and you can run several ' +
+        'at once. For a range like 8 to 10 minutes it times the shorter one, so you check early. ' +
+        'Timers run while the site is open and stop if you close the tab.</p>' +
+      '<p>There is a <strong>Keep screen on</strong> button next to the method, so the phone ' +
+        'does not lock while your hands are covered in flour.</p>' +
+
+      '<h2>It works without internet</h2>' +
+      '<p>After the first visit the whole site is stored on the device, so it opens even with ' +
+        'no signal in the kitchen. Add it to your home screen and it behaves like an app.</p>' +
 
       '<h2>The Sunday plan</h2>' +
       '<p>Add a main and a couple of sides and it adds up the whole meal, then builds a shopping ' +
@@ -917,6 +943,27 @@
         surpriseMenu();
         break;
 
+      case 'wake':
+        if (window.Kitchen) Kitchen.toggleWake();
+        break;
+
+      case 'timerStart': {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!window.Kitchen) break;
+        var secs = parseInt(btn.getAttribute('data-secs'), 10);
+        Kitchen.start(secs, btn.getAttribute('data-label') || 'Timer');
+        break;
+      }
+
+      case 'timerPause':
+        if (window.Kitchen) Kitchen.togglePause(parseInt(btn.getAttribute('data-id'), 10));
+        break;
+
+      case 'timerCancel':
+        if (window.Kitchen) Kitchen.cancel(parseInt(btn.getAttribute('data-id'), 10));
+        break;
+
       case 'copyLink': {
         var input = document.getElementById('xferLink');
         if (!input) break;
@@ -962,18 +1009,12 @@
     }
   });
 
-  // Tapping a step crosses it off
+  // Tapping a step crosses it off. The timer chips sit inside the step text,
+  // so a tap on one must not also tick the step off.
   document.addEventListener('click', function (e) {
+    if (e.target.closest('.timer-chip')) return;
     var step = e.target.closest('[data-step]');
     if (!step || currentView.indexOf('recipe:') !== 0) return;
-    toggleStep(step);
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    var step = e.target.closest && e.target.closest('[data-step]');
-    if (!step || currentView.indexOf('recipe:') !== 0) return;
-    e.preventDefault();
     toggleStep(step);
   });
 
@@ -981,7 +1022,10 @@
     var rid = currentView.split(':')[1];
     var i = parseInt(step.getAttribute('data-step'), 10);
     var on = Store.toggleChecked(rid, 'step', i);
-    step.parentNode.classList.toggle('done', on);
+    var li = step.closest('li');
+    li.classList.toggle('done', on);
+    var tick = li.querySelector('.step-tick');
+    if (tick) tick.setAttribute('aria-pressed', on ? 'true' : 'false');
   }
 
   function refreshServings(recipe, servings) {
@@ -1044,4 +1088,25 @@
 
   updateNavCounts();
   route();
+
+  /* --------------------------------------------------------- offline -- */
+
+  // Caching the whole site means it still works on bad kitchen wifi, and
+  // opens instantly from the home screen.
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').catch(function () {
+        // no offline support, everything else carries on working
+      });
+    });
+
+    // When a new version takes over, reload once so the page and its cached
+    // assets are from the same build.
+    var reloading = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (reloading) return;
+      reloading = true;
+      location.reload();
+    });
+  }
 })();

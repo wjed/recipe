@@ -43,6 +43,8 @@
     ].join(' ').toLowerCase();
 
     r._titleLower = r.title.toLowerCase();
+    // no spaces or hyphens, so "stirfry" still finds "stir-fry"
+    r._squashed = r._hay.replace(/[\s-]/g, '');
 
     all.push(r);
     byId[r.id] = r;
@@ -53,15 +55,91 @@
 
   /* ------------------------------------------------------------ search --- */
 
+  /* ------------------------------------------------- typo forgiveness --- */
+
+  // Every word that appears in a title, protein, cuisine or tag. Used to map a
+  // misspelling back onto something real, because this gets typed on a phone.
+  var vocab = null;
+  function buildVocab() {
+    var set = Object.create(null);
+    for (var i = 0; i < all.length; i++) {
+      var r = all[i];
+      var words = (r.title + ' ' + r.protein + ' ' + r.cuisine + ' ' + r.tags.join(' '))
+        .toLowerCase().split(/[^a-z]+/);
+      for (var w = 0; w < words.length; w++) {
+        if (words[w].length > 2) set[words[w]] = 1;
+      }
+    }
+    vocab = Object.keys(set);
+  }
+
+  // Bounded Levenshtein: bails as soon as the distance exceeds max.
+  function within(a, b, max) {
+    if (Math.abs(a.length - b.length) > max) return false;
+    var prev = [], cur = [], i, j;
+    for (j = 0; j <= b.length; j++) prev[j] = j;
+    for (i = 1; i <= a.length; i++) {
+      cur[0] = i;
+      var best = cur[0];
+      for (j = 1; j <= b.length; j++) {
+        cur[j] = Math.min(
+          prev[j] + 1,
+          cur[j - 1] + 1,
+          prev[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1)
+        );
+        if (cur[j] < best) best = cur[j];
+      }
+      if (best > max) return false;
+      for (j = 0; j <= b.length; j++) prev[j] = cur[j];
+    }
+    return prev[b.length] <= max;
+  }
+
+  // "brocolli" -> "broccoli". Short words get one edit, longer ones two.
+  function nearestWord(term) {
+    if (!vocab) buildVocab();
+    var max = term.length <= 4 ? 1 : (term.length <= 7 ? 1 : 2);
+    var best = null, bestD = max + 1;
+    for (var i = 0; i < vocab.length; i++) {
+      var v = vocab[i];
+      if (Math.abs(v.length - term.length) > max) continue;
+      if (v.charAt(0) !== term.charAt(0)) continue;   // first letter is rarely the typo
+      for (var d = 1; d <= max; d++) {
+        if (within(term, v, d)) { if (d < bestD) { bestD = d; best = v; } break; }
+      }
+    }
+    return best;
+  }
+
+  // Corrects each term that matches nothing at all. Returns the terms actually
+  // used plus any substitutions, so the page can say what it searched for.
+  function resolveTerms(terms) {
+    var used = [], fixes = [], dead = [];
+    for (var t = 0; t < terms.length; t++) {
+      var term = terms[t];
+      var hits = false;
+      for (var i = 0; i < all.length && !hits; i++) {
+        if (all[i]._hay.indexOf(term) !== -1 || all[i]._squashed.indexOf(term) !== -1) hits = true;
+      }
+      if (hits) { used.push(term); continue; }
+      var fixed = nearestWord(term);
+      if (fixed) { used.push(fixed); fixes.push([term, fixed]); }
+      else { used.push(term); dead.push(term); }
+    }
+    return { terms: used, fixes: fixes, dead: dead };
+  }
+
   function score(recipe, terms) {
     var total = 0;
     for (var t = 0; t < terms.length; t++) {
       var term = terms[t];
-      if (recipe._hay.indexOf(term) === -1) return 0;   // every term must appear
+      // _squashed drops spaces and hyphens, so "stirfry" finds "stir-fry"
+      var inHay = recipe._hay.indexOf(term) !== -1;
+      if (!inHay && recipe._squashed.indexOf(term.replace(/[\s-]/g, '')) === -1) return 0;
       if (recipe._titleLower.indexOf(term) !== -1) total += 10;
       else if ((recipe.protein || '').toLowerCase().indexOf(term) !== -1) total += 6;
       else if (recipe.tags.join(' ').toLowerCase().indexOf(term) !== -1) total += 4;
-      else total += 1;
+      else total += inHay ? 1 : 0.5;
     }
     return total;
   }
@@ -77,6 +155,18 @@
 
   function diffRank(r) {
     return r.difficulty === 'Easy' ? 0 : r.difficulty === 'Medium' ? 1 : 2;
+  }
+
+  var lastFixes = [];     // [[typed, used]] from the most recent query
+  var lastIgnored = [];   // words dropped so the search could return something
+
+  function collect(list, terms) {
+    var out = [];
+    for (var i = 0; i < list.length; i++) {
+      var sc = score(list[i], terms);
+      if (sc > 0) out.push({ r: list[i], s: sc });
+    }
+    return out;
   }
 
   function query(opts) {
@@ -109,12 +199,21 @@
 
     // ---- text
     var q = (opts.q || '').trim().toLowerCase();
+    lastFixes = []; lastIgnored = [];
     if (q) {
-      var terms = q.split(/\s+/).filter(Boolean);
-      var scored = [];
-      for (var i = 0; i < list.length; i++) {
-        var s = score(list[i], terms);
-        if (s > 0) scored.push({ r: list[i], s: s });
+      var resolved = resolveTerms(q.split(/\s+/).filter(Boolean));
+      var terms = resolved.terms;
+      lastFixes = resolved.fixes;
+
+      var scored = collect(list, terms);
+
+      // Every term has to match, which means one unrecognised word kills the
+      // whole search. If that happens, drop the dead words and try again
+      // rather than showing nothing.
+      if (!scored.length && resolved.dead.length && resolved.dead.length < terms.length) {
+        var kept = terms.filter(function (t) { return resolved.dead.indexOf(t) === -1; });
+        scored = collect(list, kept);
+        if (scored.length) lastIgnored = resolved.dead.slice();
       }
       scored.sort(function (a, b) { return b.s - a.s || a.r.title.localeCompare(b.r.title); });
       list = scored.map(function (x) { return x.r; });
@@ -174,6 +273,14 @@
 
   /* -------------------------------------------------------- suggestion --- */
 
+  function currentSeason() {
+    var m = new Date().getMonth();            // 0 = January
+    if (m <= 1 || m === 11) return 'winter';
+    if (m <= 4) return 'spring';
+    if (m <= 7) return 'summer';
+    return 'fall';
+  }
+
   function suggest(filters) {
     var pool = query(filters || {});
     if (!pool.length) return null;
@@ -181,6 +288,15 @@
     var recent = window.Store ? window.Store.history() : [];
     var fresh = pool.filter(function (r) { return recent.indexOf(r.id) === -1; });
     var from = fresh.length ? fresh : pool;
+
+    // Lean towards things that suit the time of year, without ruling anything
+    // out. Stew in August is allowed, just less likely.
+    var season = currentSeason();
+    var inSeason = from.filter(function (r) {
+      return r.seasons.indexOf(season) !== -1 || r.seasons.indexOf('all') !== -1;
+    });
+    if (inSeason.length >= 8 && Math.random() < 0.75) from = inSeason;
+
     return from[Math.floor(Math.random() * from.length)];
   }
 
@@ -292,6 +408,9 @@
     related: related,
     facets: facets,
     shoppingList: shoppingList,
-    problems: function () { return problems.slice(); }
+    season: currentSeason,
+    problems: function () { return problems.slice(); },
+    lastCorrections: function () { return lastFixes.slice(); },
+    lastIgnored: function () { return lastIgnored.slice(); }
   };
 })();

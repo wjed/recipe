@@ -179,12 +179,49 @@
 
   /* ------------------------------------------------------------ steps --- */
 
+  // "Roast 25 minutes", "Simmer 8 to 10 minutes", "Cook on low 8 hours".
+  // The first number of a range wins, because you want to check at 8, not 10.
+  var TIME_RE = /\b(\d+(?:\s\d+\/\d+)?|\d+\/\d+)(?:\s*(?:to|-)\s*\d+)?\s*(hours?|hrs?|minutes?|mins?|seconds?|secs?)\b/gi;
+
+  function toSeconds(num, unit) {
+    var n;
+    var mixed = num.match(/^(\d+)\s(\d+)\/(\d+)$/);
+    var frac = num.match(/^(\d+)\/(\d+)$/);
+    if (mixed) n = +mixed[1] + (+mixed[2] / +mixed[3]);
+    else if (frac) n = +frac[1] / +frac[2];
+    else n = parseFloat(num);
+    if (!isFinite(n) || n <= 0) return 0;
+    if (/^h/i.test(unit)) return Math.round(n * 3600);
+    if (/^m/i.test(unit)) return Math.round(n * 60);
+    return Math.round(n);
+  }
+
+  // Runs over already-escaped text, and only ever matches digits and letters,
+  // so it cannot break the escaping.
+  function addTimers(escaped, stepNo) {
+    return escaped.replace(TIME_RE, function (match, num, unit) {
+      var secs = toSeconds(num, unit);
+      if (secs < 10 || secs > 12 * 3600) return match;
+      return '<button type="button" class="timer-chip" data-act="timerStart"' +
+        ' data-secs="' + secs + '" data-label="Step ' + stepNo + '"' +
+        ' title="Start a ' + match + ' timer">' + match + '</button>';
+    });
+  }
+
+  // The numbered circle is a real button, and the step text is plain text that
+  // happens to contain timer buttons. Putting role="button" on the text would
+  // swallow those timers for keyboard and screen reader users.
   R.steps = function (recipe) {
     var done = window.Store.getChecked(recipe.id, 'step');
     return '<ol class="steps">' + recipe.steps.map(function (s, i) {
-      return '<li class="' + (done.indexOf(i) !== -1 ? 'done' : '') + '">' +
-        '<span class="step-text" data-step="' + i + '" role="button" tabindex="0">' + U.esc(s) + '</span>' +
-        '</li>';
+      var isDone = done.indexOf(i) !== -1;
+      return '<li class="' + (isDone ? 'done' : '') + '">' +
+        '<button type="button" class="step-tick" data-step="' + i + '"' +
+          ' aria-pressed="' + (isDone ? 'true' : 'false') + '"' +
+          ' aria-label="Step ' + (i + 1) + ', mark as done">' + (i + 1) + '</button>' +
+        '<span class="step-text" data-step="' + i + '">' +
+          addTimers(U.esc(s), i + 1) +
+        '</span></li>';
     }).join('') + '</ol>';
   };
 

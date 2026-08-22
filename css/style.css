@@ -146,7 +146,7 @@ img { max-width: 100%; height: auto; }
 
 /* ---------------------------------------------------------------- view -- */
 
-.view { display: block; min-height: 60vh; padding-bottom: 60px; outline: none; }
+.view { display: block; min-height: 60vh; outline: none; }
 .section { padding-top: clamp(30px, 5vw, 50px); }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 4px; }
 .section-head h2 { margin: 0; }
@@ -345,21 +345,24 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
 .ing-list input:checked + span { text-decoration: line-through; color: var(--ink-3); }
 .ing-qty { font-weight: 700; }
 
-.steps { list-style: none; counter-reset: step; margin: 0; padding: 0; }
-.steps li { counter-increment: step; position: relative; padding: 0 0 18px 44px; }
-.steps li::before {
-  content: counter(step);
+.steps { list-style: none; margin: 0; padding: 0; }
+.steps li { position: relative; padding: 0 0 18px 44px; }
+.steps li:last-child { padding-bottom: 0; }
+
+/* the number is a real button, so it can be tabbed to and toggled */
+.step-tick {
   position: absolute; left: 0; top: 0;
-  width: 28px; height: 28px; border-radius: 999px;
+  width: 30px; height: 30px; border-radius: 999px;
   background: var(--accent-soft); color: var(--accent-deep);
   border: 1px solid var(--line);
   display: flex; align-items: center; justify-content: center;
-  font-size: .84rem; font-weight: 700;
+  font: inherit; font-size: .84rem; font-weight: 700;
+  cursor: pointer; padding: 0;
 }
-.steps li:last-child { padding-bottom: 0; }
-.steps li.done::before { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.step-tick:hover { border-color: var(--accent); }
+.steps li.done .step-tick { background: var(--accent); color: var(--paper); border-color: var(--accent); }
 .steps li.done .step-text { color: var(--ink-3); }
-.step-text { cursor: pointer; display: block; padding-top: 1px; }
+.step-text { cursor: pointer; display: block; padding-top: 3px; }
 
 .tip-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .tip-list li {
@@ -514,6 +517,61 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
   }
 }
 
+/* ------------------------------------------------------------- timers -- */
+
+/* A time inside a step is tappable. It should still read as part of the
+   sentence, so it gets an underline rather than a button shape. */
+.timer-chip {
+  font: inherit;
+  color: var(--accent-deep);
+  background: none;
+  border: 0;
+  border-bottom: 1px dashed currentColor;
+  padding: 2px 1px;
+  margin: 0 -1px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.timer-chip:hover { background: var(--accent-soft); }
+.steps li.done .timer-chip { color: var(--ink-3); }
+
+.timer-tray {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
+  display: flex; flex-direction: column; gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line-2);
+  max-height: 40vh; overflow-y: auto;
+}
+.timer {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px clamp(14px, 4vw, 24px);
+  background: var(--card);
+}
+.timer-time {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700; font-size: 1.05rem; min-width: 62px;
+  color: var(--accent-deep);
+}
+.timer-label {
+  flex: 1; min-width: 0; font-size: .85rem; color: var(--ink-2);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.timer-btn {
+  flex-shrink: 0; min-height: 34px; padding: 6px 11px;
+  font: inherit; font-size: .82rem; font-weight: 600;
+  color: var(--ink-2); background: var(--paper);
+  border: 1px solid var(--line-2); border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.timer-btn:hover { background: var(--sunk); color: var(--ink); }
+
+.timer.is-done { background: var(--accent-soft); }
+.timer.is-done .timer-time { color: var(--accent-deep); }
+.timer.is-done .timer-label { color: var(--ink); font-weight: 600; }
+
+/* keep the tray from covering the last step; --tray-h is set by kitchen.js */
+.view { padding-bottom: calc(60px + var(--tray-h, 0px)); }
+
 /* ---------------------------------------------------------- transfer -- */
 
 .transfer-row { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -528,7 +586,8 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
 
 @media print {
   .site-header, .site-footer, .toolbar, .fav-btn, .pick-actions,
-  .btn, .skip-link, .toast, .serving-ctl, .nav-toggle { display: none !important; }
+  .btn, .skip-link, .toast, .serving-ctl, .nav-toggle,
+  .timer-tray { display: none !important; }
   /* Paper is always white, so pin the whole page light no matter the theme. */
   body { background: #fff; color: #000; font-size: 11pt; }
   .recipe-hero, .pick-top, .stat, .stat-strip, .panel, .nutrition,
@@ -544,6 +603,7 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
   .steps li { break-inside: avoid; page-break-inside: avoid; }
   a { color: #000; text-decoration: none; }
   .chip { border: 1px solid #999 !important; background: #fff !important; color: #000 !important; }
+  .timer-chip { border: 0; color: #000 !important; }
   .stat-strip { border-color: #999; }
   .nutrition { background: #fff !important; border-color: #999; }
 }
