@@ -147,23 +147,25 @@
 
   /* ------------------------------------------------------------- colour --- */
 
-  // One flat, muted tint per protein. Recipe cards put dark text and an emoji on
-  // these, so they stay light in BOTH colour schemes, hence the literal hex.
+  // One flat, muted tint per protein, in a light and a dark version.
+  // Both are needed: a tinted panel holds normal themed text and controls, so
+  // the panel has to follow the colour scheme or the two end up fighting.
   var TINTS = {
-    Chicken:    '#f4e3c4',
-    Beef:       '#eed3c8',
-    Pork:       '#f2dbd4',
-    Turkey:     '#eeddc3',
-    Lamb:       '#e6d2c6',
-    Fish:       '#d3e2ea',
-    Shrimp:     '#f6d8cb',
-    Vegetarian: '#dee9d4',
-    Eggs:       '#f8ebc6',
-    Side:       '#e6e8dc'
+    Chicken:    ['#f4e3c4', '#3a3020'],
+    Beef:       ['#eed3c8', '#3a2822'],
+    Pork:       ['#f2dbd4', '#3a2a26'],
+    Turkey:     ['#eeddc3', '#382f20'],
+    Lamb:       ['#e6d2c6', '#352b23'],
+    Fish:       ['#d3e2ea', '#22303a'],
+    Shrimp:     ['#f6d8cb', '#3c2a22'],
+    Vegetarian: ['#dee9d4', '#26301f'],
+    Eggs:       ['#f8ebc6', '#3a3220'],
+    Side:       ['#e6e8dc', '#2c2d24']
   };
+  var TINT_FALLBACK = ['#e9e5db', '#2e2b22'];
 
   U.tintFor = function (recipe) {
-    return TINTS[recipe.type === 'side' ? 'Side' : recipe.protein] || '#e9e5db';
+    return TINTS[recipe.type === 'side' ? 'Side' : recipe.protein] || TINT_FALLBACK;
   };
 
   var DEFAULT_EMOJI = {

@@ -35,7 +35,8 @@
   R.tagLabel = function (tag) { return TAG_LABELS[tag] || U.titleCase(tag.replace(/-/g, ' ')); };
 
   R.styleVars = function (recipe) {
-    return '--tint:' + U.tintFor(recipe) + ';';
+    var t = U.tintFor(recipe);
+    return '--tint:' + t[0] + ';--tint-dark:' + t[1] + ';';
   };
 
   /* -------------------------------------------------------------- card --- */

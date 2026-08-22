@@ -293,6 +293,89 @@ console.log(`  protein floor: ${PROTEIN_FLOOR}g | lowest main: ${Math.min(...DB.
 console.log(`  avg steps: ${(R.reduce((a, r) => a + r.steps.length, 0) / R.length).toFixed(1)}`);
 console.log(`  avg ingredients: ${(R.reduce((a, r) => a + r._flat.length, 0) / R.length).toFixed(1)}`);
 
+/* ------------------------------------------------------------- contrast --
+   The colour tokens are checked here rather than in a browser, because the bug
+   this guards against (dark text landing on a dark panel in dark mode) stays
+   invisible until someone opens the page in the wrong theme. */
+
+function hexToRgb(h) {
+  h = h.trim().replace('#', '');
+  if (h.length === 3) h = h.split('').map(c => c + c).join('');
+  return { r: parseInt(h.slice(0, 2), 16), g: parseInt(h.slice(2, 4), 16), b: parseInt(h.slice(4, 6), 16) };
+}
+function relLum(c) {
+  const a = [c.r, c.g, c.b].map(v => {
+    v /= 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+  return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2];
+}
+function contrast(fg, bg) {
+  const L1 = relLum(hexToRgb(fg)), L2 = relLum(hexToRgb(bg));
+  return (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
+}
+function parseTokens(block) {
+  const out = {};
+  const re = /--([a-z0-9-]+):\s*(#[0-9a-fA-F]{3,8})\s*;/g;
+  let m;
+  while ((m = re.exec(block))) out[m[1]] = m[2];
+  return out;
+}
+
+console.log(`
+=== COLOUR CONTRAST ===`);
+const cssSrc = fs.readFileSync(path.join(ROOT, 'css', 'style.css'), 'utf8');
+const lightBlock = (cssSrc.match(/:root\s*\{([\s\S]*?)\}/) || [])[1] || '';
+const darkBlock = (cssSrc.match(/:root:not\(\[data-theme="light"\]\)\s*\{([\s\S]*?)\}/) || [])[1] || '';
+const themes = { light: parseTokens(lightBlock), dark: parseTokens(darkBlock) };
+
+const utilSrc = fs.readFileSync(path.join(ROOT, 'js', 'util.js'), 'utf8');
+const tints = [];
+const tintRe = /(\w+):\s*\['(#[0-9a-f]{6})',\s*'(#[0-9a-f]{6})'\]/gi;
+let tm;
+while ((tm = tintRe.exec(utilSrc))) tints.push({ name: tm[1], light: tm[2], dark: tm[3] });
+
+const PAIRS = [
+  ['ink', 'paper', 4.5, 'body text'],
+  ['ink', 'card', 4.5, 'text on cards'],
+  ['ink', 'sunk', 4.5, 'text on sunken panels'],
+  ['ink-2', 'card', 4.5, 'secondary text on cards'],
+  ['ink-2', 'sunk', 4.5, 'secondary text on panels'],
+  ['ink-2', 'paper', 4.5, 'secondary text on page'],
+  ['ink-3', 'card', 4.5, 'quiet text on cards'],
+  ['ink-3', 'sunk', 4.5, 'quiet text on panels'],
+  ['ink-3', 'paper', 4.5, 'quiet text on page'],
+  ['clay', 'card', 4.5, 'protein numbers'],
+  ['clay', 'sunk', 4.5, 'protein numbers on panels'],
+  ['clay', 'paper', 4.5, 'eyebrows'],
+  ['accent', 'paper', 4.5, 'links'],
+  ['accent', 'card', 4.5, 'links on cards'],
+  ['accent-deep', 'card', 4.5, 'key chip text'],
+  ['paper', 'accent', 4.5, 'primary button text'],
+  ['paper', 'clay', 4.5, 'saved-count bubble'],
+  ['berry', 'card', 3, 'saved heart']
+];
+
+let worst = { ratio: 99, label: '' };
+for (const theme of ['light', 'dark']) {
+  const t = themes[theme];
+  for (const [fg, bg, min, where] of PAIRS) {
+    if (!t[fg] || !t[bg]) { err(`contrast: ${theme} theme missing token --${!t[fg] ? fg : bg}`); continue; }
+    const r = contrast(t[fg], t[bg]);
+    if (r < worst.ratio) worst = { ratio: r, label: `${theme} ${fg}/${bg}` };
+    if (r < min) err(`contrast: ${theme} ${where} (--${fg} on --${bg}) is ${r.toFixed(2)}:1, needs ${min}:1`);
+  }
+  // tinted panels carry normal --ink text, so both tint variants have to work
+  for (const tint of tints) {
+    const bg = theme === 'light' ? tint.light : tint.dark;
+    const r = contrast(t['ink'], bg);
+    if (r < worst.ratio) worst = { ratio: r, label: `${theme} ink on ${tint.name} tint` };
+    if (r < 4.5) err(`contrast: ${theme} text on the ${tint.name} tint (${bg}) is ${r.toFixed(2)}:1, needs 4.5:1`);
+  }
+}
+console.log(`  ${PAIRS.length * 2 + tints.length * 2} token pairs checked across both themes`);
+console.log(`  tightest: ${worst.label} at ${worst.ratio.toFixed(2)}:1`);
+
 // --- results
 console.log(`\n=== RESULT ===`);
 console.log(`errors:   ${errors.length}`);
