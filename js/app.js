@@ -794,7 +794,7 @@
         'tap <strong>No planning ahead</strong> on the All Recipes page and they ' +
         'drop out of the list.</p>' +
 
-      '<h2>The Sunday plan</h2>
+      '<h2>The Sunday plan</h2>' +
       '<p>Add a main and a couple of sides and it adds up the whole meal, then builds a shopping ' +
         'list sorted the way you walk through the store. <strong>Build me a menu</strong> does ' +
         'the whole thing in one press.</p>' +

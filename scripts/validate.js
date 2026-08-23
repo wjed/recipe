@@ -400,6 +400,46 @@ for (const theme of ['light', 'dark']) {
 console.log(`  ${PAIRS.length * 2 + tints.length * 2} token pairs checked across both themes`);
 console.log(`  tightest: ${worst.label} at ${worst.ratio.toFixed(2)}:1`);
 
+/* ------------------------------------------------------------ parseable --
+   validate.js only executes util/store/data/render, so a syntax error in
+   app.js, kitchen.js or sw.js would ship silently. Parse every script that
+   index.html actually loads. */
+
+console.log(`\n=== SCRIPTS PARSE ===`);
+{
+  const html = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+  const srcs = [];
+  const tag = /<script[^>]+src="([^"]+)"/g;
+  let m;
+  while ((m = tag.exec(html))) srcs.push(m[1].split("?")[0]);
+  srcs.push("sw.js");
+
+  let okCount = 0;
+  for (const rel of srcs) {
+    const f = path.join(ROOT, rel);
+    if (!fs.existsSync(f)) { err(`index.html loads ${rel} but the file is missing`); continue; }
+    try {
+      new Function(fs.readFileSync(f, "utf8"));
+      okCount++;
+    } catch (e) {
+      err(`${rel} does not parse: ${e.message}`);
+    }
+  }
+  console.log(`  ${okCount}/${srcs.length} scripts parse`);
+
+  // the service worker caches exact versioned URLs, so the numbers must agree
+  const swSrc = fs.readFileSync(path.join(ROOT, "sw.js"), "utf8");
+  const swVer = (swSrc.match(/var VERSION = (\d+)/) || [])[1];
+  const pageVers = [...new Set((html.match(/\?v=(\d+)/g) || []).map(v => v.slice(3)))];
+  if (pageVers.length !== 1) {
+    err(`index.html mixes asset versions: ${pageVers.join(", ")}`);
+  } else if (pageVers[0] !== swVer) {
+    err(`index.html is on v${pageVers[0]} but sw.js VERSION is ${swVer}`);
+  } else {
+    console.log(`  assets and service worker both on v${swVer}`);
+  }
+}
+
 /* --------------------------------------------------------- source hygiene --
    A backslash-b that survives one too many rounds of escaping becomes a real
    backspace character. The regex then silently never matches, and the rule it
