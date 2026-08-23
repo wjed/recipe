@@ -9,7 +9,7 @@
    leaves a half-old half-new mix behind.
    ========================================================================== */
 
-var VERSION = 19;
+var VERSION = 20;
 var CACHE = 'sunday-dinner-v' + VERSION;
 
 var ASSETS = [
@@ -73,13 +73,26 @@ self.addEventListener('fetch', function (e) {
 
   // Navigations always resolve to the shell, so a deep link opened offline
   // still boots the app and the hash router takes it from there.
+  //
+  // 'no-cache' forces a revalidation with the server instead of trusting the
+  // HTTP cache. Pages serves index.html with a ten minute max-age, and the
+  // shell is what names the ?v= of every other asset, so a stale shell keeps
+  // pointing at the previous build long after it was replaced.
   if (req.mode === 'navigate') {
     e.respondWith(
-      fetch(req).catch(function () {
-        return caches.match('./index.html').then(function (r) {
-          return r || caches.match('./');
-        });
-      })
+      fetch(req, { cache: 'no-cache' })
+        .then(function (res) {
+          if (res && res.ok) {
+            var copy = res.clone();
+            caches.open(CACHE).then(function (c) { c.put('./index.html', copy); });
+          }
+          return res;
+        })
+        .catch(function () {
+          return caches.match('./index.html').then(function (r) {
+            return r || caches.match('./');
+          });
+        })
     );
     return;
   }
