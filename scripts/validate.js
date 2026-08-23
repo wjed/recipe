@@ -458,6 +458,24 @@ console.log(`\n=== SCRIPTS PARSE ===`);
   }
   console.log(`  ${okCount}/${srcs.length} scripts parse`);
 
+  // An empty main is only 60vh tall, so without both of these the footer
+  // renders a band across the middle of a blank page on every refresh and
+  // then jumps thousands of pixels once the first view arrives.
+  const cssSrc = fs.readFileSync(path.join(ROOT, "css", "style.css"), "utf8");
+  const appSrc = fs.readFileSync(path.join(ROOT, "js", "app.js"), "utf8");
+  const bootGuards = [
+    [/body:not\(\.ready\)\s*\.site-footer\s*\{[^}]*visibility:\s*hidden/, "css/style.css hides the footer until body.ready"],
+    [/body\s*\{[^}]*flex-direction:\s*column/, "css/style.css makes body a column so the footer sinks to the bottom"],
+    [/\.view\s*\{[^}]*flex:\s*1 0 auto/, "css/style.css lets .view grow into the spare height"]
+  ];
+  let bootOk = 0;
+  for (const [re, what] of bootGuards) {
+    if (re.test(cssSrc)) bootOk++; else err(`boot layout: missing ${what}`);
+  }
+  if (/classList\.add\(['"]ready['"]\)/.test(appSrc)) bootOk++;
+  else err("boot layout: js/app.js never adds the 'ready' class, so the footer stays hidden");
+  console.log(`  boot layout guards: ${bootOk}/4`);
+
   // the service worker caches exact versioned URLs, so the numbers must agree
   const swSrc = fs.readFileSync(path.join(ROOT, "sw.js"), "utf8");
   const swVer = (swSrc.match(/var VERSION = (\d+)/) || [])[1];

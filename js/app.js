@@ -1152,6 +1152,7 @@
 
   updateNavCounts();
   route();
+  document.body.classList.add('ready');
 
   /* --------------------------------------------------------- offline -- */
 
