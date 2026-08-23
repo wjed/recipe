@@ -71,9 +71,9 @@ const LABELLED_TAGS = ['one-pan','sheet-pan','slow-cooker','make-ahead','freezer
   'gluten-free','dairy-free','kid-friendly','leftovers','high-protein','veggie-forward','budget',
   'special-occasion','no-cook','low-carb','comfort','grill','dessert'];
 
-const PROTEIN_FLOOR = 25;   // grams per serving, every main must clear this
+const PROTEIN_FLOOR = 30;   // grams per serving, every main must clear this
 const MAX_STEPS = 9;        // keep it to something you can hold in your head
-const MAX_INGREDIENTS = 26;
+const MAX_INGREDIENTS = 24;
 const MAX_ACTIVE = 45;      // minutes of actual hands-on work
 
 const ids = new Set();

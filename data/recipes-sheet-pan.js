@@ -8,12 +8,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍎", protein: "Pork", cuisine: "American",
   totalTime: 45, activeTime: 12, difficulty: "Easy", servings: 4,
   plate: { protein: "Pork sausage", starch: "Baby potatoes", veg: "Brussels sprouts and apples" },
-  nutrition: { calories: 545, protein: 26, carbs: 44, fat: 30, fiber: 8 },
+  nutrition: { calories: 615, protein: 31, carbs: 45, fat: 36, fiber: 8 },
   tags: ["sheet-pan", "one-pan", "gluten-free", "dairy-free", "budget", "leftovers"],
   seasons: ["fall"],
   ingredients: [
     { group: "Pan", items: [
-      "6 good pork sausages",
+      "8 good pork sausages",
       "1 lb baby potatoes, halved",
       "1 lb Brussels sprouts, halved",
       "2 firm apples, cut into wedges",
@@ -48,7 +48,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍅", protein: "Vegetarian", cuisine: "Italian",
   totalTime: 35, activeTime: 10, difficulty: "Easy", servings: 4,
   plate: { protein: "Mozzarella and chickpeas", starch: "Gnocchi", veg: "Tomatoes, zucchini, peppers" },
-  nutrition: { calories: 685, protein: 29, carbs: 86, fat: 26, fiber: 11 },
+  nutrition: { calories: 730, protein: 32, carbs: 87, fat: 29, fiber: 11 },
   tags: ["sheet-pan", "one-pan", "30-minutes", "veggie-forward", "kid-friendly", "budget"],
   seasons: ["summer"],
   ingredients: [
@@ -66,7 +66,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1 1/2 teaspoons kosher salt"
     ]},
     { group: "To finish", items: [
-      "12 oz fresh mozzarella, torn",
+      "1 lb fresh mozzarella, torn",
       "1/2 cup torn basil",
       "1/2 cup grated Parmesan",
       "1 tablespoon balsamic vinegar"
@@ -425,7 +425,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍳", protein: "Eggs", cuisine: "American",
   totalTime: 45, activeTime: 15, difficulty: "Easy", servings: 4,
   plate: { protein: "Eggs and sausage", starch: "Potatoes", veg: "Peppers and onions" },
-  nutrition: { calories: 525, protein: 27, carbs: 42, fat: 29, fiber: 6 },
+  nutrition: { calories: 560, protein: 30, carbs: 42, fat: 32, fiber: 6 },
   tags: ["sheet-pan", "one-pan", "budget", "kid-friendly", "high-protein", "comfort"],
   seasons: ["all"],
   ingredients: [
@@ -441,7 +441,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1/2 teaspoon black pepper"
     ]},
     { group: "To finish", items: [
-      "8 eggs",
+      "10 eggs",
       "1 cup shredded cheddar",
       "4 scallions, sliced",
       "Hot sauce"
@@ -608,7 +608,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍛", protein: "Vegetarian", cuisine: "Indian",
   totalTime: 45, activeTime: 15, difficulty: "Easy", servings: 4,
   plate: { protein: "Chickpeas", starch: "Rice or naan", veg: "Cauliflower and onion" },
-  nutrition: { calories: 595, protein: 26, carbs: 81, fat: 19, fiber: 20 },
+  nutrition: { calories: 650, protein: 32, carbs: 85, fat: 21, fiber: 20 },
   tags: ["sheet-pan", "one-pan", "budget", "veggie-forward", "dairy-free", "high-protein", "make-ahead"],
   seasons: ["all"],
   ingredients: [
@@ -625,7 +625,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1 1/2 teaspoons kosher salt"
     ]},
     { group: "To serve", items: [
-      "1 1/2 cups plain Greek yogurt",
+      "2 1/2 cups plain Greek yogurt",
       "2 tablespoons lemon juice",
       "1/2 cup chopped cilantro",
       "3 cups cooked basmati rice",

@@ -196,7 +196,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍚", protein: "Vegetarian", cuisine: "Italian",
   totalTime: 50, activeTime: 45, difficulty: "Medium", servings: 4,
   plate: { protein: "Parmesan", starch: "Arborio rice", veg: "Mushrooms" },
-  nutrition: { calories: 665, protein: 26, carbs: 73, fat: 28, fiber: 4 },
+  nutrition: { calories: 720, protein: 31, carbs: 74, fat: 32, fiber: 4 },
   tags: ["comfort", "veggie-forward", "special-occasion", "gluten-free"],
   seasons: ["fall", "winter"],
   ingredients: [
@@ -209,7 +209,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1 onion, finely diced",
       "3 cloves garlic, minced",
       "3/4 cup dry white wine",
-      "1 3/4 cups grated Parmesan",
+      "2 1/4 cups grated Parmesan",
       "1 tablespoon fresh thyme",
       "1 1/2 teaspoons kosher salt",
       "1 tablespoon lemon juice"
@@ -321,7 +321,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🧀", protein: "Vegetarian", cuisine: "American",
   totalTime: 50, activeTime: 30, difficulty: "Easy", servings: 6,
   plate: { protein: "Cheese and milk", starch: "Macaroni", veg: "Broccoli" },
-  nutrition: { calories: 625, protein: 26, carbs: 62, fat: 31, fiber: 5 },
+  nutrition: { calories: 701, protein: 31, carbs: 63, fat: 37, fiber: 5 },
   tags: ["comfort", "kid-friendly", "make-ahead", "budget", "veggie-forward"],
   seasons: ["fall", "winter"],
   ingredients: [
@@ -337,7 +337,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1/2 teaspoon smoked paprika",
       "1/4 teaspoon nutmeg",
       "1 1/2 teaspoons kosher salt",
-      "3 cups shredded sharp cheddar",
+      "4 cups shredded sharp cheddar",
       "1 cup shredded Gruyere"
     ]},
     { group: "Topping", items: [
@@ -370,7 +370,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🐚", protein: "Vegetarian", cuisine: "Italian",
   totalTime: 70, activeTime: 35, difficulty: "Medium", servings: 6,
   plate: { protein: "Ricotta and cheese", starch: "Pasta shells", veg: "Spinach and tomato" },
-  nutrition: { calories: 545, protein: 27, carbs: 58, fat: 23, fiber: 6 },
+  nutrition: { calories: 582, protein: 30, carbs: 59, fat: 26, fiber: 6 },
   tags: ["make-ahead", "freezer-friendly", "comfort", "veggie-forward", "kid-friendly", "leftovers"],
   seasons: ["all"],
   ingredients: [
@@ -379,7 +379,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "2 lb fresh spinach, or 20 oz frozen, thawed",
       "2 cups whole milk ricotta",
       "1 1/2 cups shredded mozzarella",
-      "3/4 cup grated Parmesan",
+      "1 1/4 cups grated Parmesan",
       "1 egg",
       "3 cloves garlic, minced",
       "1/2 teaspoon nutmeg",
@@ -416,7 +416,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🎃", protein: "Vegetarian", cuisine: "Italian",
   totalTime: 40, activeTime: 25, difficulty: "Easy", servings: 4,
   plate: { protein: "White beans and Parmesan", starch: "Gnocchi", veg: "Butternut squash and kale" },
-  nutrition: { calories: 745, protein: 28, carbs: 85, fat: 34, fiber: 12 },
+  nutrition: { calories: 800, protein: 33, carbs: 86, fat: 38, fiber: 12 },
   tags: ["veggie-forward", "comfort", "special-occasion"],
   seasons: ["fall", "winter"],
   ingredients: [
@@ -430,7 +430,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "4 cloves garlic, sliced",
       "1 bunch kale, stemmed and torn",
       "1/2 cup chopped walnuts",
-      "1 1/4 cups grated Parmesan",
+      "1 3/4 cups grated Parmesan",
       "1 1/2 teaspoons kosher salt",
       "1 tablespoon lemon juice"
     ]}
@@ -458,7 +458,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥓", protein: "Pork", cuisine: "Italian",
   totalTime: 25, activeTime: 25, difficulty: "Medium", servings: 4,
   plate: { protein: "Eggs and pancetta", starch: "Spaghetti", veg: null },
-  nutrition: { calories: 615, protein: 28, carbs: 66, fat: 26, fiber: 3 },
+  nutrition: { calories: 670, protein: 33, carbs: 67, fat: 30, fiber: 3 },
   tags: ["30-minutes", "comfort", "budget"],
   seasons: ["all"],
   ingredients: [
@@ -467,7 +467,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "8 oz guanciale or pancetta, cut into thick matchsticks",
       "4 egg yolks",
       "2 whole eggs",
-      "1 1/2 cups finely grated Pecorino Romano",
+      "2 cups finely grated Pecorino Romano",
       "2 teaspoons coarsely ground black pepper",
       "1 teaspoon kosher salt"
     ]}
@@ -636,7 +636,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥗", protein: "Vegetarian", cuisine: "Mediterranean",
   totalTime: 50, activeTime: 20, difficulty: "Easy", servings: 4,
   plate: { protein: "Chickpeas and feta", starch: "Farro", veg: "Squash, peppers, red onion" },
-  nutrition: { calories: 645, protein: 27, carbs: 83, fat: 24, fiber: 17 },
+  nutrition: { calories: 695, protein: 30, carbs: 84, fat: 28, fiber: 17 },
   tags: ["make-ahead", "veggie-forward", "leftovers", "budget", "high-protein"],
   seasons: ["fall"],
   ingredients: [
@@ -659,7 +659,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1/2 teaspoon salt"
     ]},
     { group: "To finish", items: [
-      "1 cup crumbled feta",
+      "1 1/2 cups crumbled feta",
       "1/2 cup chopped parsley",
       "1/3 cup toasted pumpkin seeds",
       "3 cups arugula"
@@ -688,7 +688,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥘", protein: "Vegetarian", cuisine: "Moroccan",
   totalTime: 35, activeTime: 25, difficulty: "Easy", servings: 4,
   plate: { protein: "Chickpeas", starch: "Couscous", veg: "Peppers, tomato, herbs" },
-  nutrition: { calories: 645, protein: 27, carbs: 90, fat: 19, fiber: 18 },
+  nutrition: { calories: 673, protein: 31, carbs: 92, fat: 20, fiber: 18 },
   tags: ["30-minutes", "budget", "veggie-forward", "make-ahead", "high-protein"],
   seasons: ["all"],
   ingredients: [
@@ -712,7 +712,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1/2 teaspoon salt"
     ]},
     { group: "To serve", items: [
-      "1 1/4 cups plain Greek yogurt",
+      "2 cups plain Greek yogurt",
       "1 tablespoon lemon juice",
       "1/2 cup chopped parsley",
       "1/2 cup chopped mint",
@@ -743,7 +743,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🧀", protein: "Vegetarian", cuisine: "Italian",
   totalTime: 30, activeTime: 30, difficulty: "Medium", servings: 4,
   plate: { protein: "Pecorino", starch: "Spaghetti", veg: "Broccoli" },
-  nutrition: { calories: 615, protein: 29, carbs: 69, fat: 25, fiber: 6 },
+  nutrition: { calories: 643, protein: 32, carbs: 69, fat: 27, fiber: 6 },
   tags: ["30-minutes", "budget", "veggie-forward", "comfort"],
   seasons: ["all"],
   ingredients: [
@@ -751,7 +751,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1 lb spaghetti or tonnarelli",
       "1 large head broccoli, cut into florets",
       "3 tablespoons olive oil",
-      "3 cups finely grated Pecorino Romano",
+      "3 1/2 cups finely grated Pecorino Romano",
       "1 tablespoon coarsely ground black pepper",
       "3 tablespoons butter",
       "1 teaspoon kosher salt"

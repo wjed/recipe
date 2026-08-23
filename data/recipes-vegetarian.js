@@ -8,7 +8,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍛", protein: "Vegetarian", cuisine: "Indian",
   totalTime: 45, activeTime: 20, difficulty: "Easy", servings: 4,
   plate: { protein: "Chickpeas and yogurt", starch: "Basmati rice", veg: "Tomato and onion" },
-  nutrition: { calories: 625, protein: 28, carbs: 92, fat: 16, fiber: 19 },
+  nutrition: { calories: 653, protein: 31, carbs: 94, fat: 17, fiber: 19 },
   tags: ["budget", "make-ahead", "freezer-friendly", "dairy-free", "veggie-forward", "leftovers", "high-protein"],
   seasons: ["all"],
   ingredients: [
@@ -31,7 +31,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1/2 cup chopped cilantro"
     ]},
     { group: "To serve", items: [
-      "1 cup plain Greek yogurt",
+      "1 1/2 cups plain Greek yogurt",
       "1 1/2 cups basmati rice",
       "4 pieces naan"
     ]}
@@ -210,7 +210,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥧", protein: "Vegetarian", cuisine: "British",
   totalTime: 75, activeTime: 35, difficulty: "Medium", servings: 6,
   plate: { protein: "Lentils", starch: "Mashed potatoes", veg: "Carrots, peas, mushrooms" },
-  nutrition: { calories: 585, protein: 29, carbs: 80, fat: 19, fiber: 18 },
+  nutrition: { calories: 623, protein: 32, carbs: 80, fat: 22, fiber: 18 },
   tags: ["comfort", "budget", "make-ahead", "freezer-friendly", "veggie-forward", "leftovers"],
   seasons: ["fall", "winter"],
   ingredients: [
@@ -236,7 +236,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "5 tablespoons butter",
       "1/2 cup warm milk",
       "1 teaspoon salt",
-      "1 cup grated sharp cheddar"
+      "1 1/2 cups grated sharp cheddar"
     ]}
   ],
   steps: [
@@ -308,7 +308,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Press the tofu and mix the sauce in the morning."
 },
-
+
 {
   id: "stuffed-peppers-quinoa",
   title: "Quinoa Stuffed Peppers",
@@ -316,7 +316,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🫑", protein: "Vegetarian", cuisine: "Mexican",
   totalTime: 65, activeTime: 25, difficulty: "Easy", servings: 6,
   plate: { protein: "Beans and cheese", starch: "Quinoa", veg: "Bell peppers and corn" },
-  nutrition: { calories: 535, protein: 28, carbs: 62, fat: 22, fiber: 14 },
+  nutrition: { calories: 590, protein: 32, carbs: 72, fat: 22, fiber: 17 },
   tags: ["make-ahead", "gluten-free", "veggie-forward", "high-protein", "leftovers", "budget"],
   seasons: ["summer", "fall"],
   ingredients: [
@@ -331,7 +331,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "2 tablespoons olive oil",
       "1 onion, diced",
       "3 cloves garlic, minced",
-      "2 (15 oz) cans black beans, drained",
+      "3 (15 oz) cans black beans, drained",
       "1 1/2 cups corn kernels",
       "1 (14.5 oz) can diced tomatoes, drained",
       "2 teaspoons ground cumin",
@@ -457,11 +457,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍔", protein: "Vegetarian", cuisine: "American",
   totalTime: 45, activeTime: 30, difficulty: "Medium", servings: 4,
   plate: { protein: "Black beans and cheddar", starch: "Buns", veg: "Lettuce, tomato, onion" },
-  nutrition: { calories: 590, protein: 25, carbs: 63, fat: 27, fiber: 13 },
+  nutrition: { calories: 645, protein: 30, carbs: 64, fat: 31, fiber: 13 },
   tags: ["budget", "make-ahead", "freezer-friendly", "veggie-forward", "kid-friendly"],
   seasons: ["summer"],
   ingredients: [
     { group: "Patties", items: [
+      "1/2 cup grated Parmesan",
       "2 (15 oz) cans black beans, drained and rinsed",
       "1 tablespoon olive oil",
       "1 onion, finely diced",
@@ -493,7 +494,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Heat the oven to 350F. Spread the drained beans on a sheet pan and bake 15 minutes to dry them out. This is the important part. Wet beans make mushy burgers.",
     "Meanwhile, cook the onion and bell pepper in the oil over medium 8 minutes, until soft and any liquid has evaporated. Add the garlic and spices and cook 1 minute. Let cool.",
     "Mash about two thirds of the beans in a large bowl, leaving the rest whole for texture.",
-    "Add the cooled vegetables, panko, eggs, and salt. Mix until it holds together when squeezed.",
+    "Add the cooled vegetables, panko, Parmesan, eggs, and salt. Mix until it holds together when squeezed.",
     "Form into 4 thick patties and chill 20 minutes.",
     "Stir the chipotle mayo ingredients together.",
     "Heat the oil in a skillet over medium. Cook the patties 5 minutes per side, turning once carefully, until a firm crust forms. Lay a slice of cheddar on each in the last minute.",
@@ -513,7 +514,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥬", protein: "Vegetarian", cuisine: "Mediterranean",
   totalTime: 45, activeTime: 15, difficulty: "Easy", servings: 4,
   plate: { protein: "White beans and halloumi", starch: null, veg: "Cauliflower" },
-  nutrition: { calories: 575, protein: 28, carbs: 34, fat: 38, fiber: 12 },
+  nutrition: { calories: 623, protein: 32, carbs: 35, fat: 42, fiber: 12 },
   tags: ["gluten-free", "dairy-free", "low-carb", "veggie-forward", "special-occasion"],
   seasons: ["fall", "winter"],
   ingredients: [
@@ -534,7 +535,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "3/4 teaspoon kosher salt"
     ]},
     { group: "To serve", items: [
-      "8 oz halloumi, sliced 1/2 inch thick",
+      "10 oz halloumi, sliced 1/2 inch thick",
       "2 (15 oz) cans white beans, drained and warmed",
       "1/3 cup toasted almonds, chopped",
       "1 lemon, cut into wedges"
@@ -564,13 +565,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥬", protein: "Vegetarian", cuisine: "Indian",
   totalTime: 45, activeTime: 35, difficulty: "Medium", servings: 4,
   plate: { protein: "Paneer and chickpeas", starch: "Basmati rice", veg: "Spinach" },
-  nutrition: { calories: 555, protein: 29, carbs: 59, fat: 24, fiber: 11 },
+  nutrition: { calories: 635, protein: 35, carbs: 60, fat: 30, fiber: 11 },
   tags: ["gluten-free", "veggie-forward", "high-protein", "comfort", "make-ahead"],
   seasons: ["all"],
   ingredients: [
     { group: "Curry", items: [
       "1 (15 oz) can chickpeas, drained",
-      "1 lb paneer, cut into 3/4-inch cubes",
+      "1 1/4 lb paneer, cut into 3/4-inch cubes",
       "1 1/2 lb fresh spinach",
       "3 tablespoons ghee or neutral oil",
       "1 large onion, finely diced",
@@ -615,7 +616,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🌮", protein: "Vegetarian", cuisine: "Mexican",
   totalTime: 40, activeTime: 20, difficulty: "Easy", servings: 4,
   plate: { protein: "Black beans and yogurt crema", starch: "Corn tortillas", veg: "Cauliflower and cabbage" },
-  nutrition: { calories: 570, protein: 26, carbs: 74, fat: 19, fiber: 20 },
+  nutrition: { calories: 653, protein: 31, carbs: 89, fat: 20, fiber: 24 },
   tags: ["dairy-free", "budget", "veggie-forward", "gluten-free"],
   seasons: ["all"],
   ingredients: [
@@ -639,7 +640,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     { group: "To serve", items: [
       "1 red onion, thinly sliced",
       "1/2 cup red wine vinegar",
-      "2 (15 oz) cans black beans, warmed",
+      "3 (15 oz) cans black beans, warmed",
       "12 corn tortillas",
       "2 cups shredded cabbage",
       "1/2 cup chopped cilantro"
@@ -667,7 +668,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍲", protein: "Vegetarian", cuisine: "Indian",
   totalTime: 40, activeTime: 15, difficulty: "Easy", servings: 4,
   plate: { protein: "Red lentils", starch: "Basmati rice", veg: "Tomato and spinach" },
-  nutrition: { calories: 535, protein: 28, carbs: 87, fat: 10, fiber: 18 },
+  nutrition: { calories: 575, protein: 32, carbs: 91, fat: 11, fiber: 18 },
   tags: ["budget", "make-ahead", "freezer-friendly", "dairy-free", "veggie-forward", "comfort", "high-protein"],
   seasons: ["fall", "winter"],
   ingredients: [
@@ -694,7 +695,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     { group: "To serve", items: [
       "1 1/2 cups basmati rice",
       "1/2 cup chopped cilantro",
-      "1/4 cup plain yogurt"
+      "1 cup plain yogurt"
     ]}
   ],
   steps: [
@@ -721,14 +722,14 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🧀", protein: "Vegetarian", cuisine: "Mediterranean",
   totalTime: 45, activeTime: 15, difficulty: "Easy", servings: 4,
   plate: { protein: "Halloumi and chickpeas", starch: "Baby potatoes", veg: "Peppers, zucchini, tomato" },
-  nutrition: { calories: 545, protein: 25, carbs: 44, fat: 30, fiber: 9 },
+  nutrition: { calories: 628, protein: 30, carbs: 59, fat: 31, fiber: 13 },
   tags: ["sheet-pan", "one-pan", "gluten-free", "veggie-forward", "high-protein"],
   seasons: ["summer"],
   ingredients: [
     { group: "Tray", items: [
       "2 blocks (8 oz each) halloumi, cut into thick slices",
       "1 lb baby potatoes, halved",
-      "1 (15 oz) can chickpeas, drained and dried",
+      "2 (15 oz) cans chickpeas, drained and dried",
       "2 bell peppers, cut into chunks",
       "2 zucchini, cut into half-moons",
       "1 pint cherry tomatoes",
@@ -821,12 +822,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍄", protein: "Vegetarian", cuisine: "Russian",
   totalTime: 40, activeTime: 35, difficulty: "Easy", servings: 4,
   plate: { protein: "Mushrooms and lentils", starch: "Egg noodles", veg: "Mushrooms and onion" },
-  nutrition: { calories: 690, protein: 29, carbs: 82, fat: 28, fiber: 11 },
+  nutrition: { calories: 745, protein: 34, carbs: 83, fat: 32, fiber: 11 },
   tags: ["comfort", "budget", "veggie-forward"],
   seasons: ["fall", "winter"],
   ingredients: [
     { group: "Stroganoff", items: [
-      "1/2 cup grated Parmesan",
+      "1 cup grated Parmesan",
       "1 1/2 cups cooked green lentils",
       "2 lb mixed mushrooms, thickly sliced",
       "4 tablespoons butter",
@@ -863,7 +864,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Make the sauce base ahead; stir in sour cream when reheating."
 },
-
+
 {
   id: "huevos-rancheros",
   title: "Huevos Rancheros",
@@ -918,7 +919,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🫘", protein: "Vegetarian", cuisine: "Italian",
   totalTime: 45, activeTime: 20, difficulty: "Easy", servings: 4,
   plate: { protein: "White beans", starch: "Breadcrumb topping", veg: "Kale" },
-  nutrition: { calories: 555, protein: 28, carbs: 53, fat: 26, fiber: 14 },
+  nutrition: { calories: 610, protein: 33, carbs: 54, fat: 30, fiber: 14 },
   tags: ["budget", "comfort", "veggie-forward", "make-ahead", "high-protein", "one-pan"],
   seasons: ["fall", "winter"],
   ingredients: [
@@ -937,7 +938,7 @@ window.RECIPES = (window.RECIPES || []).concat([
     ]},
     { group: "Topping", items: [
       "1 1/4 cups panko breadcrumbs",
-      "1 1/4 cups grated Parmesan",
+      "1 3/4 cups grated Parmesan",
       "3 tablespoons olive oil"
     ]}
   ],
@@ -961,28 +962,21 @@ window.RECIPES = (window.RECIPES || []).concat([
 {
   id: "tofu-tikka-masala",
   title: "Tofu Tikka Masala",
-  blurb: "Roasted marinated tofu in the creamy, tomato-rich sauce everybody already loves.",
+  blurb: "Crisp roasted tofu and chickpeas in the creamy, tomato-rich sauce everybody already loves.",
   emoji: "🍛", protein: "Vegetarian", cuisine: "Indian",
-  totalTime: 55, activeTime: 30, difficulty: "Medium", servings: 4,
+  totalTime: 45, activeTime: 25, difficulty: "Easy", servings: 4,
   plate: { protein: "Tofu and chickpeas", starch: "Basmati rice", veg: "Tomato and onion" },
-  nutrition: { calories: 615, protein: 31, carbs: 75, fat: 23, fiber: 12 },
+  nutrition: { calories: 665, protein: 33, carbs: 88, fat: 22, fiber: 16 },
   tags: ["veggie-forward", "high-protein", "make-ahead", "comfort", "gluten-free"],
   seasons: ["all"],
   ingredients: [
     { group: "Tofu", items: [
       "2 blocks (14 oz each) extra-firm tofu, pressed and cubed",
-      "3/4 cup plain yogurt",
-      "2 tablespoons lemon juice",
-      "1 tablespoon grated ginger",
-      "4 cloves garlic, minced",
-      "2 teaspoons garam masala",
-      "1 teaspoon turmeric",
-      "1 teaspoon ground cumin",
-      "1 teaspoon kosher salt",
-      "2 tablespoons neutral oil"
+      "2 tablespoons neutral oil",
+      "1 teaspoon kosher salt"
     ]},
     { group: "Sauce", items: [
-      "1 (15 oz) can chickpeas, drained",
+      "2 (15 oz) cans chickpeas, drained",
       "3 tablespoons butter",
       "1 large onion, finely diced",
       "4 cloves garlic, minced",
@@ -1004,17 +998,16 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   steps: [
     "Press the tofu 20 minutes, then cut into 1-inch cubes.",
-    "Whisk the yogurt with the lemon juice, ginger, garlic, spices, and salt. Fold in the tofu and marinate 20 minutes.",
-    "Heat the oven to 450F. Spread the tofu on an oiled sheet pan and roast 25 minutes, turning once, until browned at the edges.",
+    "Heat the oven to 450F. Toss the tofu with the oil and salt, spread it on a sheet pan, and roast 25 minutes, turning once, until browned at the edges.",
     "Meanwhile, melt the butter in a large pot over medium. Cook the onion 10 minutes until golden.",
     "Add the garlic and ginger for 2 minutes, then all the ground spices for 60 seconds.",
     "Add the tomatoes, salt, and sugar. Simmer 15 minutes, until darkened and thick.",
-    "Stir in the cream and simmer 5 minutes. For a silkier sauce, blend it smooth with an immersion blender.",
+    "Stir in the cream and simmer 5 minutes.",
     "Fold in the roasted tofu and the chickpeas, warm through 3 minutes, and finish with cilantro. Serve with rice and naan."
   ],
   tips: [
     "Roast the tofu separately and fold it in at the end. Simmering it in the sauce turns it spongy.",
-    "The yogurt marinade tenderizes the surface and helps the spices stick."
+    "Extra-firm tofu will not soak up a marinade, so there is no point making one. The sauce is what carries the flavor."
   ],
   makeAhead: "The sauce keeps four days and freezes well; roast fresh tofu when you serve it."
 }

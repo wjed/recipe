@@ -682,12 +682,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🐚", protein: "Shrimp", cuisine: "French",
   totalTime: 20, activeTime: 20, difficulty: "Medium", servings: 4,
   plate: { protein: "Sea scallops", starch: null, veg: null },
-  nutrition: { calories: 320, protein: 29, carbs: 6, fat: 19, fiber: 0 },
+  nutrition: { calories: 348, protein: 34, carbs: 7, fat: 19, fiber: 0 },
   tags: ["30-minutes", "low-carb", "gluten-free", "special-occasion", "high-protein"],
   seasons: ["all"],
   ingredients: [
     { group: "Everything", items: [
-      "1 1/2 lb large sea scallops",
+      "1 3/4 lb large sea scallops",
       "1 teaspoon kosher salt",
       "1/2 teaspoon black pepper",
       "2 tablespoons neutral oil",

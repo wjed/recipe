@@ -153,16 +153,16 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥚", protein: "Eggs", cuisine: "Spanish",
   totalTime: 55, activeTime: 40, difficulty: "Medium", servings: 6,
   plate: { protein: "Eggs and Manchego", starch: "Potatoes", veg: "Onion" },
-  nutrition: { calories: 565, protein: 26, carbs: 33, fat: 37, fiber: 3 },
+  nutrition: { calories: 625, protein: 31, carbs: 34, fat: 42, fiber: 3 },
   tags: ["budget", "make-ahead", "gluten-free", "veggie-forward", "comfort", "leftovers"],
   seasons: ["all"],
   ingredients: [
     { group: "Tortilla", items: [
-      "1 cup grated Manchego or aged cheddar",
+      "1 1/2 cups grated Manchego or aged cheddar",
       "2 lb Yukon gold potatoes, peeled and thinly sliced",
       "1 large onion, thinly sliced",
       "1 1/2 cups olive oil, for cooking the potatoes",
-      "12 eggs",
+      "14 eggs",
       "2 teaspoons kosher salt"
     ]},
     { group: "To serve", items: [
@@ -615,13 +615,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥟", protein: "Pork", cuisine: "Polish",
   totalTime: 45, activeTime: 35, difficulty: "Easy", servings: 4,
   plate: { protein: "Kielbasa", starch: "Pierogi", veg: "Onions and cabbage" },
-  nutrition: { calories: 665, protein: 26, carbs: 62, fat: 35, fiber: 5 },
+  nutrition: { calories: 740, protein: 30, carbs: 63, fat: 42, fiber: 5 },
   tags: ["comfort", "budget", "kid-friendly", "leftovers"],
   seasons: ["fall", "winter"],
   ingredients: [
     { group: "Everything", items: [
       "2 lb frozen potato and cheese pierogi",
-      "1 lb kielbasa, sliced into coins",
+      "1 1/4 lb kielbasa, sliced into coins",
       "3 large onions, thinly sliced",
       "6 tablespoons butter",
       "2 tablespoons neutral oil",
@@ -716,12 +716,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍲", protein: "Vegetarian", cuisine: "Ethiopian",
   totalTime: 55, activeTime: 20, difficulty: "Easy", servings: 5,
   plate: { protein: "Red lentils", starch: "Injera or rice", veg: "Onion and tomato" },
-  nutrition: { calories: 505, protein: 27, carbs: 77, fat: 11, fiber: 20 },
+  nutrition: { calories: 573, protein: 32, carbs: 89, fat: 11, fiber: 23 },
   tags: ["budget", "veggie-forward", "dairy-free", "make-ahead", "freezer-friendly", "high-protein", "comfort"],
   seasons: ["fall", "winter"],
   ingredients: [
     { group: "Stew", items: [
-      "2 1/2 cups red lentils, rinsed",
+      "3 cups red lentils, rinsed",
       "3 large onions, very finely diced",
       "1/4 cup neutral oil",
       "6 cloves garlic, minced",

@@ -9,7 +9,7 @@
    leaves a half-old half-new mix behind.
    ========================================================================== */
 
-var VERSION = 31;
+var VERSION = 34;
 var CACHE = 'sunday-dinner-v' + VERSION;
 
 var ASSETS = [

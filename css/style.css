@@ -268,6 +268,15 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
   background: var(--card); border: 1px solid var(--line-2);
   font-size: 1rem; line-height: 1; color: var(--ink-3);
 }
+/* The visible circle stays small; this invisible pad is what the thumb hits. */
+/* The title link covers the whole card, so anywhere on the row is a tap. */
+.rcard-title a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+
+.fav-btn::after {
+  content: ""; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px; height: 44px; border-radius: 999px;
+}
 .fav-btn:hover { color: var(--berry); }
 .fav-btn[aria-pressed="true"] { color: var(--berry); border-color: var(--berry); }
 
@@ -516,7 +525,7 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
 /* --------------------------------------------------------------- toast -- */
 
 .toast {
-  position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 160%);
+  position: fixed; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom)); transform: translate(-50%, 160%);
   background: var(--ink); color: var(--paper); padding: 12px 20px; border-radius: var(--radius-sm);
   font-size: .9rem; font-weight: 600; z-index: 200;
   transition: transform .25s ease; max-width: calc(100vw - 32px); text-align: center;
@@ -525,7 +534,12 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
 
 /* -------------------------------------------------------------- footer -- */
 
-.site-footer { border-top: 1px solid var(--line); padding: 26px 0 36px; margin-top: 44px; }
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--sunk);
+  padding-block: 26px calc(30px + env(safe-area-inset-bottom));
+  margin-top: 44px;
+}
 .footer-line { font-family: var(--serif); font-size: 1rem; margin-bottom: 4px; }
 .footer-fine { font-size: .78rem; color: var(--ink-3); margin: 0; }
 .footer-fine a { display: inline-block; padding: 8px 2px; }
@@ -573,6 +587,7 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
   display: flex; flex-direction: column; gap: 1px;
   background: var(--line);
   border-top: 1px solid var(--line-2);
+  padding-bottom: env(safe-area-inset-bottom);
   max-height: 40vh; overflow-y: auto;
 }
 .timer {
@@ -605,7 +620,7 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
 .timer.is-done .timer-label { color: var(--ink); font-weight: 600; }
 
 /* keep the tray from covering the last step; --tray-h is set by kitchen.js */
-.view { padding-bottom: calc(60px + var(--tray-h, 0px)); }
+.view { padding-bottom: calc(40px + var(--tray-h, 0px)); }
 
 /* ---------------------------------------------------------- transfer -- */
 
@@ -626,10 +641,10 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
 
   /* the hero has to earn its height: the suggestion is the point of the page */
   h1 { font-size: 1.7rem; }
-  .hero-inner { padding-block: 20px 18px; }
-  .hero h1 { max-width: none; }         /* 15ch wrapped it onto three lines */
-  .hero .lede { margin-bottom: 16px; font-size: 1rem; max-width: none; }
-  .hero-greeting { margin-bottom: 6px; }
+  .hero-inner { padding-block: 16px 16px; }
+  .hero h1 { max-width: none; margin-bottom: .35em; }
+  .hero .lede { display: none; }        /* the card below says it better */
+  .hero-greeting { margin-bottom: 4px; font-size: .88rem; }
   .hero-actions { gap: 8px; flex-wrap: nowrap; }
   .hero-actions .btn { flex: 1 1 0; min-width: 0; padding-inline: 12px; }
   .btn-lg { min-height: 48px; font-size: .97rem; }
@@ -650,7 +665,9 @@ a.section-note { display: inline-flex; align-items: center; min-height: 40px; pa
   .rcard-thumb { width: 92px; height: auto; flex-shrink: 0; border-bottom: 0; border-right: 1px solid var(--line); font-size: 2rem; }
   .rcard-body { padding: 12px 14px; }
   .rcard-blurb { display: none; }
-  .fav-btn { top: 6px; right: 6px; width: 32px; height: 32px; }
+  .fav-btn { top: 6px; right: 6px; }
+  .chip-btn { min-height: 44px; }
+  .btn { min-height: 44px; }
 
   .recipe-layout { gap: 20px; padding-top: 20px; }
   .panel { padding: 16px 15px; }

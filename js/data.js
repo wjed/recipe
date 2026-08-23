@@ -73,13 +73,15 @@
     vocab = Object.keys(set);
   }
 
-  // Bounded Levenshtein: bails as soon as the distance exceeds max.
+  // Bounded Damerau-Levenshtein: bails as soon as the distance exceeds max.
+  // Swapping two neighbouring letters counts as one edit, not two, because
+  // "chikcen" is a far more common slip than any single wrong letter.
   function within(a, b, max) {
     if (Math.abs(a.length - b.length) > max) return false;
-    var prev = [], cur = [], i, j;
+    var prev2 = [], prev = [], cur = [], i, j;
     for (j = 0; j <= b.length; j++) prev[j] = j;
     for (i = 1; i <= a.length; i++) {
-      cur[0] = i;
+      cur = [i];
       var best = cur[0];
       for (j = 1; j <= b.length; j++) {
         cur[j] = Math.min(
@@ -87,10 +89,16 @@
           cur[j - 1] + 1,
           prev[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1)
         );
+        if (i > 1 && j > 1 &&
+            a.charAt(i - 1) === b.charAt(j - 2) &&
+            a.charAt(i - 2) === b.charAt(j - 1)) {
+          cur[j] = Math.min(cur[j], prev2[j - 2] + 1);
+        }
         if (cur[j] < best) best = cur[j];
       }
       if (best > max) return false;
-      for (j = 0; j <= b.length; j++) prev[j] = cur[j];
+      prev2 = prev;
+      prev = cur;
     }
     return prev[b.length] <= max;
   }

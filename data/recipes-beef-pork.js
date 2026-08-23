@@ -581,12 +581,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥪", protein: "Beef", cuisine: "American",
   totalTime: 35, activeTime: 25, difficulty: "Easy", servings: 6,
   plate: { protein: "Ground beef", starch: "Buns", veg: "Peppers, onion, carrot" },
-  nutrition: { calories: 445, protein: 27, carbs: 41, fat: 19, fiber: 4 },
+  nutrition: { calories: 495, protein: 31, carbs: 41, fat: 23, fiber: 4 },
   tags: ["30-minutes", "kid-friendly", "budget", "freezer-friendly", "leftovers"],
   seasons: ["all"],
   ingredients: [
     { group: "Filling", items: [
-      "2 lb ground beef",
+      "2 1/2 lb ground beef",
       "1 tablespoon olive oil",
       "1 onion, finely diced",
       "1 red bell pepper, finely diced",

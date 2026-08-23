@@ -1160,12 +1160,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🌭", protein: "Chicken", cuisine: "Italian",
   totalTime: 40, activeTime: 10, difficulty: "Easy", servings: 4,
   plate: { protein: "Chicken sausage", starch: "Baby potatoes", veg: "Peppers and onions" },
-  nutrition: { calories: 460, protein: 28, carbs: 40, fat: 22, fiber: 6 },
+  nutrition: { calories: 515, protein: 33, carbs: 41, fat: 25, fiber: 6 },
   tags: ["sheet-pan", "one-pan", "budget", "dairy-free", "leftovers"],
   seasons: ["all"],
   ingredients: [
     { group: "Sheet pan", items: [
-      "6 Italian chicken sausages",
+      "8 Italian chicken sausages",
       "3 bell peppers, sliced thick",
       "2 onions, sliced thick",
       "1 lb baby potatoes, halved",

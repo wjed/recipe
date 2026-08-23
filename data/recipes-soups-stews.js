@@ -109,12 +109,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥬", protein: "Vegetarian", cuisine: "Italian",
   totalTime: 60, activeTime: 25, difficulty: "Easy", servings: 6,
   plate: { protein: "Cannellini beans and chickpeas", starch: "Small pasta", veg: "Zucchini, kale, tomato, carrot" },
-  nutrition: { calories: 505, protein: 25, carbs: 76, fat: 12, fiber: 18 },
+  nutrition: { calories: 597, protein: 32, carbs: 86, fat: 15, fiber: 21 },
   tags: ["budget", "veggie-forward", "make-ahead", "freezer-friendly", "leftovers", "comfort"],
   seasons: ["fall", "winter"],
   ingredients: [
     { group: "Soup", items: [
-      "1 (15 oz) can chickpeas, drained",
+      "2 (15 oz) cans chickpeas, drained",
       "3 tablespoons olive oil",
       "1 large onion, diced",
       "3 carrots, diced",
@@ -133,7 +133,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "2 bay leaves"
     ]},
     { group: "To serve", items: [
-      "1 cup grated Parmesan",
+      "1 1/2 cups grated Parmesan",
       "1/4 cup chopped basil",
       "2 tablespoons good olive oil"
     ]}
@@ -459,7 +459,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥦", protein: "Vegetarian", cuisine: "American",
   totalTime: 45, activeTime: 25, difficulty: "Easy", servings: 6,
   plate: { protein: "Cheddar and white beans", starch: "Bread", veg: "Broccoli and carrot" },
-  nutrition: { calories: 555, protein: 27, carbs: 45, fat: 30, fiber: 10 },
+  nutrition: { calories: 631, protein: 32, carbs: 45, fat: 36, fiber: 10 },
   tags: ["comfort", "kid-friendly", "veggie-forward", "budget"],
   seasons: ["fall", "winter"],
   ingredients: [
@@ -478,7 +478,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1/4 teaspoon nutmeg",
       "1 1/2 teaspoons kosher salt",
       "1/2 teaspoon black pepper",
-      "4 cups shredded sharp cheddar"
+      "5 cups shredded sharp cheddar"
     ]}
   ],
   steps: [
@@ -504,12 +504,12 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🧆", protein: "Turkey", cuisine: "Italian",
   totalTime: 55, activeTime: 40, difficulty: "Medium", servings: 6,
   plate: { protein: "Meatballs", starch: "Acini di pepe", veg: "Escarole and carrot" },
-  nutrition: { calories: 385, protein: 28, carbs: 34, fat: 15, fiber: 4 },
+  nutrition: { calories: 417, protein: 32, carbs: 34, fat: 17, fiber: 4 },
   tags: ["comfort", "make-ahead", "kid-friendly", "leftovers", "high-protein"],
   seasons: ["fall", "winter"],
   ingredients: [
     { group: "Meatballs", items: [
-      "1 lb ground turkey or chicken",
+      "1 1/4 lb ground turkey or chicken",
       "1/2 lb ground pork",
       "1/2 cup panko breadcrumbs",
       "1/3 cup milk",
@@ -558,13 +558,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍲", protein: "Vegetarian", cuisine: "Mediterranean",
   totalTime: 50, activeTime: 15, difficulty: "Easy", servings: 6,
   plate: { protein: "Lentils and yogurt", starch: "Lentils", veg: "Carrot, celery, tomato, spinach" },
-  nutrition: { calories: 455, protein: 28, carbs: 65, fat: 10, fiber: 21 },
+  nutrition: { calories: 512, protein: 32, carbs: 75, fat: 10, fiber: 24 },
   tags: ["budget", "make-ahead", "freezer-friendly", "dairy-free", "veggie-forward", "high-protein", "comfort"],
   seasons: ["fall", "winter"],
   ingredients: [
     { group: "Soup", items: [
       "1 cup plain Greek yogurt, to serve",
-      "2 cups brown or green lentils, rinsed",
+      "2 1/2 cups brown or green lentils, rinsed",
       "3 tablespoons olive oil",
       "1 large onion, diced",
       "3 carrots, diced",
@@ -755,7 +755,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥘", protein: "Vegetarian", cuisine: "Moroccan",
   totalTime: 50, activeTime: 20, difficulty: "Easy", servings: 6,
   plate: { protein: "Chickpeas and lentils", starch: "Couscous", veg: "Squash, tomato, spinach" },
-  nutrition: { calories: 575, protein: 25, carbs: 96, fat: 12, fiber: 19 },
+  nutrition: { calories: 642, protein: 30, carbs: 107, fat: 13, fiber: 22 },
   tags: ["budget", "make-ahead", "freezer-friendly", "dairy-free", "veggie-forward", "comfort", "high-protein"],
   seasons: ["fall", "winter"],
   ingredients: [
@@ -775,7 +775,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "1 (28 oz) can diced tomatoes",
       "4 cups vegetable broth",
       "1 medium butternut squash, peeled and cubed",
-      "2 (15 oz) cans chickpeas, drained",
+      "3 (15 oz) cans chickpeas, drained",
       "1/2 cup dried apricots, chopped",
       "1 1/2 teaspoons kosher salt",
       "5 oz baby spinach",
@@ -785,7 +785,7 @@ window.RECIPES = (window.RECIPES || []).concat([
       "2 cups couscous",
       "1/2 cup chopped cilantro",
       "1/3 cup toasted almonds",
-      "1 cup plain yogurt"
+      "1 1/2 cups plain yogurt"
     ]}
   ],
   steps: [

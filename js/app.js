@@ -209,35 +209,16 @@
     revealPick(host);
   }
 
-  // Put the card just under the sticky header so the new idea is the thing you
-  // are looking at, rather than something that appeared further down the page.
-  // scroll-margin-top on #pickHost keeps it clear of the header.
+  // Deliberately does not scroll. Moving the page under someone who just
+  // pressed a button is worse than them glancing down a few centimetres, so
+  // the hero is kept short enough that the card is already in view.
   function revealPick(host) {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (host.scrollIntoView) {
-      host.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-
-      // Smooth scrolling is animated and can be dropped or interrupted. If we
-      // are not where we asked to be shortly after, put it there outright,
-      // because the whole point is that the new idea is on screen.
-      if (!reduce) {
-        setTimeout(function () {
-          var header = document.querySelector('.site-header');
-          var want = (header ? header.offsetHeight : 0) + 12;
-          if (Math.abs(host.getBoundingClientRect().top - want) > 24) {
-            host.scrollIntoView({ behavior: 'auto', block: 'start' });
-          }
-        }, 450);
-      }
-    }
-
     var card = host.querySelector('.pick');
-    if (card && !reduce) {
-      card.classList.remove('is-new');
-      void card.offsetWidth;          // restart the animation
-      card.classList.add('is-new');
-    }
+    if (!card) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    card.classList.remove('is-new');
+    void card.offsetWidth;            // restart the animation
+    card.classList.add('is-new');
   }
 
   function refreshPick() {

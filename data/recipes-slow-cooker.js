@@ -722,13 +722,13 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🥥", protein: "Vegetarian", cuisine: "Indian",
   totalTime: 380, activeTime: 15, difficulty: "Easy", servings: 6,
   plate: { protein: "Chickpeas and lentils", starch: "Rice", veg: "Sweet potato, tomato, spinach" },
-  nutrition: { calories: 625, protein: 27, carbs: 94, fat: 19, fiber: 20 },
+  nutrition: { calories: 680, protein: 31, carbs: 104, fat: 19, fiber: 23 },
   tags: ["slow-cooker", "budget", "make-ahead", "freezer-friendly", "dairy-free", "veggie-forward", "high-protein", "gluten-free"],
   seasons: ["fall", "winter"],
   ingredients: [
     { group: "Curry", items: [
       "1 cup red lentils, rinsed",
-      "3 (15 oz) cans chickpeas, drained",
+      "4 (15 oz) cans chickpeas, drained",
       "2 large sweet potatoes, cut into 1-inch cubes",
       "1 large onion, diced",
       "6 cloves garlic, minced",
