@@ -61,6 +61,8 @@
           '<div class="rcard-foot">' +
             (n.protein ? '<span class="pro">' + n.protein + 'g protein</span>' : '') +
             '<span class="meta">' + U.formatTime(recipe.totalTime) + ' &middot; ' + U.esc(recipe.difficulty) + '</span>' +
+            (recipe.ahead ? '<span class="ahead-tag">plan ' +
+              U.formatTimeShort(recipe.ahead.mins) + ' ahead</span>' : '') +
           '</div>' +
         '</div>' +
       '</article>';
@@ -232,6 +234,8 @@
     return '<div class="stat-strip">' +
       '<div class="stat"><b>' + U.formatTime(recipe.totalTime) + '</b><span>Total</span></div>' +
       '<div class="stat"><b>' + U.formatTime(recipe.activeTime) + '</b><span>Hands on</span></div>' +
+      (recipe.ahead ? '<div class="stat stat-warn"><b>' + U.formatTimeShort(recipe.ahead.mins) +
+        '</b><span>Ahead</span></div>' : '') +
       '<div class="stat"><b>' + servings + '</b><span>Servings</span></div>' +
       (n.protein ? '<div class="stat stat-key"><b>' + n.protein + 'g</b><span>Protein</span></div>' : '') +
       (n.calories ? '<div class="stat"><b>' + n.calories + '</b><span>Calories</span></div>' : '') +

@@ -1480,6 +1480,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   emoji: "🍫", protein: "Vegetarian", cuisine: "American",
   type: "side", sideType: "dessert",
   totalTime: 55, activeTime: 15, difficulty: "Easy", servings: 16,
+  ahead: { mins: 120, note: "Needs 2 hours to cool before you can cut it" },
   plate: { protein: null, starch: "Brownies", veg: null },
   nutrition: { calories: 265, protein: 4, carbs: 32, fat: 15, fiber: 2 },
   tags: ["dessert", "make-ahead", "kid-friendly", "comfort", "budget"],

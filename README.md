@@ -41,6 +41,12 @@ validator, not by eye, so a recipe that drops below it fails the build.
 - **Forgiving search.** "brocolli" finds broccoli, "chiken" finds chicken, and
   "stirfry" finds stir-fry. If one word matches nothing at all it is dropped
   rather than zeroing the whole search, and the page says what it did.
+- **Head start warnings.** A recipe that has to marinate or chill for hours
+  says so on the card and at the top of the page, because the stated cooking
+  time does not cover it. "No planning ahead" filters them out.
+- **Shopping list combines duplicates.** Two recipes both wanting kosher salt
+  make one line, with each recipe's amount listed under it so the quantities
+  are never quietly merged.
 
 ## Running it
 
@@ -95,6 +101,8 @@ Four rules that matter:
 3. **House style: no em dashes**, and no `" - "` standing in for one. Start a
    new sentence instead. Contractions are fine and preferred.
 4. **Do not lie in the tags.** `30-minutes` means `totalTime` is 35 or under.
+5. **If a step says "refrigerate at least 4 hours", add `ahead: { mins, note }`.**
+   The validator fails otherwise, because the stated time would be a lie.
 
 After editing, **bump the `?v=` number on every asset in `index.html` and the
 matching `VERSION` in `sw.js`.** They have to agree: the service worker caches

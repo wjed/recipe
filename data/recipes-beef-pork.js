@@ -825,6 +825,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   blurb: "Citrus-and-garlic marinated pork shoulder roasted until the outside is dark and the inside falls apart.",
   emoji: "🍊", protein: "Pork", cuisine: "Cuban",
   totalTime: 270, activeTime: 30, difficulty: "Medium", servings: 8,
+  ahead: { mins: 480, note: "Marinates at least 8 hours, so start it the day before" },
   plate: { protein: "Roast pork", starch: "Rice and black beans", veg: "Onions" },
   nutrition: { calories: 610, protein: 42, carbs: 52, fat: 25, fiber: 9 },
   tags: ["make-ahead", "special-occasion", "dairy-free", "gluten-free", "leftovers"],

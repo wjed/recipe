@@ -627,6 +627,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   blurb: "Cumin and lime marinated chicken with a bright, spicy green sauce that people put on everything.",
   emoji: "🍗", protein: "Chicken", cuisine: "Peruvian",
   totalTime: 100, activeTime: 25, difficulty: "Medium", servings: 4,
+  ahead: { mins: 240, note: "Marinates at least 4 hours, so start it in the morning" },
   plate: { protein: "Roast chicken", starch: "Roasted potatoes", veg: "Green sauce and salad" },
   nutrition: { calories: 625, protein: 46, carbs: 34, fat: 33, fiber: 4 },
   tags: ["one-pan", "make-ahead", "gluten-free", "special-occasion", "high-protein"],

@@ -167,6 +167,30 @@ for (const r of R) {
     if (count < 3) warn(at(`only ${count} ingredients`));
   }
 
+  // A step that says "refrigerate at least 4 hours" makes the stated time a
+  // lie unless the recipe also declares how far ahead you have to start.
+  const REQUIRED_WAIT = /(?:at least|refrigerate|marinate|brine|soak|chill|cool completely in the pan,?)\s*(?:it\s*)?(\d+)\s*(hours?|hrs?)\b/gi;
+  let needsAhead = 0;
+  for (const step of (r.steps || [])) {
+    REQUIRED_WAIT.lastIndex = 0;
+    let m;
+    while ((m = REQUIRED_WAIT.exec(step))) {
+      const ctx = step.slice(Math.max(0, m.index - 24), m.index + 6).toLowerCase();
+      if (/up to|ideally|or /.test(ctx)) continue;   // an optional upper bound
+      needsAhead = Math.max(needsAhead, +m[1] * 60);
+    }
+  }
+  if (needsAhead >= 60 && r.totalTime < needsAhead) {
+    if (!r.ahead || !r.ahead.mins) {
+      err(at(`steps require ${needsAhead} min of waiting but totalTime is ${r.totalTime} and there is no ahead:{}`));
+    } else if (r.ahead.mins < needsAhead) {
+      err(at(`ahead.mins is ${r.ahead.mins} but the steps require ${needsAhead}`));
+    }
+  }
+  if (r.ahead && (!r.ahead.note || r.ahead.note.length < 12)) {
+    err(at('ahead needs a note explaining what to start early'));
+  }
+
   // house style: no em dashes, and no " - " standing in for one
   const copy = [r.blurb, r.makeAhead || ''].concat(r.steps || [], r.tips || []).join(' ');
   if (/—/.test(copy)) err(at('copy contains an em dash'));
@@ -375,6 +399,49 @@ for (const theme of ['light', 'dark']) {
 }
 console.log(`  ${PAIRS.length * 2 + tints.length * 2} token pairs checked across both themes`);
 console.log(`  tightest: ${worst.label} at ${worst.ratio.toFixed(2)}:1`);
+
+/* --------------------------------------------------------- source hygiene --
+   A backslash-b that survives one too many rounds of escaping becomes a real
+   backspace character. The regex then silently never matches, and the rule it
+   belongs to quietly passes. Catch that here rather than in production. */
+
+console.log(`
+=== SOURCE HYGIENE ===`);
+{
+  const roots = ['js', 'scripts', 'css', 'data'];
+  const files = ['index.html', 'sw.js', 'manifest.webmanifest'].map(f => path.join(ROOT, f));
+  for (const dir of roots) {
+    const d = path.join(ROOT, dir);
+    if (!fs.existsSync(d)) continue;
+    for (const f of fs.readdirSync(d)) {
+      if (/\.(js|css|json)$/.test(f)) files.push(path.join(d, f));
+    }
+  }
+  // Compared by code point rather than by regex, so this check cannot
+  // itself fall victim to the escaping problem it exists to catch.
+  const ok = new Set([9, 10, 13]);            // tab, newline, carriage return
+  const show = (str) => Array.from(str).map((c) => {
+    const n = c.charCodeAt(0);
+    if (n === 10 || n === 13) return " ";
+    return n < 32 ? "<0x" + n.toString(16) + ">" : c;
+  }).join("");
+
+  let hits = 0;
+  for (const f of files) {
+    if (!fs.existsSync(f)) continue;
+    const src = fs.readFileSync(f, "utf8");
+    for (let i = 0; i < src.length; i++) {
+      const n = src.charCodeAt(i);
+      if (n < 32 && !ok.has(n)) {
+        hits++;
+        const near = show(src.slice(Math.max(0, i - 40), i + 12));
+        err("stray control character 0x" + n.toString(16) + " in " +
+            path.relative(ROOT, f) + ": ..." + near + "...");
+      }
+    }
+  }
+  console.log(`  ${files.length} source files scanned, ${hits} stray control characters`);
+}
 
 // --- results
 console.log(`\n=== RESULT ===`);

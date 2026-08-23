@@ -189,6 +189,7 @@
     });
     out.push(chipBtn('Under 45 min', f.maxTime === 45, 'pickTime', '45'));
     out.push(chipBtn('Easy only', !!(f.difficulty && f.difficulty.length), 'pickEasy', '1'));
+    out.push(chipBtn('Cooking tonight', !!f.noAhead, 'pickNow', '1'));
     out.push('</div>');
     return out.join('');
   }
@@ -229,6 +230,7 @@
       maxTime: p.t ? parseInt(p.t, 10) : 0,
       tags: p.tag ? p.tag.split(',') : [],
       difficulty: p.d ? p.d.split(',') : [],
+      noAhead: p.now === '1',
       type: p.type || 'main',
       sort: p.sort || (p.q ? 'relevance' : 'az')
     };
@@ -300,6 +302,7 @@
         return chipBtn(t[1], opts.maxTime === parseInt(t[0], 10), 'fTime', t[0]);
       }).join('') +
       chipBtn('Easy only', opts.difficulty.indexOf('Easy') !== -1, 'fEasy', 'Easy') +
+      chipBtn('No planning ahead', opts.noAhead, 'fNow', '1') +
       '</div></div>';
 
     out += '<div class="filter-row"><span class="filter-label">Style</span><div class="filter-scroll">' +
@@ -434,6 +437,8 @@
         '</div>' +
 
         '<div>' +
+          (r.ahead ? '<div class="callout callout-warn"><p><strong>Start early</strong>' +
+            U.esc(r.ahead.note) + '</p></div>' : '') +
           (r.makeAhead ? callout('Get ahead', r.makeAhead) : '') +
           '<div class="panel">' +
             '<div class="section-head" style="margin-bottom:6px">' +
@@ -532,9 +537,16 @@
           return '<p class="shop-cat">' + U.esc(grp.aisle) + '</p><ul class="shop-list">' +
             grp.items.map(function (it) {
               var on = checkedLines.indexOf(it.line) !== -1;
+              // one recipe: just name it. Several: list each amount, so the
+              // quantities are never quietly merged into one.
+              var sub = it.needs.length === 1
+                ? U.esc(it.needs[0].from)
+                : it.needs.map(function (n) {
+                    return U.esc((n.amount ? n.amount + ' ' : '') + 'for ' + n.from);
+                  }).join(', ');
               return '<li><label><input type="checkbox" data-shop="' + U.esc(it.line) + '"' +
                 (on ? ' checked' : '') + '><span>' + U.esc(it.line) +
-                '<br><small style="color:var(--ink-3)">' + U.esc(it.from) + '</small></span></label></li>';
+                '<br><small style="color:var(--ink-3)">' + sub + '</small></span></label></li>';
             }).join('') + '</ul>';
         }).join('')
       : '<p class="section-note">Add a recipe and the shopping list writes itself.</p>';
@@ -775,7 +787,14 @@
       '<p>After the first visit the whole site is stored on the device, so it opens even with ' +
         'no signal in the kitchen. Add it to your home screen and it behaves like an app.</p>' +
 
-      '<h2>The Sunday plan</h2>' +
+      '<h2>Recipes that need a head start</h2>' +
+      '<p>A few need marinating or chilling before you can start, and the stated ' +
+        'time does not cover that. Those show <strong>plan 4h ahead</strong> on the ' +
+        'card and say so at the top of the recipe. If you are cooking right now, ' +
+        'tap <strong>No planning ahead</strong> on the All Recipes page and they ' +
+        'drop out of the list.</p>' +
+
+      '<h2>The Sunday plan</h2>
       '<p>Add a main and a couple of sides and it adds up the whole meal, then builds a shopping ' +
         'list sorted the way you walk through the store. <strong>Build me a menu</strong> does ' +
         'the whole thing in one press.</p>' +
@@ -862,6 +881,11 @@
         reroll();
         break;
 
+      case 'pickNow':
+        pickerState.filters.noAhead = !pickerState.filters.noAhead;
+        reroll();
+        break;
+
       case 'clearPickFilters':
         pickerState.filters = {};
         reroll();
@@ -870,6 +894,12 @@
       case 'fProtein': toggleListParam('p', value); break;
       case 'fTag':     toggleListParam('tag', value); break;
       case 'fEasy':    toggleListParam('d', value); break;
+      case 'fNow': {
+        var rn = parseHash();
+        if (rn.params.now) delete rn.params.now; else rn.params.now = '1';
+        location.hash = buildHash('/browse', rn.params);
+        break;
+      }
       case 'fTime': {
         var r0 = parseHash();
         if (!value || r0.params.t === value) delete r0.params.t;

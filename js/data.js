@@ -196,6 +196,10 @@
     if (opts.ids) {
       list = list.filter(function (r) { return opts.ids.indexOf(r.id) !== -1; });
     }
+    // "cooking tonight": drop anything that needs marinating or chilling first
+    if (opts.noAhead) {
+      list = list.filter(function (r) { return !r.ahead; });
+    }
 
     // ---- text
     var q = (opts.q || '').trim().toLowerCase();
@@ -373,18 +377,58 @@
     return /water\s*$/i.test(line) && !/(sparkling|coconut|rose|tonic|soda)/i.test(line);
   }
 
+  var UNIT = '(?:cups?|tablespoons?|teaspoons?|tbsp|tsp|lbs?|pounds?|oz|ounces?|cans?|' +
+             'cloves?|sprigs?|stalks?|heads?|bunch(?:es)?|pints?|quarts?|slices?|' +
+             'pieces?|blocks?|ears?|sticks?|packages?)';
+  var AMOUNT_RE = new RegExp('^([\\d\\s/.-]+(?:\\([^)]*\\)\\s*)?(?:' + UNIT + '\\b)?)\\s*(.*)$', 'i');
+
+  // "2 teaspoons kosher salt" -> { amount: "2 teaspoons", name: "kosher salt" }
+  function splitAmount(line) {
+    var m = AMOUNT_RE.exec(line);
+    if (!m || !m[2]) return { amount: '', name: line };
+    return { amount: m[1].trim(), name: m[2].trim() };
+  }
+
+  // Two recipes both wanting kosher salt should be one line on the list, not
+  // two. Match on the ingredient minus its quantity.
+  function shoppingKey(line) {
+    return line.toLowerCase()
+      .replace(/\([^)]*\)/g, ' ')
+      .replace(/^[\d\s/.-]+/, '')
+      .replace(/\b(cups?|tablespoons?|teaspoons?|tbsp|tsp|lbs?|pounds?|oz|ounces?|cans?|cloves?|sprigs?|stalks?|heads?|bunch(es)?|pints?|quarts?|slices?|pieces?|blocks?|ears?)\b/g, ' ')
+      .replace(/[^a-z ]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
   // Collects every ingredient from the planned recipes, grouped by aisle.
+  // One line per ingredient, with each recipe's amount listed under it, so
+  // combining never hides the fact that they wanted different quantities.
   function shoppingList(recipeIds) {
-    var groups = {}, order = [];
+    var groups = {}, order = [], seen = {};
     for (var i = 0; i < recipeIds.length; i++) {
       var r = byId[recipeIds[i]];
       if (!r) continue;
       for (var j = 0; j < r._flat.length; j++) {
         var line = r._flat[j];
         if (isTapWater(line)) continue;
+
+        var split = splitAmount(line);
+        var key = shoppingKey(line);
+
+        if (key && seen[key]) {
+          seen[key].needs.push({ amount: split.amount, from: r.title });
+          // once two recipes want it, lead with the bare ingredient so no
+          // single recipe's amount reads like the total
+          seen[key].line = split.name;
+          continue;
+        }
+
         var aisle = aisleFor(line);
         if (!groups[aisle]) { groups[aisle] = []; order.push(aisle); }
-        groups[aisle].push({ line: line, from: r.title });
+        var entry = { line: line, needs: [{ amount: split.amount, from: r.title }] };
+        if (key) seen[key] = entry;
+        groups[aisle].push(entry);
       }
     }
     var aisleOrder = ['Produce', 'Meat & Seafood', 'Dairy & Eggs', 'Bakery', 'Pantry', 'Spices & Baking', 'Frozen', 'Other'];
