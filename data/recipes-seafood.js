@@ -221,63 +221,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Mix a jar of the spice blend and keep it for months; it's excellent on chicken too."
 },
-
-{
-  id: "fish-tacos-slaw",
-  title: "Crispy Fish Tacos with Cabbage Slaw",
-  blurb: "Lightly battered white fish, crunchy slaw, and a chipotle crema, in warm corn tortillas.",
-  emoji: "🌮", protein: "Fish", cuisine: "Mexican",
-  totalTime: 40, activeTime: 35, difficulty: "Medium", servings: 4,
-  plate: { protein: "White fish", starch: "Corn tortillas", veg: "Cabbage slaw" },
-  nutrition: { calories: 545, protein: 34, carbs: 48, fat: 24, fiber: 7 },
-  tags: ["kid-friendly", "veggie-forward"],
-  seasons: ["summer"],
-  ingredients: [
-    { group: "Fish", items: [
-      "1 1/2 lb cod or halibut, cut into strips",
-      "3/4 cup all-purpose flour",
-      "1/2 cup cornstarch",
-      "1 teaspoon baking powder",
-      "1 teaspoon kosher salt",
-      "1 teaspoon smoked paprika",
-      "1 cup cold sparkling water or beer",
-      "3 cups neutral oil for frying"
-    ]},
-    { group: "Slaw", items: [
-      "4 cups shredded cabbage",
-      "1/4 red onion, thinly sliced",
-      "3 tablespoons lime juice",
-      "1 tablespoon olive oil",
-      "1/2 teaspoon salt",
-      "1/2 cup chopped cilantro"
-    ]},
-    { group: "Chipotle crema", items: [
-      "1/2 cup sour cream",
-      "1/4 cup mayonnaise",
-      "1 chipotle in adobo, minced",
-      "1 tablespoon lime juice"
-    ]},
-    { group: "To serve", items: [
-      "12 corn tortillas",
-      "2 limes, cut into wedges"
-    ]}
-  ],
-  steps: [
-    "Toss the slaw ingredients together and let them sit. The cabbage softens slightly and the lime seasons it through.",
-    "Stir the crema ingredients together.",
-    "Whisk the flour, cornstarch, baking powder, salt, and paprika. Just before frying, whisk in the cold sparkling water until it's the texture of thin pancake batter. Lumps are fine.",
-    "Heat 2 inches of oil in a heavy pot to 365F. If you have no thermometer, a drop of batter should sizzle and float immediately.",
-    "Pat the fish dry, dip each strip in the batter, let the excess drip off, and lower it into the oil. Fry 3 or 4 pieces at a time for 3 to 4 minutes, until golden and crisp.",
-    "Drain on a rack and salt right away.",
-    "Warm the tortillas, then build: fish, slaw, crema, and a squeeze of lime."
-  ],
-  tips: [
-    "The batter must be cold and the oil must be hot. That contrast is what makes it crisp instead of greasy.",
-    "Don't crowd the pot. Each piece drops the oil temperature, and cool oil means soggy batter."
-  ],
-  makeAhead: "Slaw and crema can be made a day ahead. Batter and fry at the last minute."
-},
-
+
 {
   id: "miso-glazed-salmon",
   title: "Miso Glazed Salmon with Bok Choy",

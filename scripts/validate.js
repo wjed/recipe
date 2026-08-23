@@ -59,7 +59,7 @@ if (DB) console.log(`mains: ${DB.mainCount()}  sides: ${DB.sideCount()}  index p
 
 // --- vocabularies that the UI depends on
 const PROTEINS = ['Chicken','Beef','Pork','Turkey','Lamb','Fish','Shrimp','Eggs','Vegetarian'];
-const DIFFICULTY = ['Easy','Medium','Ambitious'];
+const DIFFICULTY = ['Easy','Medium'];   // nothing here should be a project
 const SIDE_TYPES = ['veg','starch','salad','bread','dessert','starter'];
 const SEASONS = ['all','spring','summer','fall','winter'];
 // tags offered as filter buttons on the browse page (js/app.js TAGS)
@@ -72,6 +72,9 @@ const LABELLED_TAGS = ['one-pan','sheet-pan','slow-cooker','make-ahead','freezer
   'special-occasion','no-cook','low-carb','comfort','grill','dessert'];
 
 const PROTEIN_FLOOR = 25;   // grams per serving, every main must clear this
+const MAX_STEPS = 9;        // keep it to something you can hold in your head
+const MAX_INGREDIENTS = 26;
+const MAX_ACTIVE = 45;      // minutes of actual hands-on work
 
 const ids = new Set();
 const tagUse = {};
@@ -165,6 +168,31 @@ for (const r of R) {
       }
     }
     if (count < 3) warn(at(`only ${count} ingredients`));
+  }
+
+  // Simple enough for a weeknight. Sarah wants to put something in a pan,
+  // not manage three components or heat a pot of frying oil.
+  if (r.steps && r.steps.length > MAX_STEPS) {
+    err(at(`${r.steps.length} steps, limit is ${MAX_STEPS}`));
+  }
+  if (r._flat && r._flat.length > MAX_INGREDIENTS) {
+    err(at(`${r._flat.length} ingredients, limit is ${MAX_INGREDIENTS}`));
+  }
+  if (r.activeTime > MAX_ACTIVE) {
+    err(at(`${r.activeTime} min of hands-on work, limit is ${MAX_ACTIVE}`));
+  }
+  {
+    const method = (r.steps || []).join(' ').toLowerCase();
+    const fussy = [
+      [/inches of oil|deep-fry|deep fry/, 'deep frying'],
+      [/\broux\b/, 'making a roux'],
+      [/soaked overnight|soak.{0,20}overnight/, 'overnight soaking'],
+      [/food processor/, 'needing a food processor'],
+      [/blind bake/, 'blind baking']
+    ];
+    for (const [re, label] of fussy) {
+      if (re.test(method)) err(at(`involves ${label}, which is more than this box is for`));
+    }
   }
 
   // A step that says "refrigerate at least 4 hours" makes the stated time a
@@ -314,6 +342,9 @@ console.log('  protein:', byProtein);
 console.log('  effort :', byDiff);
 console.log('  cuisines:', Object.keys(byCuisine).length);
 console.log(`  protein floor: ${PROTEIN_FLOOR}g | lowest main: ${Math.min(...DB.mains().map(r => r.nutrition.protein))}g`);
+console.log(`  busiest recipe: ${Math.max(...R.map(r => r.steps.length))} steps, ` +
+  `${Math.max(...R.map(r => r._flat.length))} ingredients, ` +
+  `${Math.max(...R.map(r => r.activeTime))} min hands on`);
 console.log(`  avg steps: ${(R.reduce((a, r) => a + r.steps.length, 0) / R.length).toFixed(1)}`);
 console.log(`  avg ingredients: ${(R.reduce((a, r) => a + r._flat.length, 0) / R.length).toFixed(1)}`);
 

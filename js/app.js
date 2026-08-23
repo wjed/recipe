@@ -99,15 +99,14 @@
       '<section class="hero"><div class="wrap hero-inner">' +
         '<p class="hero-greeting">' + U.esc(sundayGreeting()) + '</p>' +
         '<h1>What should we make for dinner?</h1>' +
-        '<p class="lede">Every dinner here is a full plate: a real protein, something starchy, ' +
-          'something green. Press the button and it picks one.</p>' +
+        '<p class="lede">A real protein, something starchy, something green.</p>' +
         '<div class="hero-actions">' +
           '<button class="btn btn-primary btn-lg" data-act="reroll">Give me an idea</button>' +
           '<a class="btn btn-secondary btn-lg" href="#/browse">Browse all ' + DB.count() + '</a>' +
         '</div>' +
       '</div></section>' +
 
-      '<div class="wrap section">' +
+      '<div class="wrap pick-wrap">' +
         '<div id="pickHost">' + pickHtml() + '</div>' +
       '</div>' +
 
@@ -203,10 +202,41 @@
     var next = DB.suggest(pickerState.filters);
     pickerState.current = next;
     if (next) Store.remember(next.id);
+
     var host = document.getElementById('pickHost');
-    if (host) {
-      host.innerHTML = pickHtml();
-      host.scrollIntoView({ block: 'nearest' });
+    if (!host) return;
+    host.innerHTML = pickHtml();
+    revealPick(host);
+  }
+
+  // Put the card just under the sticky header so the new idea is the thing you
+  // are looking at, rather than something that appeared further down the page.
+  // scroll-margin-top on #pickHost keeps it clear of the header.
+  function revealPick(host) {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (host.scrollIntoView) {
+      host.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+
+      // Smooth scrolling is animated and can be dropped or interrupted. If we
+      // are not where we asked to be shortly after, put it there outright,
+      // because the whole point is that the new idea is on screen.
+      if (!reduce) {
+        setTimeout(function () {
+          var header = document.querySelector('.site-header');
+          var want = (header ? header.offsetHeight : 0) + 12;
+          if (Math.abs(host.getBoundingClientRect().top - want) > 24) {
+            host.scrollIntoView({ behavior: 'auto', block: 'start' });
+          }
+        }, 450);
+      }
+    }
+
+    var card = host.querySelector('.pick');
+    if (card && !reduce) {
+      card.classList.remove('is-new');
+      void card.offsetWidth;          // restart the animation
+      card.classList.add('is-new');
     }
   }
 
@@ -222,6 +252,14 @@
   var TAGS = ['one-pan', 'sheet-pan', 'slow-cooker', 'comfort', 'veggie-forward', 'kid-friendly',
               'make-ahead', 'high-protein', 'gluten-free', 'dairy-free', 'low-carb', 'budget',
               'leftovers', 'freezer-friendly', 'grill', 'special-occasion'];
+
+  var filtersOpen = false;   // phone only, the rows are always shown on desktop
+
+  function activeFilterCount(o) {
+    return (o.proteins ? o.proteins.length : 0) + (o.tags ? o.tags.length : 0) +
+           (o.difficulty ? o.difficulty.length : 0) + (o.maxTime ? 1 : 0) +
+           (o.noAhead ? 1 : 0) + (o.type && o.type !== 'main' ? 1 : 0);
+  }
 
   function paramsToOpts(p) {
     return {
@@ -248,7 +286,7 @@
     }
 
     var html = '' +
-      '<div class="wrap section" style="padding-top:22px">' +
+      '<div class="wrap section browse-head" style="padding-top:22px">' +
         '<h1 style="margin-bottom:.2em">The recipe box</h1>' +
         '<p class="lede">' + DB.mainCount() + ' dinners and ' + DB.sideCount() +
           ' sides &amp; sweets. Search it, or tap the buttons to narrow things down.</p>' +
@@ -262,7 +300,14 @@
           '<button class="s-clear" type="button" data-act="clearQ" aria-label="Clear search"' +
             (opts.q ? '' : ' hidden') + '>✕</button>' +
         '</div>' +
-        filterRows(opts) +
+        '<button class="filter-toggle" type="button" data-act="toggleFilters"' +
+          ' aria-expanded="' + (filtersOpen ? 'true' : 'false') + '" aria-controls="filterRows">' +
+          'Filters' + (activeFilterCount(opts) ? ' <span class="filter-count">' +
+            activeFilterCount(opts) + '</span>' : '') +
+        '</button>' +
+        '<div id="filterRows" class="filter-rows' + (filtersOpen ? ' open' : '') + '">' +
+          filterRows(opts) +
+        '</div>' +
       '</div></div>' +
 
       '<div class="wrap">' +
@@ -924,6 +969,14 @@
       case 'clearAll':
         location.hash = '#/browse';
         break;
+
+      case 'toggleFilters': {
+        filtersOpen = !filtersOpen;
+        var rows = document.getElementById('filterRows');
+        if (rows) rows.classList.toggle('open', filtersOpen);
+        btn.setAttribute('aria-expanded', filtersOpen ? 'true' : 'false');
+        break;
+      }
 
       case 'serv': {
         var rid = currentView.split(':')[1];

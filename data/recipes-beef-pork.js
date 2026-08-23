@@ -573,54 +573,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Keeps four days and reheats beautifully with a splash of broth."
 },
-
-{
-  id: "braised-short-ribs",
-  title: "Red Wine Braised Short Ribs",
-  blurb: "Three hours in the oven for beef that falls off the bone, in a thick red wine sauce.",
-  emoji: "🍷", protein: "Beef", cuisine: "French",
-  totalTime: 240, activeTime: 40, difficulty: "Ambitious", servings: 6,
-  plate: { protein: "Short ribs", starch: null, veg: "Carrots and onion" },
-  nutrition: { calories: 690, protein: 45, carbs: 18, fat: 45, fiber: 3 },
-  tags: ["comfort", "make-ahead", "special-occasion", "gluten-free"],
-  seasons: ["fall", "winter"],
-  ingredients: [
-    { group: "Ribs", items: [
-      "5 lb bone-in beef short ribs",
-      "2 teaspoons kosher salt",
-      "1 teaspoon black pepper",
-      "2 tablespoons neutral oil"
-    ]},
-    { group: "Braise", items: [
-      "2 onions, diced",
-      "4 carrots, diced",
-      "3 stalks celery, diced",
-      "6 cloves garlic, smashed",
-      "3 tablespoons tomato paste",
-      "1 bottle (750 ml) dry red wine",
-      "3 cups beef broth",
-      "6 sprigs thyme",
-      "2 bay leaves",
-      "1 tablespoon balsamic vinegar"
-    ]}
-  ],
-  steps: [
-    "Heat the oven to 325F. Season the ribs all over, generously, and let them sit 20 minutes.",
-    "Heat the oil in a large Dutch oven over medium-high. Sear the ribs in batches, 3 minutes per side, until every surface is deeply browned. This takes about 20 minutes and isn't the place to hurry. Move to a plate.",
-    "Pour off all but 2 tablespoons of fat. Add the onions, carrots, and celery and cook 8 minutes.",
-    "Add the garlic and tomato paste and cook 3 minutes, until the paste turns dark red and sticks to the pot.",
-    "Pour in the wine and bring to a boil, scraping the bottom. Boil hard 8 to 10 minutes, until reduced by half. This cooks off the raw alcohol edge.",
-    "Add the broth, thyme, and bay leaves. Return the ribs bone side up; the liquid should come three quarters of the way up.",
-    "Cover and braise in the oven 3 hours, until a fork twists in the meat with no resistance.",
-    "Lift the ribs out. Strain the sauce, skim the fat, and simmer it on the stove 10 minutes to concentrate. Stir in the balsamic and pour over the ribs."
-  ],
-  tips: [
-    "Make it a day ahead. Chilling lets you lift the fat off in one solid sheet, and the flavor deepens overnight.",
-    "Serve over mashed potatoes, polenta, or buttered noodles. You need something to catch the sauce."
-  ],
-  makeAhead: "Better made one to two days ahead. Reheat covered at 325F for 40 minutes."
-},
-
+
 {
   id: "sloppy-joes",
   title: "Homemade Sloppy Joes",
@@ -669,54 +622,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Freezes for three months. Make a double batch."
 },
-
-{
-  id: "pork-schnitzel",
-  title: "Pork Schnitzel with Cucumber Salad",
-  blurb: "Paper-thin cutlets in a golden crust with a sharp, cold cucumber salad to cut through it.",
-  emoji: "🍋", protein: "Pork", cuisine: "German",
-  totalTime: 40, activeTime: 40, difficulty: "Medium", servings: 4,
-  plate: { protein: "Pork cutlets", starch: "Breadcrumb crust", veg: "Cucumber salad" },
-  nutrition: { calories: 545, protein: 42, carbs: 30, fat: 27, fiber: 2 },
-  tags: ["comfort", "kid-friendly", "special-occasion"],
-  seasons: ["spring", "summer"],
-  ingredients: [
-    { group: "Cucumber salad", items: [
-      "2 English cucumbers, very thinly sliced",
-      "1/2 red onion, thinly sliced",
-      "1/4 cup white wine vinegar",
-      "2 tablespoons sour cream",
-      "1 tablespoon sugar",
-      "2 tablespoons chopped dill",
-      "1/2 teaspoon salt"
-    ]},
-    { group: "Schnitzel", items: [
-      "2 lb boneless pork loin, cut into 8 slices",
-      "1/2 cup all-purpose flour",
-      "3 eggs, beaten",
-      "2 cups fine breadcrumbs",
-      "1 1/2 teaspoons kosher salt",
-      "1/2 teaspoon black pepper",
-      "1/2 cup neutral oil",
-      "1 lemon, cut into wedges"
-    ]}
-  ],
-  steps: [
-    "Toss the cucumbers with the salt and let them sit 15 minutes, then squeeze out the water. Stir in the vinegar, sour cream, sugar, onion, and dill and refrigerate.",
-    "Put each pork slice between plastic and pound to 1/4 inch. thin. Season both sides.",
-    "Set up flour, egg, and breadcrumbs on three plates.",
-    "Coat each cutlet in flour, then egg, then breadcrumbs. Press lightly, not firmly. Schnitzel crust should be loose and puffed, not glued on.",
-    "Heat the oil in a large skillet over medium-high; it should be about 1/4 inch deep and shimmer when ready.",
-    "Fry one or two at a time, 2 minutes a side, spooning hot oil over the top so the crust puffs away from the meat. Drain on a rack.",
-    "Serve immediately with lemon wedges and the cold cucumber salad."
-  ],
-  tips: [
-    "Swirling the pan while it fries lifts the crust off the meat. That gap is what makes real schnitzel.",
-    "Fry in batches and keep finished cutlets in a 200F oven; crowding drops the oil temperature and makes them greasy."
-  ],
-  makeAhead: "The cucumber salad is better made two hours ahead."
-},
-
+
 {
   id: "steak-fajita-bowls",
   title: "Steak Fajita Bowls",

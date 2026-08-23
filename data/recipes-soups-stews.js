@@ -747,64 +747,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "The stew base keeps three days; make dumplings fresh when you reheat."
 },
-
-{
-  id: "pozole-rojo",
-  title: "Pozole Rojo",
-  blurb: "A deep red chile broth with pork and hominy, finished at the table with cabbage, radish, and lime.",
-  emoji: "🌽", protein: "Pork", cuisine: "Mexican",
-  totalTime: 180, activeTime: 40, difficulty: "Ambitious", servings: 8,
-  plate: { protein: "Pork shoulder", starch: "Hominy", veg: "Cabbage, radish, onion" },
-  nutrition: { calories: 505, protein: 36, carbs: 38, fat: 24, fiber: 8 },
-  tags: ["make-ahead", "special-occasion", "gluten-free", "dairy-free", "leftovers", "freezer-friendly"],
-  seasons: ["fall", "winter"],
-  ingredients: [
-    { group: "Pork", items: [
-      "3 lb boneless pork shoulder, cut into 2-inch chunks",
-      "1 onion, halved",
-      "8 cloves garlic",
-      "2 bay leaves",
-      "1 tablespoon kosher salt",
-      "12 cups water"
-    ]},
-    { group: "Chile sauce", items: [
-      "6 dried guajillo chiles, stemmed and seeded",
-      "3 dried ancho chiles, stemmed and seeded",
-      "4 cloves garlic",
-      "1 teaspoon dried oregano",
-      "1 teaspoon ground cumin"
-    ]},
-    { group: "To finish", items: [
-      "2 (25 oz) cans hominy, drained and rinsed",
-      "1 tablespoon kosher salt"
-    ]},
-    { group: "Garnishes", items: [
-      "3 cups shredded cabbage",
-      "1 bunch radishes, thinly sliced",
-      "1 white onion, diced",
-      "1/2 cup chopped cilantro",
-      "3 limes, cut into wedges",
-      "1 tablespoon dried oregano",
-      "Tostadas or tortilla chips"
-    ]}
-  ],
-  steps: [
-    "Put the pork, onion, garlic, bay leaves, salt, and water in a large pot. Bring to a boil and skim off the foam.",
-    "Reduce to a simmer and cook 2 hours, until the pork is completely tender.",
-    "Meanwhile, toast the dried chiles in a dry skillet over medium for 30 seconds a side, until fragrant. Don't let them blacken or the whole pot turns bitter.",
-    "Cover the toasted chiles with boiling water and soak 20 minutes until soft.",
-    "Blend the softened chiles with the garlic, oregano, cumin, and 1 1/2 cups of their soaking liquid until completely smooth. Strain through a sieve, pressing hard, and discard the solids.",
-    "Lift the pork out and shred it roughly. Strain the broth and return it to the pot.",
-    "Add the chile sauce, shredded pork, and hominy to the broth. Simmer 30 minutes and season with salt.",
-    "Serve in wide bowls and let everyone pile on cabbage, radish, onion, cilantro, oregano, and lime."
-  ],
-  tips: [
-    "Straining the chile sauce is what makes the broth silky instead of gritty. It's worth the extra step.",
-    "The garnishes aren't optional decoration. The crunch and acid are half of what makes pozole work."
-  ],
-  makeAhead: "Better the next day. Keeps four days and freezes three months."
-},
-
+
 {
   id: "moroccan-chickpea-stew",
   title: "Moroccan Chickpea and Squash Stew",
@@ -952,60 +895,5 @@ window.RECIPES = (window.RECIPES || []).concat([
     "Served cold with extra cream, this becomes vichyssoise."
   ],
   makeAhead: "Keeps four days. Freeze before adding the cream."
-},
-
-{
-  id: "chicken-sausage-gumbo",
-  title: "Chicken and Sausage Gumbo",
-  blurb: "Built on a dark roux, with andouille and chicken over rice. Patient cooking, enormous payoff.",
-  emoji: "🍚", protein: "Chicken", cuisine: "Cajun",
-  totalTime: 150, activeTime: 60, difficulty: "Ambitious", servings: 8,
-  plate: { protein: "Chicken and sausage", starch: "Rice", veg: "Peppers, celery, onion, okra" },
-  nutrition: { calories: 585, protein: 36, carbs: 48, fat: 27, fiber: 4 },
-  tags: ["comfort", "make-ahead", "special-occasion", "leftovers", "freezer-friendly"],
-  seasons: ["fall", "winter"],
-  ingredients: [
-    { group: "Roux", items: [
-      "3/4 cup neutral oil",
-      "3/4 cup all-purpose flour"
-    ]},
-    { group: "Gumbo", items: [
-      "2 lb boneless skinless chicken thighs, cut into chunks",
-      "1 lb andouille sausage, sliced",
-      "2 onions, diced",
-      "2 green bell peppers, diced",
-      "4 stalks celery, diced",
-      "6 cloves garlic, minced",
-      "8 cups chicken broth",
-      "2 bay leaves",
-      "1 tablespoon Cajun seasoning",
-      "1 teaspoon dried thyme",
-      "1/2 teaspoon cayenne",
-      "2 teaspoons kosher salt",
-      "12 oz okra, sliced",
-      "6 scallions, sliced",
-      "1/4 cup chopped parsley"
-    ]},
-    { group: "To serve", items: [
-      "2 cups long-grain rice, cooked",
-      "Hot sauce"
-    ]}
-  ],
-  steps: [
-    "Brown the sausage in a large heavy pot over medium-high, 6 minutes. Lift it out. Brown the chicken 6 minutes and lift that out too.",
-    "Make the roux: add the oil to the pot and whisk in the flour. Cook over medium-low, whisking constantly, for 30 to 45 minutes.",
-    "The roux will go from blond to peanut butter to the color of milk chocolate. That last color is what you want. Don't walk away and don't stop whisking. If black specks appear it has burned and you must start over.",
-    "Add the onions, peppers, and celery all at once; they will stop the roux cooking further. Cook 8 minutes.",
-    "Add the garlic and cook 1 minute.",
-    "Whisk in the broth a cup at a time, keeping it smooth. Add the bay leaves, Cajun seasoning, thyme, cayenne, and salt.",
-    "Return the chicken and sausage. Simmer, partly covered, 1 hour, skimming any fat that rises.",
-    "Add the okra and cook 20 minutes more. Stir in the scallions and parsley and serve over rice with hot sauce."
-  ],
-  tips: [
-    "The roux is the dish and it can't be rushed. Put on a podcast and commit to the whisking.",
-    "If the roux burns even slightly, throw it out and start again. Burnt roux ruins the whole pot and there's no fixing it."
-  ],
-  makeAhead: "Better on day two. Freezes for three months."
 }
-
-]);
+]);

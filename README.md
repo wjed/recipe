@@ -6,11 +6,14 @@ Press one button on the front page and it tells you what to make. Every dinner
 is built around a **real plate: a protein, a starch, and a vegetable**. If a
 recipe is missing one of the three, the site suggests a side to fill the gap.
 
-**225 recipes**: 181 dinners and 44 sides, salads, breads, starters and
+**213 recipes**: 169 dinners and 44 sides, salads, breads, starters and
 desserts, all with full step-by-step instructions and per-serving nutrition.
 
-**Every dinner clears 25g of protein per serving.** That is enforced by the
-validator, not by eye, so a recipe that drops below it fails the build.
+**Every dinner clears 25g of protein per serving**, and every one of them is
+simple enough for a weeknight: at most 9 steps, 26 ingredients and 45 minutes
+of hands-on work, with no deep frying, no roux, and nothing that needs a food
+processor or an overnight soak. Both rules are enforced by the validator, not
+by eye, so a recipe that breaks either fails the build.
 
 ## What it does
 
@@ -77,7 +80,7 @@ adding one means copying an existing entry and editing it.
   protein: "Chicken",            // Chicken|Beef|Pork|Turkey|Lamb|Fish|Shrimp|Eggs|Vegetarian
   cuisine: "American",
   totalTime: 45, activeTime: 15, // minutes
-  difficulty: "Easy",            // Easy|Medium|Ambitious
+  difficulty: "Easy",            // Easy or Medium. Nothing here is a project.
   servings: 4,
   type: "main",                  // or "side" (+ sideType: veg|starch|salad|bread|dessert|starter)
   plate: { protein: "...", starch: "...", veg: "..." },   // null for anything it lacks
@@ -103,6 +106,9 @@ Four rules that matter:
 4. **Do not lie in the tags.** `30-minutes` means `totalTime` is 35 or under.
 5. **If a step says "refrigerate at least 4 hours", add `ahead: { mins, note }`.**
    The validator fails otherwise, because the stated time would be a lie.
+6. **Keep it simple.** 9 steps, 26 ingredients and 45 minutes hands-on are hard
+   limits. So is the technique: no deep frying, roux, blind baking, food
+   processor or overnight soaking. This is a box of weeknight dinners.
 
 After editing, **bump the `?v=` number on every asset in `index.html` and the
 matching `VERSION` in `sw.js`.** They have to agree: the service worker caches

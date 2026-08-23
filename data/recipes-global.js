@@ -89,65 +89,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Marinate overnight; the beef cooks in five minutes."
 },
-
-{
-  id: "chicken-katsu-curry",
-  title: "Chicken Katsu Curry",
-  blurb: "A crisp breaded cutlet over rice with a thick, mildly sweet Japanese curry sauce.",
-  emoji: "🍛", protein: "Chicken", cuisine: "Japanese",
-  totalTime: 60, activeTime: 45, difficulty: "Medium", servings: 4,
-  plate: { protein: "Breaded chicken", starch: "Rice", veg: "Carrot, onion, potato" },
-  nutrition: { calories: 725, protein: 45, carbs: 82, fat: 25, fiber: 6 },
-  tags: ["comfort", "kid-friendly", "make-ahead", "special-occasion"],
-  seasons: ["all"],
-  ingredients: [
-    { group: "Curry sauce", items: [
-      "2 tablespoons butter",
-      "1 large onion, diced",
-      "2 carrots, sliced",
-      "1 potato, cubed",
-      "3 cloves garlic, minced",
-      "1 tablespoon grated ginger",
-      "3 tablespoons all-purpose flour",
-      "2 tablespoons curry powder",
-      "1 teaspoon garam masala",
-      "4 cups chicken broth",
-      "1 tablespoon soy sauce",
-      "1 tablespoon honey",
-      "1 tablespoon ketchup",
-      "1 apple, grated"
-    ]},
-    { group: "Katsu", items: [
-      "4 boneless skinless chicken breasts",
-      "1/2 cup all-purpose flour",
-      "2 eggs, beaten",
-      "2 cups panko breadcrumbs",
-      "1 1/2 teaspoons kosher salt",
-      "1/2 teaspoon black pepper",
-      "1/2 cup neutral oil for frying"
-    ]},
-    { group: "To serve", items: [
-      "4 cups cooked short-grain rice",
-      "2 cups shredded cabbage"
-    ]}
-  ],
-  steps: [
-    "Melt the butter in a pot over medium. Cook the onion 8 minutes until golden, then add the carrots, potato, garlic, and ginger and cook 3 minutes.",
-    "Stir in the flour, curry powder, and garam masala and cook 2 minutes.",
-    "Add the broth gradually, whisking, then the soy sauce, honey, ketchup, and grated apple.",
-    "Simmer 25 minutes, until the vegetables are tender and the sauce is thick enough to coat a spoon. Keep it warm.",
-    "Meanwhile, pound the chicken breasts to an even 1/2 inch and season with the salt and pepper.",
-    "Set out flour, egg, and panko. Coat each breast in that order, pressing the panko on firmly.",
-    "Heat the oil in a large skillet over medium-high until a crumb sizzles instantly. Fry the cutlets 4 minutes a side, until deep golden and cooked through. Drain on a rack.",
-    "Slice each cutlet into thick strips. Serve over rice with the curry sauce ladled alongside and shredded cabbage on the side."
-  ],
-  tips: [
-    "The grated apple is what gives Japanese curry its characteristic gentle sweetness.",
-    "Drain the katsu on a rack and slice it just before serving so the crust stays crisp."
-  ],
-  makeAhead: "The curry sauce keeps five days and freezes well. Fry the katsu fresh."
-},
-
+
 {
   id: "vietnamese-lemongrass-pork-bowls",
   title: "Vietnamese Lemongrass Pork Bowls",
@@ -244,65 +186,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Traditionally eaten at room temperature, so it's ideal made hours ahead."
 },
-
-{
-  id: "moussaka",
-  title: "Moussaka",
-  blurb: "Layers of eggplant, spiced lamb, and a thick bechamel baked until browned and set.",
-  emoji: "🍆", protein: "Lamb", cuisine: "Greek",
-  totalTime: 150, activeTime: 60, difficulty: "Ambitious", servings: 8,
-  plate: { protein: "Ground lamb", starch: "Potato layer", veg: "Eggplant and tomato" },
-  nutrition: { calories: 585, protein: 31, carbs: 36, fat: 35, fiber: 7 },
-  tags: ["comfort", "make-ahead", "special-occasion", "leftovers", "freezer-friendly"],
-  seasons: ["fall", "winter"],
-  ingredients: [
-    { group: "Vegetables", items: [
-      "3 large eggplants, sliced into 1/2-inch rounds",
-      "2 lb potatoes, peeled and sliced 1/4 inch thick",
-      "1/2 cup olive oil",
-      "2 teaspoons kosher salt"
-    ]},
-    { group: "Meat sauce", items: [
-      "2 lb ground lamb or beef",
-      "2 tablespoons olive oil",
-      "1 large onion, diced",
-      "5 cloves garlic, minced",
-      "3 tablespoons tomato paste",
-      "1 (28 oz) can crushed tomatoes",
-      "1/2 cup red wine",
-      "1 teaspoon cinnamon",
-      "1/2 teaspoon allspice",
-      "1 teaspoon dried oregano",
-      "2 bay leaves",
-      "2 teaspoons kosher salt"
-    ]},
-    { group: "Bechamel", items: [
-      "6 tablespoons butter",
-      "6 tablespoons all-purpose flour",
-      "4 cups whole milk, warmed",
-      "3 egg yolks",
-      "1 cup grated Parmesan or kefalotyri",
-      "1/2 teaspoon nutmeg",
-      "1 1/4 teaspoons salt"
-    ]}
-  ],
-  steps: [
-    "Salt the eggplant slices and leave them on a rack 30 minutes, then blot dry. Heat the oven to 425F.",
-    "Brush the eggplant and potato slices with olive oil, spread on sheet pans, and roast 25 minutes, flipping once, until tender and golden. Set aside.",
-    "For the meat sauce, brown the lamb in the oil 10 minutes, then add the onion and cook 6 minutes. Add the garlic for 1 minute.",
-    "Stir in the tomato paste and cook 2 minutes. Add the wine and simmer 3 minutes, then the tomatoes, cinnamon, allspice, oregano, bay leaves, and salt.",
-    "Simmer 30 minutes, until very thick with no loose liquid. A wet meat layer makes a sloppy moussaka.",
-    "For the bechamel, melt the butter, whisk in the flour, and cook 2 minutes. Add the warm milk gradually, whisking, and simmer 5 minutes until thick. Off the heat, whisk in the nutmeg, salt, cheese, and then the egg yolks one at a time.",
-    "Lower the oven to 375F. Layer in a deep 9x13 dish: potatoes, half the eggplant, all the meat sauce, the rest of the eggplant, then the bechamel spread evenly over the top.",
-    "Bake 45 to 50 minutes, until deeply golden and set. Rest at least 30 minutes before cutting. This is essential for clean slices."
-  ],
-  tips: [
-    "Roasting rather than frying the eggplant saves an enormous amount of oil and tastes just as good.",
-    "The egg yolks in the bechamel are what let it set into a firm, sliceable custard rather than a sauce."
-  ],
-  makeAhead: "Assemble a day ahead and bake from cold, adding 20 minutes."
-},
-
+
 {
   id: "chicken-tagine-olives",
   title: "Chicken Tagine with Olives and Lemon",
@@ -464,63 +348,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Make the base ahead; add sour cream when reheating."
 },
-
-{
-  id: "bibimbap",
-  title: "Bibimbap",
-  blurb: "A bowl of rice with seasoned vegetables arranged around beef and a fried egg, mixed at the table.",
-  emoji: "🍲", protein: "Beef", cuisine: "Korean",
-  totalTime: 60, activeTime: 50, difficulty: "Medium", servings: 4,
-  plate: { protein: "Beef and egg", starch: "Rice", veg: "Spinach, carrot, mushroom, sprouts" },
-  nutrition: { calories: 645, protein: 38, carbs: 68, fat: 25, fiber: 7 },
-  tags: ["veggie-forward", "high-protein", "special-occasion", "dairy-free", "make-ahead"],
-  seasons: ["all"],
-  ingredients: [
-    { group: "Beef", items: [
-      "1 lb ground beef or thinly sliced sirloin",
-      "3 tablespoons soy sauce",
-      "1 tablespoon brown sugar",
-      "1 tablespoon sesame oil",
-      "4 cloves garlic, minced"
-    ]},
-    { group: "Vegetables", items: [
-      "10 oz spinach",
-      "2 carrots, julienned",
-      "8 oz shiitake mushrooms, sliced",
-      "2 cups bean sprouts",
-      "1 zucchini, julienned",
-      "3 tablespoons sesame oil",
-      "3 cloves garlic, minced",
-      "2 teaspoons kosher salt",
-      "1 tablespoon sesame seeds"
-    ]},
-    { group: "Sauce and assembly", items: [
-      "4 cups cooked short-grain rice",
-      "4 eggs",
-      "1/4 cup gochujang",
-      "1 tablespoon sesame oil",
-      "1 tablespoon rice vinegar",
-      "1 tablespoon honey",
-      "2 tablespoons water"
-    ]}
-  ],
-  steps: [
-    "Whisk the gochujang, sesame oil, vinegar, honey, and water into a smooth sauce.",
-    "Mix the beef with the soy sauce, brown sugar, sesame oil, and garlic and leave it while you cook the vegetables.",
-    "Blanch the spinach 30 seconds, squeeze it dry, and toss with 1 teaspoon sesame oil, a little garlic, and salt.",
-    "Blanch the bean sprouts 2 minutes and dress the same way.",
-    "Saute the carrots 2 minutes in sesame oil with salt, and set aside. Repeat separately with the zucchini, then the mushrooms with a splash of soy sauce. Keeping them separate is the point. Each one should taste of itself.",
-    "Cook the beef in a hot skillet 5 minutes, until browned and glazed.",
-    "Fry the eggs so the whites are set and the yolks runny.",
-    "Fill bowls with hot rice and arrange the vegetables and beef in neat sections on top, with an egg in the middle. Serve the sauce alongside and mix everything together at the table."
-  ],
-  tips: [
-    "Season and cook each vegetable separately. It seems fussy and it's the character of the dish.",
-    "For crispy rice at the bottom, use a hot stone bowl or press the rice into an oiled skillet for 3 minutes before filling."
-  ],
-  makeAhead: "All the vegetable components keep three days, which makes assembly a ten-minute job."
-},
-
+
 {
   id: "thai-basil-chicken",
   title: "Thai Basil Chicken (Pad Krapow)",
@@ -779,63 +607,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Keeps four days and reheats well in a hot skillet."
 },
-
-{
-  id: "golabki",
-  title: "Golabki (Polish Stuffed Cabbage Rolls)",
-  blurb: "Cabbage leaves wrapped around pork, beef, and rice, baked slowly in tomato sauce.",
-  emoji: "🥬", protein: "Pork", cuisine: "Polish",
-  totalTime: 150, activeTime: 50, difficulty: "Ambitious", servings: 6,
-  plate: { protein: "Pork and beef", starch: "Rice filling", veg: "Cabbage and tomato" },
-  nutrition: { calories: 465, protein: 30, carbs: 44, fat: 19, fiber: 6 },
-  tags: ["comfort", "make-ahead", "freezer-friendly", "budget", "leftovers", "special-occasion"],
-  seasons: ["fall", "winter"],
-  ingredients: [
-    { group: "Cabbage", items: [
-      "1 large head green cabbage",
-      "1 tablespoon kosher salt for the water"
-    ]},
-    { group: "Filling", items: [
-      "1 lb ground pork",
-      "1 lb ground beef",
-      "1 1/2 cups cooked rice",
-      "1 large onion, finely diced",
-      "3 cloves garlic, minced",
-      "1 egg",
-      "1/4 cup chopped parsley",
-      "2 teaspoons kosher salt",
-      "1 teaspoon black pepper",
-      "1 teaspoon dried marjoram"
-    ]},
-    { group: "Sauce", items: [
-      "2 tablespoons butter",
-      "1 onion, diced",
-      "1 (28 oz) can crushed tomatoes",
-      "2 cups beef broth",
-      "2 tablespoons tomato paste",
-      "1 tablespoon brown sugar",
-      "1 tablespoon apple cider vinegar",
-      "2 bay leaves",
-      "1 teaspoon kosher salt"
-    ]}
-  ],
-  steps: [
-    "Cut the core out of the cabbage. Lower the whole head into a large pot of boiling salted water for 3 minutes, then peel off the outer leaves as they soften, returning the head to the water as you go. Get 16 to 18 good leaves.",
-    "Shave down the thick rib at the base of each leaf with a knife so it rolls without cracking.",
-    "Mix all the filling ingredients with your hands until just combined. Don't overwork it.",
-    "Cook the onion for the sauce in the butter 6 minutes, then add the tomatoes, broth, tomato paste, sugar, vinegar, bay leaves, and salt. Simmer 10 minutes.",
-    "Heat the oven to 350F. Spread a cup of sauce in a deep baking dish and line the bottom with a couple of spare cabbage leaves.",
-    "Put about 1/3 cup of filling near the base of each leaf, fold the sides in, and roll it up tightly like a burrito. Set them seam side down in the dish.",
-    "Pour the remaining sauce over, cover tightly with foil, and bake 1 1/2 hours.",
-    "Uncover and bake 15 minutes more. Rest 15 minutes before serving with plenty of sauce."
-  ],
-  tips: [
-    "Freezing the whole cabbage head overnight and thawing it also softens the leaves, with no boiling at all. It's the easier method if you plan ahead.",
-    "Line the dish with spare leaves. It stops the bottom rolls catching and burning."
-  ],
-  makeAhead: "Assemble a day ahead, or freeze baked rolls in their sauce for three months."
-},
-
+
 {
   id: "pierogi-kielbasa-onions",
   title: "Pierogi with Caramelized Onions and Kielbasa",

@@ -308,66 +308,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Press the tofu and mix the sauce in the morning."
 },
-
-{
-  id: "falafel-bowls",
-  title: "Baked Falafel Bowls",
-  blurb: "Herby chickpea patties baked instead of fried, with hummus, salad, and tahini sauce.",
-  emoji: "🧆", protein: "Vegetarian", cuisine: "Middle Eastern",
-  totalTime: 50, activeTime: 30, difficulty: "Medium", servings: 4,
-  plate: { protein: "Falafel and yogurt tahini", starch: "Pita and rice", veg: "Cucumber, tomato, greens" },
-  nutrition: { calories: 675, protein: 28, carbs: 76, fat: 29, fiber: 15 },
-  tags: ["make-ahead", "dairy-free", "veggie-forward", "budget", "high-protein"],
-  seasons: ["spring", "summer"],
-  ingredients: [
-    { group: "Falafel", items: [
-      "1 1/2 cups dried chickpeas, soaked overnight",
-      "1 onion, roughly chopped",
-      "5 cloves garlic",
-      "1 cup packed parsley",
-      "1 cup packed cilantro",
-      "2 teaspoons ground cumin",
-      "1 teaspoon ground coriander",
-      "1/2 teaspoon baking powder",
-      "3 tablespoons chickpea or all-purpose flour",
-      "1 1/2 teaspoons kosher salt",
-      "3 tablespoons olive oil"
-    ]},
-    { group: "Tahini sauce", items: [
-      "1 cup plain Greek yogurt",
-      "1/3 cup tahini",
-      "3 tablespoons lemon juice",
-      "1 clove garlic, grated",
-      "4-6 tablespoons cold water",
-      "1/4 teaspoon salt"
-    ]},
-    { group: "Bowls", items: [
-      "2 cups cooked rice",
-      "1 cup hummus",
-      "1 cucumber, diced",
-      "2 tomatoes, diced",
-      "3 cups chopped romaine",
-      "1/2 cup pickled turnips or red onion",
-      "4 pitas, warmed"
-    ]}
-  ],
-  steps: [
-    "Drain the soaked chickpeas thoroughly. Don't use canned chickpeas. They're too wet and the falafel will fall apart.",
-    "Pulse the chickpeas, onion, garlic, herbs, spices, salt, and flour in a food processor until it looks like coarse wet sand that holds together when squeezed. Don't puree it smooth.",
-    "Stir in the baking powder and refrigerate 30 minutes.",
-    "Heat the oven to 425F. Brush a sheet pan generously with olive oil.",
-    "Form the mixture into 16 patties, about 2 inches wide, and set them on the oiled pan. Brush the tops with more oil.",
-    "Bake 25 minutes, flipping at 15, until browned and crisp on both sides.",
-    "Whisk the tahini with the lemon and garlic, it will seize, then loosen with cold water and whisk in the yogurt until pourable.",
-    "Build bowls with rice, hummus, salad vegetables, falafel, pickles, and plenty of tahini sauce."
-  ],
-  tips: [
-    "Dried soaked chickpeas are non-negotiable. This is the one recipe where the canned shortcut doesn't work.",
-    "The mixture should just hold together. If it crumbles completely, pulse in another spoonful of flour."
-  ],
-  makeAhead: "The raw mixture keeps two days in the fridge, and shaped patties freeze well."
-},
-
+
 {
   id: "stuffed-peppers-quinoa",
   title: "Quinoa Stuffed Peppers",
@@ -922,52 +863,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Make the sauce base ahead; stir in sour cream when reheating."
 },
-
-{
-  id: "spinach-mushroom-quiche",
-  title: "Spinach and Mushroom Quiche",
-  blurb: "A custardy, deeply savory tart that's dinner with a salad and breakfast the next morning.",
-  emoji: "🥧", protein: "Eggs", cuisine: "French",
-  totalTime: 80, activeTime: 30, difficulty: "Medium", servings: 6,
-  plate: { protein: "Eggs and cheese", starch: "Pastry crust", veg: "Spinach and mushrooms" },
-  nutrition: { calories: 535, protein: 26, carbs: 25, fat: 37, fiber: 2 },
-  tags: ["make-ahead", "comfort", "veggie-forward", "special-occasion", "leftovers"],
-  seasons: ["all"],
-  ingredients: [
-    { group: "Crust", items: [
-      "1 (9-inch) pie crust, store-bought or homemade"
-    ]},
-    { group: "Filling", items: [
-      "2 tablespoons butter",
-      "10 oz mushrooms, sliced",
-      "1 onion, finely diced",
-      "3 cloves garlic, minced",
-      "8 oz fresh spinach",
-      "8 eggs",
-      "1 1/4 cups heavy cream",
-      "2 cups grated Gruyere",
-      "1/2 teaspoon nutmeg",
-      "1 1/4 teaspoons kosher salt",
-      "1/2 teaspoon black pepper"
-    ]}
-  ],
-  steps: [
-    "Heat the oven to 400F. Line the crust with parchment, fill with dried beans or pie weights, and blind bake 15 minutes. Remove the weights and bake 8 minutes more until the base looks dry.",
-    "Meanwhile, melt the butter in a skillet over medium-high. Cook the mushrooms 8 minutes until browned and their liquid has evaporated.",
-    "Add the onion and cook 6 minutes, then the garlic for 1 minute.",
-    "Add the spinach in handfuls until wilted. Tip everything into a sieve and press out as much liquid as you can. Wet filling makes a soggy quiche.",
-    "Lower the oven to 350F. Whisk the eggs, cream, nutmeg, salt, and pepper until smooth.",
-    "Scatter half the Gruyere over the baked crust, spread the vegetables on top, then pour over the custard and finish with the rest of the cheese.",
-    "Bake 35 to 40 minutes, until the center is just set with a slight wobble and the top is golden.",
-    "Rest at least 20 minutes before cutting. It firms up as it cools and slices cleanly."
-  ],
-  tips: [
-    "Blind baking the crust is what stands between you and a raw pastry bottom.",
-    "Squeeze the vegetables dry. This is the most common quiche failure."
-  ],
-  makeAhead: "Bake a day ahead and serve at room temperature, or reheat at 325F for 15 minutes."
-},
-
+
 {
   id: "huevos-rancheros",
   title: "Huevos Rancheros",

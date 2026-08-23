@@ -100,63 +100,7 @@ window.RECIPES = (window.RECIPES || []).concat([
   ],
   makeAhead: "Assemble up to two days ahead, or freeze unbaked for three months. Bake from cold with 20 minutes added."
 },
-
-{
-  id: "classic-lasagna",
-  title: "Classic Lasagna",
-  blurb: "The full production: meat sauce, bechamel, and layers of pasta. Make it when you have the afternoon.",
-  emoji: "🍽️", protein: "Beef", cuisine: "Italian",
-  totalTime: 180, activeTime: 60, difficulty: "Ambitious", servings: 8,
-  plate: { protein: "Beef and cheese", starch: "Lasagna sheets", veg: "Tomato and soffritto" },
-  nutrition: { calories: 665, protein: 37, carbs: 52, fat: 34, fiber: 5 },
-  tags: ["comfort", "make-ahead", "freezer-friendly", "special-occasion", "leftovers"],
-  seasons: ["fall", "winter"],
-  ingredients: [
-    { group: "Meat sauce", items: [
-      "1 1/2 lb ground beef",
-      "1/2 lb ground pork",
-      "3 tablespoons olive oil",
-      "1 onion, finely diced",
-      "2 carrots, finely diced",
-      "2 stalks celery, finely diced",
-      "5 cloves garlic, minced",
-      "3 tablespoons tomato paste",
-      "1 cup red wine",
-      "2 (28 oz) cans crushed tomatoes",
-      "2 teaspoons kosher salt",
-      "1 teaspoon dried oregano"
-    ]},
-    { group: "Bechamel", items: [
-      "6 tablespoons butter",
-      "6 tablespoons all-purpose flour",
-      "4 cups whole milk, warmed",
-      "1/2 teaspoon nutmeg",
-      "1 1/4 teaspoons salt"
-    ]},
-    { group: "Assembly", items: [
-      "1 lb lasagna sheets",
-      "1 1/2 cups grated Parmesan",
-      "1 lb mozzarella, shredded"
-    ]}
-  ],
-  steps: [
-    "Make the meat sauce: cook the onion, carrot, and celery in the oil 12 minutes until soft. Add the garlic for 1 minute, then brown both meats for 10 minutes.",
-    "Stir in the tomato paste and cook 3 minutes. Add the wine and simmer until nearly gone.",
-    "Add the tomatoes, salt, and oregano. Simmer, partly covered, 1 hour, until thick and glossy.",
-    "For the bechamel, melt the butter and whisk in the flour. Cook 2 minutes without letting it color.",
-    "Add the warm milk gradually, whisking constantly, until completely smooth. Simmer 5 minutes until it coats a spoon, then stir in the nutmeg and salt.",
-    "Heat the oven to 375F. Boil the lasagna sheets 2 minutes less than the package says, unless using no-boil sheets.",
-    "Build it: a thin layer of meat sauce, then pasta, meat sauce, bechamel, Parmesan, and mozzarella. Repeat for 4 layers, finishing with bechamel and both cheeses on top.",
-    "Cover with foil and bake 40 minutes. Uncover and bake 25 minutes more, until deeply browned and bubbling.",
-    "Rest at least 30 minutes before cutting. This isn't optional if you want slices instead of landslides."
-  ],
-  tips: [
-    "The 30-minute rest is what lets it set. Cutting into a lasagna straight from the oven is how you get soup.",
-    "Warm the milk before adding it to the roux. Cold milk into hot roux is how lumps happen."
-  ],
-  makeAhead: "Assemble up to two days ahead. Freezes beautifully, baked or unbaked."
-},
-
+
 {
   id: "pasta-primavera",
   title: "Pasta Primavera",
